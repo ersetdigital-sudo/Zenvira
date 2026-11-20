@@ -286,9 +286,6 @@
 /* ---- QRIS ---- */
 .qris-box { margin-top: 14px; padding: 16px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--surface-2); display: grid; justify-items: center; gap: 12px; text-align: center; }
 .pay-panel .qris-box { margin-top: 0; }
-.qris-box__head { display: flex; align-items: center; gap: 12px; justify-self: stretch; text-align: left; }
-.qris-box__head b { display: block; font-size: 0.95rem; }
-.qris-box__head small { color: var(--muted); font-size: 0.8rem; }
 .qris-box__img { width: min(260px, 100%); padding: 10px; border-radius: var(--r-md); background: #fff; box-shadow: var(--shadow-sm); }
 .qris-box__img img { width: 100%; height: auto; }
 .qris-box__note { font-size: 0.78rem; color: var(--muted); max-width: 42ch; }
