@@ -56,7 +56,7 @@
 .promo__foot { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .promo__code { font-family: var(--mono); font-weight: 700; letter-spacing: 0.05em; padding: 7px 11px; border-radius: 10px; border: 1.5px dashed currentColor; font-size: 0.85rem; }
 .promo__slide .btn { background: var(--ink); color: var(--on-ink); min-height: 38px; }
-.promo__slide--2 .btn { background: var(--accent); color: var(--on-accent); }
+.promo__slide--2 .btn { background: var(--accent); color: #fff; }
 .promo__bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .dots { display: flex; gap: 6px; align-items: center; }
 .dot { position: relative; width: 8px; height: 8px; border-radius: 8px; background: var(--line-strong); transition: width 0.3s var(--ease), background 0.3s; }
@@ -177,7 +177,7 @@
 .summary .btn { display: none; }
 .checkout-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 80; display: flex; align-items: center; gap: 12px; padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom)); background: color-mix(in srgb, var(--surface) 95%, transparent); backdrop-filter: blur(14px); border-top: 1px solid var(--line); }
 .checkout-bar .btn { flex: 1; min-width: 0; }
-.checkout-bar__amount { font-weight: 800; letter-spacing: -0.01em; padding-left: 10px; border-left: 1.5px solid color-mix(in srgb, var(--on-accent) 24%, transparent); }
+.checkout-bar__amount { font-weight: 800; letter-spacing: -0.01em; padding-left: 10px; border-left: 1.5px solid color-mix(in srgb, #fff 36%, transparent); }
 /* Fade-only entrance di checkout agar bar fixed tidak terkurung transform .view */
 body[data-view="checkout"] .view.is-entering { animation: view-in-fade 0.45s var(--ease) both; }
 @keyframes view-in-fade { from { opacity: 0; } to { opacity: 1; } }
@@ -229,7 +229,7 @@ body[data-view="checkout"] .view.is-entering { animation: view-in-fade 0.45s var
 .contact::after { content: ""; position: absolute; z-index: -1; width: 180px; height: 180px; border-radius: 50%; background: var(--accent); right: -50px; bottom: -70px; }
 .contact h2 { font-size: 1.35rem; }
 .contact p { color: color-mix(in srgb, var(--on-ink) 70%, transparent); font-size: 0.92rem; }
-.contact .btn { background: var(--accent); color: var(--on-accent); justify-self: start; margin-top: 6px; }
+.contact .btn { background: var(--accent); color: #fff; justify-self: start; margin-top: 6px; }
 .legal-links { display: grid; gap: 8px; margin-top: 14px; }
 .legal-links button { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 52px; padding: 0 16px; border-radius: var(--r-md); border: 1px solid var(--line); background: var(--surface); font-weight: 650; transition: border-color 0.2s; }
 .legal-links button:hover { border-color: var(--text); }

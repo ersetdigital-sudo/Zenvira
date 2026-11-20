@@ -24,7 +24,7 @@
 .btn:active { transform: scale(0.97); }
 .btn--ink { background: var(--ink); color: var(--on-ink); }
 .btn--ink:hover { box-shadow: 0 8px 20px color-mix(in srgb, var(--ink) 28%, transparent); transform: translateY(-1px); }
-.btn--accent { background: var(--accent); color: var(--on-accent); }
+.btn--accent { background: var(--accent); color: #fff; }
 .btn--accent:hover { transform: translateY(-1px); box-shadow: 0 8px 20px color-mix(in srgb, var(--accent) 40%, transparent); }
 .btn--line { border: 1.5px solid var(--line-strong); }
 .btn--line:hover { border-color: var(--text); }
