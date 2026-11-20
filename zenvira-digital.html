@@ -1,0 +1,2462 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Zenvira Digital — PPOB &amp; Top Up Game</title>
+  <meta name="description" content="Bayar pulsa, paket data, token PLN, tagihan, e-wallet, dan top up game favoritmu dalam satu tempat. Pembayaran lewat QRIS, e-wallet, virtual account, dan transfer bank.">
+  <meta name="theme-color" content="#f5f5f1" id="metaTheme">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Zenvira Digital">
+  <meta property="og:title" content="Zenvira Digital — PPOB &amp; Top Up Game">
+  <meta property="og:description" content="Semua kebutuhan digital, satu tempat. Pulsa, tagihan, token listrik, e-wallet, dan top up game.">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlplbnZpcmEgRGlnaXRhbCI+CiAgPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByeD0iMTQiIGZpbGw9IiMxMjEyMTIiLz4KICA8cmVjdCB4PSIuNzUiIHk9Ii43NSIgd2lkdGg9IjQ2LjUiIGhlaWdodD0iNDYuNSIgcng9IjEzLjI1IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1vcGFjaXR5PSIuMTYiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPHBhdGggZD0iTTE0LjUgMTUuNWgxNyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjQuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPHBhdGggZD0iTTMxLjUgMTUuNSAxNiAzMi41IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRjVCMkUiIHN0cm9rZS13aWR0aD0iNC42IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8cGF0aCBkPSJNMTUgMzIuNWgxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjQuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGNpcmNsZSBjeD0iMzYuNSIgY3k9IjMyLjUiIHI9IjIuNyIgZmlsbD0iI0ZGNUIyRSIvPgo8L3N2Zz4K" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>/* css/tokens.css */
+/* ==========================================================================
+   Zenvira Digital — Design tokens
+   Terang & gelap dikendalikan lewat atribut [data-theme] di <html>.
+   ========================================================================== */
+:root {
+  color-scheme: light;
+
+  /* surfaces */
+  --bg: #f5f5f1;
+  --surface: #ffffff;
+  --surface-2: #eeeee8;
+  --surface-3: #e5e5de;
+
+  /* text & lines */
+  --text: #121212;
+  --muted: #6a6a64;
+  --faint: #9a9a93;
+  --line: #e3e3dc;
+  --line-strong: #cdcdc3;
+
+  /* brand */
+  --ink: #121212;
+  --on-ink: #ffffff;
+  --accent: #ff5b2e;
+  --accent-ink: #c93a10;
+  --accent-soft: #ffe9e1;
+  --on-accent: #121212;
+
+  /* semantic */
+  --ok: #0c8a54;
+  --ok-soft: #ddf3e7;
+  --warn: #a35b00;
+  --warn-soft: #fdecc9;
+  --err: #c6362b;
+  --err-soft: #fbe3df;
+  --info: #1d5fcf;
+  --info-soft: #e1ebff;
+
+  /* tinted icon tiles (nama mengikuti `tone` di data.js) */
+  --tone-blue-bg: #dfe9ff;   --tone-blue-fg: #1d4fc4;
+  --tone-cyan-bg: #d8f1f2;   --tone-cyan-fg: #0b7480;
+  --tone-orange-bg: #ffe6d6; --tone-orange-fg: #bd4a10;
+  --tone-purple-bg: #f4e9c8; --tone-purple-fg: #8a6208;
+  --tone-green-bg: #ddf3e7;  --tone-green-fg: #0c7a49;
+  --tone-pink-bg: #ffe0e7;   --tone-pink-fg: #b82b52;
+
+  /* shape */
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 18px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+
+  /* elevation (dipakai hemat — desain mengandalkan border) */
+  --shadow-sm: 0 1px 2px rgba(18, 18, 18, 0.05);
+  --shadow-md: 0 8px 24px rgba(18, 18, 18, 0.08);
+  --shadow-lg: 0 24px 64px rgba(18, 18, 18, 0.18);
+
+  /* type */
+  --font: "Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  /* layout */
+  --topbar-h: 64px;
+  --tab-h: 66px;
+  --gutter: 16px;
+  --ease: cubic-bezier(0.22, 0.8, 0.2, 1);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0d0d0e;
+  --surface: #161618;
+  --surface-2: #1e1e21;
+  --surface-3: #28282c;
+  --text: #f4f4f0;
+  --muted: #a0a099;
+  --faint: #6f6f69;
+  --line: #2a2a2e;
+  --line-strong: #3b3b41;
+  --ink: #f4f4f0;
+  --on-ink: #121212;
+  --accent: #ff6a3d;
+  --accent-ink: #ff8c66;
+  --accent-soft: #3a1f16;
+  --ok: #3fd08a;
+  --ok-soft: #11301f;
+  --warn: #f0b04a;
+  --warn-soft: #33260d;
+  --err: #ff7b70;
+  --err-soft: #3b1613;
+  --info: #7ca9ff;
+  --info-soft: #15233f;
+  --tone-blue-bg: #17284f;   --tone-blue-fg: #8fb2ff;
+  --tone-cyan-bg: #11343a;   --tone-cyan-fg: #6fd3dd;
+  --tone-orange-bg: #3d2013; --tone-orange-fg: #ff9a6c;
+  --tone-purple-bg: #382d10; --tone-purple-fg: #e8c35e;
+  --tone-green-bg: #11301f;  --tone-green-fg: #5fdc9c;
+  --tone-pink-bg: #3a1621;   --tone-pink-fg: #ff8fab;
+  --shadow-sm: none;
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.6);
+}
+
+</style>
+  <style>/* css/base.css */
+/* ==========================================================================
+   Zenvira Digital — Base: reset, tipografi, utilitas
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0; min-height: 100dvh; background: var(--bg); color: var(--text);
+  font-family: var(--font); font-size: 1rem; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  overflow-x: clip; transition: background 0.3s, color 0.3s;
+}
+html.no-scroll body { overflow: hidden; padding-right: var(--sbw, 0); }
+img, svg { display: block; max-width: 100%; }
+h1, h2, h3, h4, p, ul, ol, dl, dd, figure { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+h1, h2, h3, h4 { line-height: 1.12; letter-spacing: -0.025em; font-weight: 700; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { background: none; border: 0; padding: 0; cursor: pointer; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 2.5px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+::selection { background: var(--accent); color: var(--on-accent); }
+code, kbd, .mono { font-family: var(--mono); }
+kbd { font-size: 0.72rem; padding: 2px 6px; border-radius: 6px; border: 1px solid var(--line-strong); background: var(--surface-2); color: var(--muted); }
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.skip-link { position: fixed; left: 12px; top: -64px; z-index: 5000; background: var(--ink); color: var(--on-ink); padding: 10px 16px; border-radius: var(--r-sm); transition: top 0.2s; }
+.skip-link:focus { top: 12px; }
+.muted { color: var(--muted); }
+.accent { color: var(--accent-ink); }
+.nowrap { white-space: nowrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+</style>
+  <style>/* css/layout.css */
+/* ==========================================================================
+   Zenvira Digital — Layout: navbar atas, tab bar (mobile), footer, grid bento
+   Mobile-first: <1024 = topbar ringkas + tab bar, >=1024 = navbar lengkap.
+   ========================================================================== */
+.app { min-height: 100dvh; display: flex; flex-direction: column; }
+
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.04em; flex: none; }
+.brand img { width: 34px; height: 34px; border-radius: 10px; }
+.brand__name { display: none; white-space: nowrap; }
+.brand__sub { font-weight: 500; color: var(--muted); margin-left: 0.3em; }
+
+/* ---- navbar ---- */
+.topbar { position: sticky; top: 0; z-index: 60; height: var(--topbar-h); background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+.topbar__inner { max-width: 1240px; height: 100%; margin-inline: auto; padding: 0 var(--gutter); display: flex; align-items: center; gap: 10px; }
+.topnav { display: none; }
+.topbar__right { display: flex; align-items: center; justify-content: flex-end; gap: 6px; flex: 1; min-width: 0; }
+.topbar__actions { display: flex; align-items: center; gap: 6px; flex: none; }
+.search-trigger {
+  flex: 1; min-width: 0; max-width: 560px; height: 42px; display: flex; align-items: center; gap: 10px; padding: 0 14px;
+  border-radius: var(--r-pill); background: var(--surface); border: 1px solid var(--line); color: var(--muted);
+  font-size: 0.92rem; text-align: left; transition: border-color 0.2s, box-shadow 0.2s;
+}
+.search-trigger:hover { border-color: var(--line-strong); }
+.search-trigger span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.search-trigger kbd { display: none; }
+
+
+/* ---- view ---- */
+.view { flex: 1; width: 100%; max-width: 1240px; margin-inline: auto; padding: 20px var(--gutter) 40px; outline: none; }
+.view.is-entering { animation: view-in 0.45s var(--ease) both; }
+@keyframes view-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+body[data-view="checkout"] .view { padding-bottom: 120px; }
+
+.page-head { display: grid; gap: 6px; margin-bottom: 20px; }
+.page-head h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); font-weight: 800; }
+.page-head p { color: var(--muted); max-width: 60ch; }
+.crumbs { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--muted); margin-bottom: 6px; }
+.crumbs a { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; }
+.crumbs a:hover { color: var(--text); }
+
+/* ---- tab bar (mobile) ---- */
+.tabbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; height: calc(var(--tab-h) + env(safe-area-inset-bottom));
+  padding-bottom: env(safe-area-inset-bottom); display: grid; grid-template-columns: repeat(5, 1fr);
+  background: color-mix(in srgb, var(--surface) 94%, transparent); backdrop-filter: blur(16px); border-top: 1px solid var(--line);
+}
+.tab { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 0.68rem; font-weight: 600; color: var(--muted); min-height: 48px; position: relative; transition: color 0.2s; }
+.tab i { font-size: 1.15rem; transition: transform 0.25s var(--ease); }
+.tab[aria-current="page"] { color: var(--text); }
+.tab[aria-current="page"] i { transform: translateY(-2px); color: var(--accent-ink); }
+.tab[aria-current="page"]::before { content: ""; position: absolute; top: 0; width: 28px; height: 3px; border-radius: 0 0 4px 4px; background: var(--accent); }
+body[data-view="checkout"] .tabbar { display: none; }
+
+/* ---- footer ---- */
+.foot { border-top: 1px solid var(--line); background: var(--surface); color: var(--muted); font-size: 0.9rem; padding: 36px var(--gutter) 28px; }
+body:not([data-view="checkout"]) .foot { padding-bottom: calc(28px + var(--tab-h) + env(safe-area-inset-bottom)); }
+.foot__inner { max-width: 1240px; margin-inline: auto; display: grid; gap: 28px; }
+.foot__top { display: grid; gap: 26px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.foot__brand { grid-column: 1 / -1; display: grid; gap: 12px; }
+.foot__brand .brand { color: var(--text); }
+.foot__brand p { max-width: 42ch; }
+.foot__h { font-size: 0.82rem; font-weight: 750; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text); margin-bottom: 8px; }
+.foot li + li { margin-top: 2px; }
+.foot nav a, .foot nav button { min-height: 36px; display: inline-flex; align-items: center; color: var(--muted); transition: color 0.2s; text-align: left; }
+.foot nav a:hover, .foot nav button:hover { color: var(--text); }
+.foot__bottom { display: grid; gap: 6px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 0.82rem; }
+
+/* ---- bento grid ---- */
+.bento { display: grid; gap: 14px; grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.bento > * { grid-column: span 12; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-xl); padding: 20px; min-width: 0; }
+.tile__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.tile__head h2 { font-size: 1.15rem; font-weight: 700; }
+.tile__link { font-size: 0.85rem; font-weight: 600; color: var(--muted); display: inline-flex; align-items: center; gap: 6px; min-height: 36px; }
+.tile__link:hover { color: var(--text); }
+
+@media (min-width: 700px) {
+  :root { --gutter: 24px; }
+  .view { padding-top: 28px; }
+  .tile { padding: 24px; }
+  .span-4, .span-5, .span-7, .span-8 { grid-column: span 6; }
+  .full-md { grid-column: span 12; }
+  .search-trigger kbd { display: inline-block; }
+  .brand__name { display: inline; }
+  .foot__top { grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr)); }
+  .foot__brand { grid-column: auto; }
+  .foot__bottom { grid-template-columns: 1fr auto; }
+}
+
+@media (min-width: 1024px) {
+  :root { --gutter: 32px; --topbar-h: 72px; }
+  /* tiga kolom: logo | menu (di tengah) | pencarian + tema */
+  .topbar__inner { display: grid; grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr); gap: 20px; }
+  .topbar__inner > .brand { justify-self: start; }
+  .topnav { display: flex; align-items: center; gap: 2px; justify-self: center; }
+  .topbar__right { justify-self: end; flex: none; gap: 8px; }
+  .topnav__link { display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: var(--r-pill); font-weight: 600; font-size: 0.93rem; color: var(--muted); transition: background 0.2s, color 0.2s; }
+  .topnav__link:hover { background: var(--surface-2); color: var(--text); }
+  .topnav__link[aria-current="page"] { background: var(--ink); color: var(--on-ink); }
+  /* 1024–1199px: pencarian berupa tombol ikon agar menu tetap di tengah */
+  .search-trigger { flex: 0 0 44px; width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: 50%; }
+  .search-trigger span, .search-trigger kbd { display: none; }
+  .tabbar { display: none; }
+  body:not([data-view="checkout"]) .foot { padding-bottom: 28px; }
+  body[data-view="checkout"] .view { padding-bottom: 48px; }
+}
+
+@media (min-width: 1200px) {
+  .span-4 { grid-column: span 4; }
+  .span-5 { grid-column: span 5; }
+  .span-7 { grid-column: span 7; }
+  .span-8 { grid-column: span 8; }
+  .search-trigger { flex: 0 0 250px; width: 250px; height: 42px; padding: 0 14px; justify-content: flex-start; border-radius: var(--r-pill); }
+  .search-trigger span { display: block; }
+  .search-trigger kbd { display: inline-block; }
+}
+
+</style>
+  <style>/* css/components.css */
+/* ==========================================================================
+   Zenvira Digital — Komponen: tombol, input, badge, status, sheet, palette, toast…
+   ========================================================================== */
+
+/* ---- tone helper: set warna tile ikon ---- */
+.tone-blue   { --tb: var(--tone-blue-bg);   --tf: var(--tone-blue-fg); }
+.tone-cyan   { --tb: var(--tone-cyan-bg);   --tf: var(--tone-cyan-fg); }
+.tone-orange { --tb: var(--tone-orange-bg); --tf: var(--tone-orange-fg); }
+.tone-purple { --tb: var(--tone-purple-bg); --tf: var(--tone-purple-fg); }
+.tone-green  { --tb: var(--tone-green-bg);  --tf: var(--tone-green-fg); }
+.tone-pink   { --tb: var(--tone-pink-bg);   --tf: var(--tone-pink-fg); }
+.ico { width: 44px; height: 44px; flex: none; border-radius: 14px; display: grid; place-items: center; font-size: 1.1rem; background: var(--tb, var(--surface-2)); color: var(--tf, var(--text)); }
+.ico--lg { width: 56px; height: 56px; border-radius: 16px; font-size: 1.4rem; }
+.ico img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
+.ico svg, .svc-ico { width: 58%; height: 58%; display: block; }
+
+/* ---- buttons ---- */
+.btn {
+  position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 20px;
+  border-radius: var(--r-pill); font-weight: 650; font-size: 0.93rem; white-space: nowrap; user-select: none;
+  transition: transform 0.2s var(--ease), background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.btn:active { transform: scale(0.97); }
+.btn--ink { background: var(--ink); color: var(--on-ink); }
+.btn--ink:hover { box-shadow: 0 8px 20px color-mix(in srgb, var(--ink) 28%, transparent); transform: translateY(-1px); }
+.btn--accent { background: var(--accent); color: var(--on-accent); }
+.btn--accent:hover { transform: translateY(-1px); box-shadow: 0 8px 20px color-mix(in srgb, var(--accent) 40%, transparent); }
+.btn--line { border: 1.5px solid var(--line-strong); }
+.btn--line:hover { border-color: var(--text); }
+.btn--ghost:hover { background: var(--surface-2); }
+.btn--sm { min-height: 36px; padding: 0 14px; font-size: 0.84rem; }
+.btn--lg { min-height: 52px; padding: 0 26px; font-size: 1rem; }
+.btn--block { width: 100%; }
+.btn[disabled], .btn.is-loading { opacity: 0.65; pointer-events: none; }
+.btn.is-loading::after { content: ""; width: 16px; height: 16px; border: 2.5px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spin 0.7s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.icon-btn { width: 44px; height: 44px; flex: none; display: inline-grid; place-items: center; border-radius: 50%; color: var(--muted); transition: background 0.2s, color 0.2s, transform 0.2s; }
+.icon-btn:hover { background: var(--surface-2); color: var(--text); }
+.icon-btn:active { transform: scale(0.92); }
+
+/* ---- chips & segmented ---- */
+.chip { display: inline-flex; align-items: center; gap: 6px; min-height: 38px; padding: 0 16px; border-radius: var(--r-pill); border: 1.5px solid var(--line); background: var(--surface); font-weight: 600; font-size: 0.86rem; color: var(--muted); white-space: nowrap; transition: all 0.2s var(--ease); }
+.chip:hover { border-color: var(--line-strong); color: var(--text); }
+.chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--on-ink); }
+.chip--mono { font-family: var(--mono); font-size: 0.76rem; min-height: 34px; padding: 0 12px; }
+.chip-row { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 2px 1px 6px; }
+.chip-row::-webkit-scrollbar { display: none; }
+.seg { display: inline-flex; gap: 4px; padding: 4px; border-radius: var(--r-pill); background: var(--surface-2); overflow-x: auto; max-width: 100%; scrollbar-width: none; }
+.seg::-webkit-scrollbar { display: none; }
+.seg button { min-height: 36px; padding: 0 14px; border-radius: var(--r-pill); font-size: 0.84rem; font-weight: 650; color: var(--muted); white-space: nowrap; transition: all 0.2s var(--ease); }
+.seg button[aria-selected="true"] { background: var(--surface); color: var(--text); box-shadow: var(--shadow-sm); }
+
+/* ---- form ---- */
+.input {
+  width: 100%; min-height: 50px; padding: 0 16px; border-radius: var(--r-md); border: 1.5px solid var(--line); background: var(--surface);
+  font-size: 1rem; appearance: none; transition: border-color 0.2s, box-shadow 0.2s;
+}
+select.input { padding-right: 40px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; }
+.input::placeholder { color: var(--faint); }
+.input:hover { border-color: var(--line-strong); }
+.input:focus { outline: none; border-color: var(--text); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 28%, transparent); }
+.input[aria-invalid="true"] { border-color: var(--err); box-shadow: 0 0 0 4px color-mix(in srgb, var(--err) 14%, transparent); }
+.input.is-valid { border-color: var(--ok); }
+.field { display: grid; gap: 6px; min-width: 0; margin-bottom: 14px; }
+.field:last-child { margin-bottom: 0; }
+.field > label { font-weight: 650; font-size: 0.88rem; }
+.field__hint { font-size: 0.78rem; color: var(--muted); }
+.field__error { font-size: 0.8rem; color: var(--err); font-weight: 600; }
+.field__error:empty { display: none; }
+.input-group { display: flex; gap: 8px; }
+.input-group .input { flex: 1; min-width: 0; }
+.field-row { display: grid; gap: 0 14px; }
+
+/* ---- badge / status ---- */
+.badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: var(--r-pill); font-size: 0.68rem; font-weight: 750; letter-spacing: 0.02em; text-transform: uppercase; background: var(--ink); color: var(--on-ink); }
+.badge--accent { background: var(--accent); color: var(--on-accent); }
+.badge--soft { background: var(--surface-2); color: var(--muted); }
+.status { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: var(--r-pill); font-size: 0.76rem; font-weight: 700; white-space: nowrap; }
+.status--pending { background: var(--warn-soft); color: var(--warn); }
+.status--processing { background: var(--info-soft); color: var(--info); }
+.status--success { background: var(--ok-soft); color: var(--ok); }
+.status--failed { background: var(--err-soft); color: var(--err); }
+.status--cancelled { background: var(--surface-2); color: var(--muted); }
+
+/* ---- notice ---- */
+.notice { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: var(--r-md); background: var(--warn-soft); color: var(--warn); font-size: 0.85rem; margin-bottom: 14px; }
+.notice i { margin-top: 3px; }
+.notice--info { background: var(--info-soft); color: var(--info); }
+.notice--ok { background: var(--ok-soft); color: var(--ok); }
+
+/* ---- key/value list ---- */
+.kv > div { display: flex; justify-content: space-between; gap: 16px; padding: 11px 0; border-bottom: 1px dashed var(--line); font-size: 0.92rem; }
+.kv > div:last-child { border-bottom: 0; }
+.kv dt { color: var(--muted); flex: none; }
+.kv dd { margin: 0; font-weight: 650; text-align: right; overflow-wrap: anywhere; }
+.kv .is-total dd { font-size: 1.2rem; font-weight: 800; letter-spacing: -0.02em; }
+.kv .is-discount dd { color: var(--ok); }
+
+/* ---- timeline ---- */
+.timeline { display: grid; }
+.timeline li { position: relative; padding: 0 0 18px 28px; font-size: 0.9rem; }
+.timeline li::before { content: ""; position: absolute; left: 6px; top: 8px; bottom: -4px; width: 2px; background: var(--line); }
+.timeline li:last-child::before { display: none; }
+.timeline li::after { content: ""; position: absolute; left: 0; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--text); border: 3px solid var(--surface); box-shadow: 0 0 0 1.5px var(--text); }
+.timeline li.is-success::after { background: var(--ok); box-shadow: 0 0 0 1.5px var(--ok); }
+.timeline li.is-failed::after { background: var(--err); box-shadow: 0 0 0 1.5px var(--err); }
+.timeline li.is-cancelled::after { background: var(--faint); box-shadow: 0 0 0 1.5px var(--faint); }
+.timeline li.is-pending::after { background: var(--warn); box-shadow: 0 0 0 1.5px var(--warn); }
+.timeline li.is-processing::after { background: var(--info); box-shadow: 0 0 0 1.5px var(--info); }
+.timeline b { display: block; }
+.timeline small { color: var(--muted); }
+
+/* ---- accordion (FAQ) ---- */
+.faq { display: grid; gap: 10px; }
+.faq details { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); transition: border-color 0.2s; }
+.faq details[open] { border-color: var(--line-strong); }
+.faq summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 58px; padding: 12px 18px; font-weight: 650; cursor: pointer; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "\f067"; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.78rem; color: var(--accent-ink); transition: transform 0.3s var(--ease); }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details > div { padding: 0 18px 18px; color: var(--muted); font-size: 0.94rem; animation: view-in 0.35s var(--ease); }
+
+/* ---- skeleton ---- */
+.skeleton { position: relative; overflow: hidden; background: var(--surface-2); border-radius: var(--r-md); }
+.skeleton::after { content: ""; position: absolute; inset: 0; transform: translateX(-100%); background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--surface) 70%, transparent), transparent); animation: shimmer 1.3s infinite; }
+@keyframes shimmer { to { transform: translateX(100%); } }
+
+/* ---- horizontal rail ---- */
+.rail { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 2px 2px 10px; margin-inline: -2px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.rail::-webkit-scrollbar { display: none; }
+.rail > * { scroll-snap-align: start; flex: none; }
+.rail-ctrl { display: flex; gap: 6px; }
+.rail-ctrl button { width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--line); display: grid; place-items: center; transition: all 0.2s; }
+.rail-ctrl button:hover:not(:disabled) { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
+.rail-ctrl button:disabled { opacity: 0.35; cursor: default; }
+
+/* ---- sheet (bottom-sheet di mobile, dialog di desktop) ---- */
+.sheet { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: flex-end; justify-content: center; }
+.sheet__backdrop { position: absolute; inset: 0; background: rgba(10, 10, 10, 0.55); opacity: 0; transition: opacity 0.3s; }
+.sheet__panel { position: relative; width: 100%; max-height: 92dvh; display: flex; flex-direction: column; background: var(--bg); border-radius: 26px 26px 0 0; border: 1px solid var(--line); border-bottom: 0; box-shadow: var(--shadow-lg); transform: translateY(40px); opacity: 0; transition: transform 0.38s var(--ease), opacity 0.3s; overflow: hidden; }
+.sheet.is-open .sheet__backdrop { opacity: 1; }
+.sheet.is-open .sheet__panel { transform: none; opacity: 1; }
+.sheet__panel:focus { outline: none; }
+.sheet__grab { width: 40px; height: 4px; border-radius: 4px; background: var(--line-strong); margin: 10px auto 0; flex: none; }
+.sheet__head { display: flex; align-items: center; gap: 10px; padding: 10px 10px 10px 22px; flex: none; }
+.sheet__head h2 { flex: 1; font-size: 1.15rem; }
+.sheet__body { overflow-y: auto; padding: 6px 22px 22px; flex: 1; overscroll-behavior: contain; }
+.sheet__foot { display: grid; gap: 10px; padding: 14px 22px calc(14px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: var(--surface); flex: none; }
+.sheet__foot:empty { display: none; }
+@media (min-width: 640px) {
+  .sheet { align-items: center; padding: 24px; }
+  .sheet__panel { max-width: 520px; border-radius: var(--r-xl); border-bottom: 1px solid var(--line); max-height: min(88dvh, 820px); }
+  .sheet__grab { display: none; }
+  .sheet__foot { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---- command palette ---- */
+.palette { position: fixed; inset: 0; z-index: 1100; display: flex; justify-content: center; align-items: flex-start; padding: 8vh 14px 14px; }
+.palette__backdrop { position: absolute; inset: 0; background: rgba(10, 10, 10, 0.55); opacity: 0; transition: opacity 0.2s; }
+.palette__panel { position: relative; width: min(660px, 100%); max-height: 78dvh; display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-xl); box-shadow: var(--shadow-lg); overflow: hidden; transform: translateY(-12px) scale(0.98); opacity: 0; transition: transform 0.25s var(--ease), opacity 0.2s; }
+.palette.is-open .palette__backdrop { opacity: 1; }
+.palette.is-open .palette__panel { transform: none; opacity: 1; }
+.palette__bar { display: flex; align-items: center; gap: 12px; padding: 0 18px; border-bottom: 1px solid var(--line); flex: none; }
+.palette__bar i { color: var(--muted); }
+.palette__input { flex: 1; min-width: 0; height: 58px; border: 0; background: transparent; font-size: 1.05rem; outline: none; }
+.palette__list { overflow-y: auto; padding: 8px; overscroll-behavior: contain; }
+.palette__group { padding: 10px 12px 4px; font-size: 0.72rem; font-weight: 750; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); }
+.palette__item { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 52px; padding: 8px 12px; border-radius: var(--r-md); text-align: left; }
+.palette__item[aria-selected="true"] { background: var(--surface-2); }
+.palette__item .ico { width: 36px; height: 36px; border-radius: 11px; font-size: 0.95rem; }
+.palette__item b { display: block; font-size: 0.94rem; }
+.palette__item small { color: var(--muted); }
+.palette__empty { padding: 36px 16px; text-align: center; color: var(--muted); }
+.palette__foot { display: flex; gap: 16px; padding: 10px 18px; border-top: 1px solid var(--line); font-size: 0.76rem; color: var(--muted); flex: none; }
+
+/* ---- toast ---- */
+.toasts { position: fixed; z-index: 2000; left: 12px; right: 12px; bottom: calc(var(--tab-h) + 14px + env(safe-area-inset-bottom)); display: grid; gap: 10px; justify-items: center; pointer-events: none; }
+body[data-view="checkout"] .toasts { bottom: calc(96px + env(safe-area-inset-bottom)); }
+.toast { pointer-events: auto; display: flex; align-items: center; gap: 12px; width: min(100%, 420px); padding: 11px 11px 11px 13px; border-radius: var(--r-lg); background: var(--ink); color: var(--on-ink); box-shadow: var(--shadow-lg); font-size: 0.9rem; animation: toast-in 0.4s var(--ease) both; }
+.toast.is-leaving { animation: toast-out 0.28s ease forwards; }
+.toast__ico { width: 30px; height: 30px; flex: none; border-radius: 50%; display: grid; place-items: center; background: color-mix(in srgb, var(--on-ink) 14%, transparent); }
+.toast--success .toast__ico { background: var(--ok); color: #fff; }
+.toast--error .toast__ico { background: var(--err); color: #fff; }
+.toast p { flex: 1; min-width: 0; line-height: 1.4; }
+.toast button { width: 30px; height: 30px; border-radius: 8px; opacity: 0.7; }
+.toast button:hover { opacity: 1; background: color-mix(in srgb, var(--on-ink) 12%, transparent); }
+@keyframes toast-in { from { opacity: 0; transform: translateY(20px) scale(0.96); } to { opacity: 1; transform: none; } }
+@keyframes toast-out { to { opacity: 0; transform: translateY(10px) scale(0.96); } }
+@media (min-width: 1024px) {
+  .toasts { left: auto; right: 24px; bottom: 24px; justify-items: end; }
+  body[data-view="checkout"] .toasts { bottom: 24px; }
+}
+
+</style>
+  <style>/* css/pages.css */
+/* ==========================================================================
+   Zenvira Digital — Halaman: beranda, katalog, checkout, transaksi, bantuan
+   ========================================================================== */
+
+/* ================= HOME ================= */
+/* ---- HERO: terpusat, pencarian langsung + "poster wall" ---- */
+.hero { position: relative; isolation: isolate; overflow: hidden; border-radius: var(--r-xl); background: var(--ink); color: var(--on-ink); display: flex; flex-direction: column; align-items: center; text-align: center; --hp: 18px; padding: 36px var(--hp) 0; min-height: 560px; }
+.hero__copy { position: relative; z-index: 3; width: 100%; display: grid; justify-items: center; gap: 16px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: var(--r-pill); font-size: 0.78rem; font-weight: 700; border: 1px solid color-mix(in srgb, var(--on-ink) 26%, transparent); color: color-mix(in srgb, var(--on-ink) 86%, transparent); }
+.eyebrow i { color: var(--accent); }
+.hero__title { font-size: clamp(2.3rem, 9.4vw, 5.4rem); font-weight: 800; letter-spacing: -0.05em; line-height: 0.98; max-width: 15ch; text-wrap: balance; }
+.hero__title .hl { background: linear-gradient(transparent 62%, var(--accent) 62% 90%, transparent 90%); padding: 0 0.06em; }
+.hero__sub { color: color-mix(in srgb, var(--on-ink) 70%, transparent); max-width: 52ch; font-size: clamp(1rem, 2.4vw, 1.15rem); }
+.hero-search { position: relative; width: min(680px, 100%); margin-top: 6px; text-align: left; }
+.hero-search .lead { position: absolute; z-index: 1; left: 22px; top: 31px; transform: translateY(-50%); color: #7d7d76; pointer-events: none; font-size: 1.05rem; }
+.hero-search__input { width: 100%; height: 62px; padding: 0 22px 0 54px; border-radius: var(--r-pill); border: 2px solid transparent; background: var(--surface); color: var(--text); font-size: 1.02rem; font-weight: 500; box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35); transition: border-color 0.2s, box-shadow 0.2s; }
+.hero-search__input::placeholder { color: #8a8a83; }
+.hero-search__input:focus { outline: none; border-color: var(--accent); box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35), 0 0 0 5px color-mix(in srgb, var(--accent) 30%, transparent); }
+.hero-search__list { position: absolute; z-index: 20; left: 0; right: 0; top: calc(100% + 10px); background: var(--surface); color: var(--text); border: 1px solid var(--line); border-radius: var(--r-xl); box-shadow: var(--shadow-lg); padding: 8px; max-height: min(360px, 52dvh); overflow-y: auto; overscroll-behavior: contain; }
+.hero__chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.hero-chip { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 16px 0 6px; border-radius: var(--r-pill); border: 1px solid color-mix(in srgb, var(--on-ink) 26%, transparent); font-size: 0.86rem; font-weight: 600; transition: background 0.2s, transform 0.25s var(--ease), border-color 0.2s; }
+.hero-chip:hover { background: color-mix(in srgb, var(--on-ink) 10%, transparent); border-color: var(--on-ink); transform: translateY(-2px); }
+.hero-chip img, .hero-chip .ico-s { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
+.hero-chip .ico-s { display: grid; place-items: center; background: var(--tb); color: var(--tf); }
+.hero-chip .ico-s svg { width: 18px; height: 18px; }
+.wall { position: relative; z-index: 1; width: calc(100% + var(--hp) * 2); margin-inline: calc(var(--hp) * -1); height: 210px; margin-top: 34px; pointer-events: none; -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 45%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0, #000 45%, transparent 100%); }
+.wall__stage { position: absolute; left: 50%; top: 0; width: 170%; display: grid; gap: 12px; transform: translateX(-50%) rotate(-4deg); }
+.wall__row { display: flex; gap: 12px; width: max-content; animation: wall-left 52s linear infinite; }
+.wall__row--b { animation-name: wall-right; animation-duration: 60s; }
+.wall { --t: 104px; }
+.wall__tile { flex: none; width: var(--t); aspect-ratio: 1; border-radius: 22px; overflow: hidden; }
+.wall__tile--svc { display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; padding: 14px; background: var(--tb); color: var(--tf); text-align: left; }
+.wall__tile--svc svg { width: 1.9rem; height: 1.9rem; }
+.wall__tile--svc b { font-size: 0.82rem; font-weight: 750; line-height: 1.15; letter-spacing: -0.01em; }
+.wall__row--b { align-items: center; }
+.wall__row--b .wall__tile { width: calc(var(--t) * 0.78); border-radius: 18px; opacity: 0.92; }
+.wall__tile img { width: 100%; height: 100%; object-fit: cover; }
+@keyframes wall-left { to { transform: translateX(-33.3333%); } }
+@keyframes wall-right { from { transform: translateX(-33.3333%); } to { transform: translateX(0); } }
+@media (prefers-reduced-motion: reduce) { .wall__row { animation: none !important; } }
+
+.tile--promo { display: flex; flex-direction: column; }
+.promo { position: relative; display: flex; flex-direction: column; gap: 12px; flex: 1; min-height: 0; }
+.promo__track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; gap: 12px; scrollbar-width: none; flex: 1; }
+.promo__track::-webkit-scrollbar { display: none; }
+.promo__slide { flex: none; width: 100%; min-height: 220px; scroll-snap-align: start; border-radius: var(--r-lg); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px; position: relative; overflow: hidden; isolation: isolate; }
+@media (min-width: 900px) { .promo__slide { width: calc((100% - 12px) / 2); min-height: 200px; } }
+.promo__slide--1 { background: var(--accent); color: var(--on-accent); }
+.promo__slide--2 { background: var(--ink); color: var(--on-ink); }
+.promo__slide--3 { background: var(--tone-green-bg); color: var(--tone-green-fg); }
+.promo__slide--4 { background: var(--tone-purple-bg); color: var(--tone-purple-fg); }
+.promo__slide::after { content: ""; position: absolute; z-index: -1; width: 160px; height: 160px; border-radius: 50%; background: currentColor; opacity: 0.1; right: -40px; bottom: -50px; }
+.promo__slide h3 { font-size: 1.35rem; max-width: 14ch; }
+.promo__slide p { font-size: 0.86rem; opacity: 0.85; margin-top: 6px; max-width: 30ch; }
+.promo__foot { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.promo__code { font-family: var(--mono); font-weight: 700; letter-spacing: 0.05em; padding: 7px 11px; border-radius: 10px; border: 1.5px dashed currentColor; font-size: 0.85rem; }
+.promo__slide .btn { background: var(--ink); color: var(--on-ink); min-height: 38px; }
+.promo__slide--2 .btn { background: var(--accent); color: var(--on-accent); }
+.promo__bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.dots { display: flex; gap: 6px; align-items: center; }
+.dot { position: relative; width: 8px; height: 8px; border-radius: 8px; background: var(--line-strong); transition: width 0.3s var(--ease), background 0.3s; }
+.dot::after { content: ""; position: absolute; inset: -18px -4px; }
+.dot[aria-current="true"] { width: 24px; background: var(--ink); }
+
+.quick { display: grid; grid-template-columns: repeat(auto-fill, minmax(86px, 1fr)); gap: 6px; }
+.quick__item { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px 4px; border-radius: var(--r-lg); font-size: 0.78rem; font-weight: 650; text-align: center; line-height: 1.25; transition: background 0.2s, transform 0.25s var(--ease); }
+.quick__item:hover { background: var(--surface-2); transform: translateY(-3px); }
+.quick__item .ico { width: 54px; height: 54px; border-radius: 17px; }
+
+.gcards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.gcard { position: relative; display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; transition: transform 0.3s var(--ease), border-color 0.2s, box-shadow 0.3s; }
+.gcard:hover, .gcard:focus-visible { transform: translateY(-4px); border-color: var(--line-strong); box-shadow: var(--shadow-md); }
+.gcard__cover { position: relative; aspect-ratio: 1; overflow: hidden; background: var(--surface-2); }
+.gcard__cover img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
+.gcard:hover .gcard__cover img { transform: scale(1.06); }
+.gcard__cover .badge { position: absolute; top: 10px; left: 10px; }
+.gcard__body { display: grid; gap: 2px; padding: 12px 14px 14px; }
+.gcard__body b { font-size: 0.95rem; line-height: 1.25; }
+.gcard__body small { color: var(--muted); font-size: 0.8rem; }
+.gcard__body small strong { color: var(--text); }
+.rail .gcard { width: 156px; }
+.sk-card { border-radius: var(--r-lg); border: 1px solid var(--line); overflow: hidden; background: var(--surface); }
+.sk-card .skeleton:first-child { aspect-ratio: 1; border-radius: 0; }
+.sk-line { height: 12px; margin: 12px 14px 0; }
+.sk-line.w60 { width: 55%; margin-bottom: 14px; }
+
+
+.svc-grid { display: grid; gap: 10px; grid-template-columns: minmax(0, 1fr); }
+.svc { display: flex; align-items: center; gap: 14px; padding: 14px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--surface); transition: border-color 0.2s, transform 0.3s var(--ease), background 0.2s; }
+.svc:hover { border-color: var(--text); transform: translateY(-3px); }
+.svc .ico { width: 50px; height: 50px; border-radius: 16px; }
+.svc > div { min-width: 0; flex: 1; }
+.svc h3 { font-size: 0.98rem; letter-spacing: -0.015em; }
+.svc p { font-size: 0.82rem; color: var(--muted); line-height: 1.4; margin-top: 2px; }
+.svc > i { color: var(--faint); transition: transform 0.25s var(--ease), color 0.2s; }
+.svc:hover > i { transform: translateX(4px); color: var(--text); }
+.tile .svc-grid .svc { background: var(--bg); border-color: transparent; }
+.tile .svc-grid .svc:hover { background: var(--surface); border-color: var(--text); }
+
+.prow { display: flex; align-items: center; gap: 12px; padding: 10px; margin-inline: -10px; border-radius: var(--r-md); transition: background 0.2s; }
+.prow:hover { background: var(--surface-2); }
+.prow__thumb { width: 44px; height: 44px; flex: none; border-radius: 12px; overflow: hidden; display: grid; place-items: center; }
+.prow__thumb img { width: 100%; height: 100%; object-fit: cover; }
+.prow > span:nth-child(2) { flex: 1; min-width: 0; }
+.prow b { display: block; font-size: 0.92rem; line-height: 1.25; }
+.prow small { color: var(--muted); font-size: 0.8rem; }
+.prow__price { font-weight: 750; font-size: 0.92rem; text-align: right; white-space: nowrap; }
+.prow__price s { display: block; font-size: 0.74rem; font-weight: 500; color: var(--faint); }
+.prow__price em { display: block; font-style: normal; font-size: 0.72rem; color: var(--ok); font-weight: 650; }
+
+/* ================= CATALOG ================= */
+.tools { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; margin-bottom: 20px; }
+.searchbox { position: relative; }
+.searchbox > i { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+.searchbox .input { padding-left: 44px; padding-right: 46px; min-height: 52px; border-radius: var(--r-pill); }
+.searchbox .icon-btn { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); }
+.empty { text-align: center; padding: 56px 20px; border: 1.5px dashed var(--line-strong); border-radius: var(--r-xl); display: grid; gap: 8px; justify-items: center; }
+.empty .ico { width: 60px; height: 60px; font-size: 1.5rem; margin-bottom: 6px; }
+.empty p { color: var(--muted); max-width: 40ch; }
+.empty .btn { margin-top: 10px; }
+
+/* ================= CHECKOUT (halaman layanan) ================= */
+.svc-head { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.svc-head .ico { width: 64px; height: 64px; border-radius: 18px; overflow: hidden; }
+.svc-head h1 { font-size: clamp(1.4rem, 4.5vw, 2rem); font-weight: 800; }
+.svc-head p { color: var(--muted); font-size: 0.9rem; }
+.checkout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; align-items: start; }
+.steps { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+.step { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-xl); padding: 18px; min-width: 0; margin: 0; }
+.step > legend { float: left; width: 100%; display: flex; align-items: center; gap: 10px; padding: 0; margin-bottom: 14px; font-weight: 750; font-size: 1.02rem; letter-spacing: -0.015em; }
+.step > legend + * { clear: both; }
+.step__n { width: 26px; height: 26px; border-radius: 50%; background: var(--ink); color: var(--on-ink); display: grid; place-items: center; font-size: 0.78rem; font-weight: 800; flex: none; }
+.step.is-done .step__n { background: var(--ok); color: #fff; }
+.bill { margin-top: 12px; padding: 14px; border-radius: var(--r-md); background: var(--ok-soft); color: var(--ok); font-size: 0.88rem; }
+.bill b { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+.bill dl { display: grid; gap: 4px; margin: 0; }
+.bill dl > div { display: flex; justify-content: space-between; gap: 10px; }
+.bill dt { opacity: 0.8; }
+.bill dd { margin: 0; font-weight: 700; text-align: right; }
+.op-chip { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--ok); }
+
+.opts { display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 10px; }
+.opt { position: relative; display: block; min-width: 0; }
+.opt__input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; margin: 0; cursor: pointer; z-index: 1; }
+.opt__card { position: relative; display: flex; flex-direction: column; gap: 4px; height: 100%; min-height: 86px; padding: 14px 12px; border-radius: var(--r-md); border: 1.5px solid var(--line); background: var(--surface); transition: all 0.2s var(--ease); }
+.opt:hover .opt__card { border-color: var(--line-strong); transform: translateY(-2px); }
+.opt__input:checked + .opt__card { border-color: var(--text); background: var(--surface-2); box-shadow: inset 0 0 0 1.5px var(--text); }
+.opt__input:checked + .opt__card::after { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; top: 8px; right: 8px; width: 20px; height: 20px; border-radius: 50%; background: var(--ink); color: var(--on-ink); font-size: 0.58rem; display: grid; place-items: center; animation: pop 0.3s var(--ease); }
+.opt__input:focus-visible + .opt__card { outline: 2.5px solid var(--accent); outline-offset: 2px; }
+@keyframes pop { 0% { transform: scale(0); } 70% { transform: scale(1.15); } 100% { transform: scale(1); } }
+.opt__name { font-weight: 700; font-size: 0.9rem; line-height: 1.3; padding-right: 20px; }
+.opt__price { margin-top: auto; font-size: 0.85rem; color: var(--muted); font-weight: 650; }
+.opt__tag { align-self: flex-start; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 7px; border-radius: var(--r-pill); background: var(--accent); color: var(--on-accent); }
+.pay-list { display: grid; gap: 8px; }
+.pay .opt__card { flex-direction: row; align-items: center; gap: 14px; min-height: 64px; padding: 10px 14px; }
+.pay .opt__input:checked + .opt__card::after { top: 50%; right: 14px; transform: translateY(-50%); }
+.pay .opt__name small { display: block; font-weight: 500; font-size: 0.76rem; color: var(--muted); }
+.pay-logo { width: 38px; height: 38px; flex: none; border-radius: 11px; display: grid; place-items: center; font-size: 0.66rem; font-weight: 800; color: #fff; background: var(--pc, var(--ink)); letter-spacing: -0.02em; }
+.promo-row { display: flex; gap: 8px; }
+.promo-row .input { text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; font-family: var(--mono); }
+.promo-msg { margin-top: 10px; font-size: 0.86rem; font-weight: 600; display: flex; gap: 8px; }
+.promo-msg i { margin-top: 3px; }
+.promo-msg.is-ok { color: var(--ok); }
+.promo-msg.is-warn { color: var(--warn); }
+.promo-msg.is-err { color: var(--err); }
+.promo-msg button { text-decoration: underline; font-weight: 700; }
+.suggest { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+
+.summary { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-xl); padding: 20px; }
+.summary h2 { font-size: 1.05rem; margin-bottom: 12px; }
+.summary__total { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 14px 0; padding: 14px 16px; border-radius: var(--r-md); background: var(--ink); color: var(--on-ink); }
+.summary__total strong { font-size: 1.35rem; letter-spacing: -0.03em; display: inline-block; transition: transform 0.25s var(--ease); }
+.summary__total strong.bump { transform: scale(1.08); }
+.summary__note { margin-top: 10px; font-size: 0.78rem; color: var(--muted); display: flex; gap: 8px; }
+.summary__note i { margin-top: 3px; }
+.summary .btn { display: none; }
+.checkout-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 80; display: flex; align-items: center; gap: 12px; padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom)); background: color-mix(in srgb, var(--surface) 95%, transparent); backdrop-filter: blur(14px); border-top: 1px solid var(--line); }
+.checkout-bar__total { display: grid; line-height: 1.2; min-width: 0; }
+.checkout-bar__total small { color: var(--muted); font-size: 0.74rem; }
+.checkout-bar__total strong { font-size: 1.15rem; letter-spacing: -0.02em; }
+.checkout-bar .btn { flex: 1; min-width: 0; }
+
+/* ================= TRANSAKSI ================= */
+.tx-tools { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; margin-bottom: 22px; }
+.tx-search { display: grid; gap: 8px; }
+.tx-section { margin-top: 26px; }
+.tx-section > h2 { font-size: 1.1rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+.tx-section > h2 small { font-size: 0.78rem; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+.tx-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+.tx-list > li { min-width: 0; }
+.tx-row { display: flex; align-items: center; gap: 14px; padding: 14px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--surface); transition: border-color 0.2s, transform 0.25s var(--ease); width: 100%; text-align: left; }
+.tx-row:hover { border-color: var(--text); transform: translateY(-2px); }
+.tx-row > span:nth-child(2) { flex: 1; min-width: 0; }
+.tx-row b { display: block; font-size: 0.95rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tx-row small { color: var(--muted); font-size: 0.78rem; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tx-row small.mono { font-size: 0.72rem; }
+.tx-row__end { display: grid; gap: 6px; justify-items: end; flex: none; }
+.tx-row__end strong { font-size: 0.92rem; }
+
+.tx-hero { display: grid; gap: 14px; position: relative; overflow: hidden; }
+.tx-hero__top { display: flex; align-items: center; gap: 16px; }
+.tx-hero__ico { width: 64px; height: 64px; flex: none; border-radius: 20px; display: grid; place-items: center; font-size: 1.7rem; }
+.tx-hero h1 { font-size: clamp(1.4rem, 4.5vw, 1.9rem); font-weight: 800; }
+.tx-hero p { color: var(--muted); font-size: 0.92rem; }
+.tx-id { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 10px 10px 16px; border-radius: var(--r-md); background: var(--surface-2); }
+.tx-id code { font-weight: 700; font-size: 0.98rem; overflow-wrap: anywhere; }
+.tx-hero.status--pending .tx-hero__ico { background: var(--warn-soft); color: var(--warn); }
+.tx-hero.status--processing .tx-hero__ico { background: var(--info-soft); color: var(--info); }
+.tx-hero.status--success .tx-hero__ico { background: var(--ok-soft); color: var(--ok); }
+.tx-hero.status--failed .tx-hero__ico { background: var(--err-soft); color: var(--err); }
+.tx-hero.status--cancelled .tx-hero__ico { background: var(--surface-2); color: var(--muted); }
+.tx-hero.is-new .tx-hero__ico { animation: pop 0.55s var(--ease) both; }
+.tx-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; margin-top: 14px; }
+.tx-grid h2 { font-size: 1.05rem; margin-bottom: 8px; }
+.tx-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.tx-actions .btn { flex: 1 1 170px; }
+
+/* ================= BANTUAN ================= */
+.help-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; align-items: start; }
+.contact { background: var(--ink); color: var(--on-ink); border-radius: var(--r-xl); padding: 24px; position: relative; overflow: hidden; isolation: isolate; display: grid; gap: 10px; }
+.contact::after { content: ""; position: absolute; z-index: -1; width: 180px; height: 180px; border-radius: 50%; background: var(--accent); right: -50px; bottom: -70px; }
+.contact h2 { font-size: 1.35rem; }
+.contact p { color: color-mix(in srgb, var(--on-ink) 70%, transparent); font-size: 0.92rem; }
+.contact .btn { background: var(--accent); color: var(--on-accent); justify-self: start; margin-top: 6px; }
+.legal-links { display: grid; gap: 8px; margin-top: 14px; }
+.legal-links button { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 52px; padding: 0 16px; border-radius: var(--r-md); border: 1px solid var(--line); background: var(--surface); font-weight: 650; transition: border-color 0.2s; }
+.legal-links button:hover { border-color: var(--text); }
+.prose h3 { font-size: 1rem; margin: 16px 0 6px; }
+.prose p { color: var(--muted); font-size: 0.93rem; }
+
+/* ================= RESPONSIVE ================= */
+@media (min-width: 560px) {
+  .gcards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .field-row--2 { grid-template-columns: 2fr 1fr; }
+  .field-row--even { grid-template-columns: 1fr 1fr; }
+  .tx-search { grid-template-columns: minmax(0, 1fr) auto; }
+  .tools { grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+  .tools .chip-row, .tools .seg { grid-column: 1 / -1; order: 3; }
+  .svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 700px) {
+  .hero { --hp: 40px; padding-top: 56px; min-height: 640px; }
+  .hero-search .lead { top: 34px; }
+  .hero-search__input { height: 68px; font-size: 1.1rem; padding-left: 58px; }
+  .wall { height: 290px; margin-top: 46px; }
+  .wall { --t: 142px; }
+  .wall__tile { border-radius: 28px; }
+  .wall__tile--svc { padding: 18px; }
+  .wall__tile--svc svg { width: 2.6rem; height: 2.6rem; }
+  .wall__tile--svc b { font-size: 1rem; }
+  .step { padding: 22px; }
+  .tx-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .tx-grid .span-full { grid-column: 1 / -1; }
+  .help-grid { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); }
+}
+@media (min-width: 1024px) {
+  .gcards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .svc-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  body[data-view="checkout"] .toasts { bottom: 96px; }
+}
+@media (min-width: 1200px) {
+  .hero { min-height: 700px; }
+  .wall { height: 320px; }
+  .wall { --t: 156px; }
+  .checkout { grid-template-columns: minmax(0, 1fr) 380px; }
+  .summary { position: sticky; top: calc(var(--topbar-h) + 16px); }
+  .summary .btn { display: inline-flex; }
+  .checkout-bar { display: none; }
+  body[data-view="checkout"] .toasts { bottom: 24px; }
+  .gcards { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .quick { grid-template-columns: repeat(10, minmax(0, 1fr)); }
+  .svc-grid--bento { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* ================= PANEL PEMBAYARAN (detail pesanan) ================= */
+.pay-panel { display: grid; gap: 16px; }
+.pay-panel__head { display: flex; align-items: center; gap: 14px; }
+.pay-panel__head .pay-logo { width: 46px; height: 46px; border-radius: 14px; font-size: 0.72rem; }
+.pay-panel__head b { display: block; font-size: 1.05rem; }
+.pay-panel__head small { color: var(--muted); font-size: 0.85rem; }
+.pay-panel__amount { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 16px; border-radius: var(--r-md); background: var(--surface-2); }
+.pay-panel__amount span { color: var(--muted); font-size: 0.9rem; }
+.pay-panel__amount strong { font-size: 1.6rem; letter-spacing: -0.03em; }
+
+</style>
+  <script>
+    /* Terapkan tema sebelum render agar tidak berkedip */
+    (function () {
+      try {
+        var pref = localStorage.getItem('zenvira.theme') || 'system';
+        var dark = pref === 'dark' || (pref === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      } catch (e) { document.documentElement.setAttribute('data-theme', 'light'); }
+    })();
+  </script>
+</head>
+<body data-view="home">
+  <a class="skip-link" href="#view">Lewati ke konten utama</a>
+
+  <div class="app">
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="brand" href="#/" aria-label="Zenvira Digital — Beranda"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlplbnZpcmEgRGlnaXRhbCI+CiAgPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByeD0iMTQiIGZpbGw9IiMxMjEyMTIiLz4KICA8cmVjdCB4PSIuNzUiIHk9Ii43NSIgd2lkdGg9IjQ2LjUiIGhlaWdodD0iNDYuNSIgcng9IjEzLjI1IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1vcGFjaXR5PSIuMTYiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPHBhdGggZD0iTTE0LjUgMTUuNWgxNyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjQuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPHBhdGggZD0iTTMxLjUgMTUuNSAxNiAzMi41IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRjVCMkUiIHN0cm9rZS13aWR0aD0iNC42IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8cGF0aCBkPSJNMTUgMzIuNWgxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjQuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGNpcmNsZSBjeD0iMzYuNSIgY3k9IjMyLjUiIHI9IjIuNyIgZmlsbD0iI0ZGNUIyRSIvPgo8L3N2Zz4K" width="36" height="36" alt=""><span class="brand__name">Zenvira<span class="brand__sub">Digital</span></span></a>
+
+        <nav class="topnav" aria-label="Menu utama">
+          <a class="topnav__link" href="#/" data-route="home">Beranda</a>
+          <a class="topnav__link" href="#/ppob" data-route="ppob">PPOB</a>
+          <a class="topnav__link" href="#/game" data-route="game">Top Up Game</a>
+          <a class="topnav__link" href="#/transaksi" data-route="transaksi">Transaksi</a>
+          <a class="topnav__link" href="#/bantuan" data-route="bantuan">Bantuan</a>
+        </nav>
+
+        <div class="topbar__right">
+          <button class="search-trigger" type="button" data-palette aria-label="Cari game, layanan, atau invoice">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <span>Cari layanan…</span>
+            <kbd>Ctrl K</kbd>
+          </button>
+
+          <div class="topbar__actions">
+            <button class="icon-btn" type="button" data-theme-toggle aria-label="Ganti tema"><i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="view" id="view" tabindex="-1"></main>
+
+    <footer class="foot">
+      <div class="foot__inner">
+        <div class="foot__top">
+          <div class="foot__brand">
+            <a class="brand" href="#/" aria-label="Zenvira Digital — Beranda"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlplbnZpcmEgRGlnaXRhbCI+CiAgPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByeD0iMTQiIGZpbGw9IiMxMjEyMTIiLz4KICA8cmVjdCB4PSIuNzUiIHk9Ii43NSIgd2lkdGg9IjQ2LjUiIGhlaWdodD0iNDYuNSIgcng9IjEzLjI1IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1vcGFjaXR5PSIuMTYiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPHBhdGggZD0iTTE0LjUgMTUuNWgxNyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjQuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPHBhdGggZD0iTTMxLjUgMTUuNSAxNiAzMi41IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRjVCMkUiIHN0cm9rZS13aWR0aD0iNC42IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8cGF0aCBkPSJNMTUgMzIuNWgxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjQuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGNpcmNsZSBjeD0iMzYuNSIgY3k9IjMyLjUiIHI9IjIuNyIgZmlsbD0iI0ZGNUIyRSIvPgo8L3N2Zz4K" width="36" height="36" alt=""><span class="brand__name">Zenvira<span class="brand__sub">Digital</span></span></a>
+            <p>Pulsa, paket data, token listrik, tagihan, e-wallet, dan top up game favoritmu — semua ada di satu tempat.</p>
+          </div>
+          <nav aria-label="Layanan">
+            <h2 class="foot__h">Layanan</h2>
+            <ul>
+              <li><a href="#/ppob/pulsa">Pulsa</a></li>
+              <li><a href="#/ppob/data">Paket Data</a></li>
+              <li><a href="#/ppob/pln">Token PLN</a></li>
+              <li><a href="#/ppob/ewallet">Saldo E-Wallet</a></li>
+              <li><a href="#/game">Top Up Game</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Bantuan">
+            <h2 class="foot__h">Bantuan</h2>
+            <ul>
+              <li><a href="#/transaksi">Cek Transaksi</a></li>
+              <li><a href="#/bantuan">Pertanyaan Umum</a></li>
+              <li><button type="button" data-info="contact">Hubungi Kami</button></li>
+            </ul>
+          </nav>
+          <nav aria-label="Informasi">
+            <h2 class="foot__h">Informasi</h2>
+            <ul>
+              <li><button type="button" data-info="terms">Syarat &amp; Ketentuan</button></li>
+              <li><button type="button" data-info="privacy">Kebijakan Privasi</button></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="foot__bottom">
+          <p>© <span id="year">2026</span> Zenvira Digital. Seluruh hak dilindungi.</p>
+          <p class="foot__pay">Pembayaran: QRIS · DANA · OVO · GoPay · ShopeePay · Virtual Account · Transfer Bank</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Tab bar (mobile) -->
+    <nav class="tabbar" aria-label="Menu utama">
+      <a class="tab" href="#/" data-route="home"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Beranda</span></a>
+      <a class="tab" href="#/ppob" data-route="ppob"><i class="fa-solid fa-receipt" aria-hidden="true"></i><span>PPOB</span></a>
+      <a class="tab" href="#/game" data-route="game"><i class="fa-solid fa-gamepad" aria-hidden="true"></i><span>Game</span></a>
+      <a class="tab" href="#/transaksi" data-route="transaksi"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i><span>Transaksi</span></a>
+      <a class="tab" href="#/bantuan" data-route="bantuan"><i class="fa-solid fa-circle-question" aria-hidden="true"></i><span>Bantuan</span></a>
+    </nav>
+  </div>
+
+  <div id="sheets"></div>
+  <div class="toasts" id="toasts" role="region" aria-label="Notifikasi" aria-live="polite"></div>
+  <noscript><p style="padding:16px">Aktifkan JavaScript untuk menggunakan situs ini.</p></noscript>
+  <script>
+'use strict';
+const COVERS = {"codm":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJjb2RtIj4KPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiMyMzIzMjMiLz4KPHJlY3QgeD0iMjMwIiB5PSIwIiB3aWR0aD0iMjIiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjU5RTBCIiBvcGFjaXR5PSIwLjM1Ii8+PHJlY3QgeD0iMjY4IiB5PSIwIiB3aWR0aD0iMjIiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjU5RTBCIiBvcGFjaXR5PSIwLjUiLz48cmVjdCB4PSIzMDYiIHk9IjAiIHdpZHRoPSIyMiIgaGVpZ2h0PSIyNTAiIGZpbGw9IiNGNTlFMEIiIG9wYWNpdHk9IjAuNjQ5OTk5OTk5OTk5OTk5OSIvPjxyZWN0IHg9IjM0NCIgeT0iMCIgd2lkdGg9IjIyIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI0Y1OUUwQiIgb3BhY2l0eT0iMC43OTk5OTk5OTk5OTk5OTk5Ii8+Cjx0ZXh0IHg9IjI4IiB5PSIzNzIiIGZvbnQtZmFtaWx5PSInU2Vnb2UgVUknLCdBcmlhbCBCbGFjaycsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjkwMCIgZm9udC1zaXplPSIxNTAiIGxldHRlci1zcGFjaW5nPSItOCIgZmlsbD0iI0ZGRkZGRiI+Q29EPC90ZXh0Pgo8L3N2Zz4=","freefire":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJmcmVlZmlyZSI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjI2QjFEIi8+CjxyZWN0IHg9IjIzMCIgeT0iMCIgd2lkdGg9IjIyIiBoZWlnaHQ9IjE1MCIgZmlsbD0iI0ZGRDlBOCIgb3BhY2l0eT0iMC4zNSIvPjxyZWN0IHg9IjI2OCIgeT0iMCIgd2lkdGg9IjIyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0ZGRDlBOCIgb3BhY2l0eT0iMC41Ii8+PHJlY3QgeD0iMzA2IiB5PSIwIiB3aWR0aD0iMjIiIGhlaWdodD0iMjUwIiBmaWxsPSIjRkZEOUE4IiBvcGFjaXR5PSIwLjY0OTk5OTk5OTk5OTk5OTkiLz48cmVjdCB4PSIzNDQiIHk9IjAiIHdpZHRoPSIyMiIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNGRkQ5QTgiIG9wYWNpdHk9IjAuNzk5OTk5OTk5OTk5OTk5OSIvPgo8dGV4dCB4PSIyOCIgeT0iMzcyIiBmb250LWZhbWlseT0iJ1NlZ29lIFVJJywnQXJpYWwgQmxhY2snLEFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI5MDAiIGZvbnQtc2l6ZT0iMjEwIiBsZXR0ZXItc3BhY2luZz0iLTgiIGZpbGw9IiMxNzE0MEYiPkZGPC90ZXh0Pgo8L3N2Zz4=","genshin":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJnZW5zaGluIj4KPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiM0QTg2RDgiLz4KPHJlY3QgeD0iMjUwIiB5PSItMTAiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiB0cmFuc2Zvcm09InJvdGF0ZSg0NSAzMjUgNjUpIiBmaWxsPSIjRkZFOUE4IiBvcGFjaXR5PSIuODUiLz4KPHRleHQgeD0iMjgiIHk9IjM3MiIgZm9udC1mYW1pbHk9IidTZWdvZSBVSScsJ0FyaWFsIEJsYWNrJyxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iOTAwIiBmb250LXNpemU9IjIxMCIgbGV0dGVyLXNwYWNpbmc9Ii04IiBmaWxsPSIjRkZGRkZGIj5HSTwvdGV4dD4KPC9zdmc+","hok":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJob2siPgo8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzBFOEFBOCIvPgo8Y2lyY2xlIGN4PSIzMzAiIGN5PSI3MCIgcj0iMTIwIiBmaWxsPSIjRjZEMzY1IiBvcGFjaXR5PSIuOSIvPjxjaXJjbGUgY3g9IjYwIiBjeT0iMzgwIiByPSI2MCIgZmlsbD0iI0Y2RDM2NSIgb3BhY2l0eT0iLjQ1Ii8+Cjx0ZXh0IHg9IjI4IiB5PSIzNzIiIGZvbnQtZmFtaWx5PSInU2Vnb2UgVUknLCdBcmlhbCBCbGFjaycsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjkwMCIgZm9udC1zaXplPSIxNTAiIGxldHRlci1zcGFjaW5nPSItOCIgZmlsbD0iI0ZGRkZGRiI+SG9LPC90ZXh0Pgo8L3N2Zz4=","mlbb":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJtbGJiIj4KPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiMxRjRGRDgiLz4KPGNpcmNsZSBjeD0iMzMwIiBjeT0iNzAiIHI9IjEyMCIgZmlsbD0iI0ZGQzg1NyIgb3BhY2l0eT0iLjkiLz48Y2lyY2xlIGN4PSI2MCIgY3k9IjM4MCIgcj0iNjAiIGZpbGw9IiNGRkM4NTciIG9wYWNpdHk9Ii40NSIvPgo8dGV4dCB4PSIyOCIgeT0iMzcyIiBmb250LWZhbWlseT0iJ1NlZ29lIFVJJywnQXJpYWwgQmxhY2snLEFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI5MDAiIGZvbnQtc2l6ZT0iMjEwIiBsZXR0ZXItc3BhY2luZz0iLTgiIGZpbGw9IiNGRkZGRkYiPk1MPC90ZXh0Pgo8L3N2Zz4=","pointblank":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJwb2ludGJsYW5rIj4KPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiNCODdBMUUiLz4KPHBvbHlnb24gcG9pbnRzPSIyMDAsMCAyNTAsMCAxNTAsNDAwIDEwMCw0MDAiIGZpbGw9IiNGREUzQTciIG9wYWNpdHk9IjAuMjUiLz48cG9seWdvbiBwb2ludHM9IjI3MCwwIDMyMCwwIDIyMCw0MDAgMTcwLDQwMCIgZmlsbD0iI0ZERTNBNyIgb3BhY2l0eT0iMC40NSIvPjxwb2x5Z29uIHBvaW50cz0iMzQwLDAgMzkwLDAgMjkwLDQwMCAyNDAsNDAwIiBmaWxsPSIjRkRFM0E3IiBvcGFjaXR5PSIwLjY1Ii8+Cjx0ZXh0IHg9IjI4IiB5PSIzNzIiIGZvbnQtZmFtaWx5PSInU2Vnb2UgVUknLCdBcmlhbCBCbGFjaycsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjkwMCIgZm9udC1zaXplPSIyMTAiIGxldHRlci1zcGFjaW5nPSItOCIgZmlsbD0iIzFDMTIwNiI+UEI8L3RleHQ+Cjwvc3ZnPg==","pubgm":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJwdWJnbSI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRDlCNTNBIi8+CjxyZWN0IHg9IjIzMCIgeT0iMjQiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjYiIGZpbGw9IiNGNkU3QTYiIG9wYWNpdHk9IjAuMjUiLz48cmVjdCB4PSIyNzAiIHk9IjI0IiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHJ4PSI2IiBmaWxsPSIjRjZFN0E2IiBvcGFjaXR5PSIwLjUiLz48cmVjdCB4PSIzMTAiIHk9IjI0IiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHJ4PSI2IiBmaWxsPSIjRjZFN0E2IiBvcGFjaXR5PSIwLjc1Ii8+PHJlY3QgeD0iMzUwIiB5PSIyNCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4IiByeD0iNiIgZmlsbD0iI0Y2RTdBNiIgb3BhY2l0eT0iMC4yNSIvPjxyZWN0IHg9IjIzMCIgeT0iNjQiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjYiIGZpbGw9IiNGNkU3QTYiIG9wYWNpdHk9IjAuNSIvPjxyZWN0IHg9IjI3MCIgeT0iNjQiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjYiIGZpbGw9IiNGNkU3QTYiIG9wYWNpdHk9IjAuNzUiLz48cmVjdCB4PSIzMTAiIHk9IjY0IiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHJ4PSI2IiBmaWxsPSIjRjZFN0E2IiBvcGFjaXR5PSIwLjI1Ii8+PHJlY3QgeD0iMzUwIiB5PSI2NCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4IiByeD0iNiIgZmlsbD0iI0Y2RTdBNiIgb3BhY2l0eT0iMC41Ii8+PHJlY3QgeD0iMjMwIiB5PSIxMDQiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjYiIGZpbGw9IiNGNkU3QTYiIG9wYWNpdHk9IjAuNzUiLz48cmVjdCB4PSIyNzAiIHk9IjEwNCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4IiByeD0iNiIgZmlsbD0iI0Y2RTdBNiIgb3BhY2l0eT0iMC4yNSIvPjxyZWN0IHg9IjMxMCIgeT0iMTA0IiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHJ4PSI2IiBmaWxsPSIjRjZFN0E2IiBvcGFjaXR5PSIwLjUiLz48cmVjdCB4PSIzNTAiIHk9IjEwNCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4IiByeD0iNiIgZmlsbD0iI0Y2RTdBNiIgb3BhY2l0eT0iMC43NSIvPjxyZWN0IHg9IjIzMCIgeT0iMTQ0IiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHJ4PSI2IiBmaWxsPSIjRjZFN0E2IiBvcGFjaXR5PSIwLjI1Ii8+PHJlY3QgeD0iMjcwIiB5PSIxNDQiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjYiIGZpbGw9IiNGNkU3QTYiIG9wYWNpdHk9IjAuNSIvPjxyZWN0IHg9IjMxMCIgeT0iMTQ0IiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHJ4PSI2IiBmaWxsPSIjRjZFN0E2IiBvcGFjaXR5PSIwLjc1Ii8+PHJlY3QgeD0iMzUwIiB5PSIxNDQiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjYiIGZpbGw9IiNGNkU3QTYiIG9wYWNpdHk9IjAuMjUiLz4KPHRleHQgeD0iMjgiIHk9IjM3MiIgZm9udC1mYW1pbHk9IidTZWdvZSBVSScsJ0FyaWFsIEJsYWNrJyxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iOTAwIiBmb250LXNpemU9IjIxMCIgbGV0dGVyLXNwYWNpbmc9Ii04IiBmaWxsPSIjMUQyQTEyIj5QTTwvdGV4dD4KPC9zdmc+","roblox":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJyb2Jsb3giPgo8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzJCMzM0MCIvPgo8cmVjdCB4PSIyMzAiIHk9IjI0IiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHJ4PSI2IiBmaWxsPSIjRUY0NDQ0IiBvcGFjaXR5PSIwLjI1Ii8+PHJlY3QgeD0iMjcwIiB5PSIyNCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4IiByeD0iNiIgZmlsbD0iI0VGNDQ0NCIgb3BhY2l0eT0iMC41Ii8+PHJlY3QgeD0iMzEwIiB5PSIyNCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4IiByeD0iNiIgZmlsbD0iI0VGNDQ0NCIgb3BhY2l0eT0iMC43NSIvPjxyZWN0IHg9IjM1MCIgeT0iMjQiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjYiIGZpbGw9IiNFRjQ0NDQiIG9wYWNpdHk9IjAuMjUiLz48cmVjdCB4PSIyMzAiIHk9IjY0IiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHJ4PSI2IiBmaWxsPSIjRUY0NDQ0IiBvcGFjaXR5PSIwLjUiLz48cmVjdCB4PSIyNzAiIHk9IjY0IiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHJ4PSI2IiBmaWxsPSIjRUY0NDQ0IiBvcGFjaXR5PSIwLjc1Ii8+PHJlY3QgeD0iMzEwIiB5PSI2NCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4IiByeD0iNiIgZmlsbD0iI0VGNDQ0NCIgb3BhY2l0eT0iMC4yNSIvPjxyZWN0IHg9IjM1MCIgeT0iNjQiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjYiIGZpbGw9IiNFRjQ0NDQiIG9wYWNpdHk9IjAuNSIvPjxyZWN0IHg9IjIzMCIgeT0iMTA0IiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHJ4PSI2IiBmaWxsPSIjRUY0NDQ0IiBvcGFjaXR5PSIwLjc1Ii8+PHJlY3QgeD0iMjcwIiB5PSIxMDQiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjYiIGZpbGw9IiNFRjQ0NDQiIG9wYWNpdHk9IjAuMjUiLz48cmVjdCB4PSIzMTAiIHk9IjEwNCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4IiByeD0iNiIgZmlsbD0iI0VGNDQ0NCIgb3BhY2l0eT0iMC41Ii8+PHJlY3QgeD0iMzUwIiB5PSIxMDQiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcng9IjYiIGZpbGw9IiNFRjQ0NDQiIG9wYWNpdHk9IjAuNzUiLz48cmVjdCB4PSIyMzAiIHk9IjE0NCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4IiByeD0iNiIgZmlsbD0iI0VGNDQ0NCIgb3BhY2l0eT0iMC4yNSIvPjxyZWN0IHg9IjI3MCIgeT0iMTQ0IiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHJ4PSI2IiBmaWxsPSIjRUY0NDQ0IiBvcGFjaXR5PSIwLjUiLz48cmVjdCB4PSIzMTAiIHk9IjE0NCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4IiByeD0iNiIgZmlsbD0iI0VGNDQ0NCIgb3BhY2l0eT0iMC43NSIvPjxyZWN0IHg9IjM1MCIgeT0iMTQ0IiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHJ4PSI2IiBmaWxsPSIjRUY0NDQ0IiBvcGFjaXR5PSIwLjI1Ii8+Cjx0ZXh0IHg9IjI4IiB5PSIzNzIiIGZvbnQtZmFtaWx5PSInU2Vnb2UgVUknLCdBcmlhbCBCbGFjaycsQXJpYWwsc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjkwMCIgZm9udC1zaXplPSIyMTAiIGxldHRlci1zcGFjaW5nPSItOCIgZmlsbD0iI0ZGRkZGRiI+UkI8L3RleHQ+Cjwvc3ZnPg==","steam":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJzdGVhbSI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMTIzQTVFIi8+CjxjaXJjbGUgY3g9IjMzMCIgY3k9IjcwIiByPSIxMjAiIGZpbGw9IiM3REQzRkMiIG9wYWNpdHk9Ii45Ii8+PGNpcmNsZSBjeD0iNjAiIGN5PSIzODAiIHI9IjYwIiBmaWxsPSIjN0REM0ZDIiBvcGFjaXR5PSIuNDUiLz4KPHRleHQgeD0iMjgiIHk9IjM3MiIgZm9udC1mYW1pbHk9IidTZWdvZSBVSScsJ0FyaWFsIEJsYWNrJyxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iOTAwIiBmb250LXNpemU9IjIxMCIgbGV0dGVyLXNwYWNpbmc9Ii04IiBmaWxsPSIjRkZGRkZGIj5TPC90ZXh0Pgo8L3N2Zz4=","valorant":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJ2YWxvcmFudCI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRTUzODRDIi8+Cjxwb2x5Z29uIHBvaW50cz0iMjAwLDAgMjUwLDAgMTUwLDQwMCAxMDAsNDAwIiBmaWxsPSIjRkZDMkNBIiBvcGFjaXR5PSIwLjI1Ii8+PHBvbHlnb24gcG9pbnRzPSIyNzAsMCAzMjAsMCAyMjAsNDAwIDE3MCw0MDAiIGZpbGw9IiNGRkMyQ0EiIG9wYWNpdHk9IjAuNDUiLz48cG9seWdvbiBwb2ludHM9IjM0MCwwIDM5MCwwIDI5MCw0MDAgMjQwLDQwMCIgZmlsbD0iI0ZGQzJDQSIgb3BhY2l0eT0iMC42NSIvPgo8dGV4dCB4PSIyOCIgeT0iMzcyIiBmb250LWZhbWlseT0iJ1NlZ29lIFVJJywnQXJpYWwgQmxhY2snLEFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI5MDAiIGZvbnQtc2l6ZT0iMjEwIiBsZXR0ZXItc3BhY2luZz0iLTgiIGZpbGw9IiMxNDA4MEEiPlY8L3RleHQ+Cjwvc3ZnPg=="};
+/* ===== js/data.js ===== */
+/* Zenvira Digital — Data katalog (game, PPOB, pembayaran, promo, FAQ, status)
+   Diekstrak dari V1 (logika sudah teruji). Dimuat sebagai <script> klasik: scope top-level dipakai bersama. */
+/* Identitas & kontak situs — ubah di sini, tampil otomatis di footer/halaman Kontak.
+   Biarkan string kosong ('') untuk menyembunyikan baris terkait. */
+const SITE = {
+  name: 'Zenvira Digital',
+  email: 'halo@zenviradigital.id',
+  whatsapp: '',
+  hours: 'Setiap hari, 08.00–22.00 WIB',
+};
+
+const CONFIG = {
+  storageKey: 'zenvira.tx.v1',
+  locale: 'id-ID',
+};
+
+const rows = (prefix, list) => list.map(([label, price, tag], i) => ({ id: `${prefix}-${i + 1}`, label, price, tag }));
+const nominal = (n) => 'Rp' + n.toLocaleString('id-ID');
+
+const FIELD_PHONE = { id: 'phone', label: 'Nomor HP', ph: '08123456789', inputmode: 'tel', maxlength: 14, rule: { type: 'phone' }, detect: true, hint: 'Contoh: 08123456789' };
+
+const GAMES = [
+  {
+    id: 'mlbb', kind: 'game', name: 'Mobile Legends: Bang Bang', short: 'Mobile Legends', aliases: ['mlbb', 'ml'], category: 'MOBA', currency: 'Diamonds', popular: true, rank: 1,
+    layout: 'split', fields: [
+      { id: 'userId', label: 'User ID', ph: 'Contoh: 12345678', inputmode: 'numeric', maxlength: 12, rule: { type: 'digits', min: 7, max: 12 }, hint: 'Lihat di profil game.' },
+      { id: 'zoneId', label: 'Zone ID', ph: '1234', inputmode: 'numeric', maxlength: 5, rule: { type: 'digits', min: 3, max: 5 }, hint: 'Angka dalam kurung.' },
+    ],
+    products: rows('mlbb', [['3 Diamonds', 1000], ['12 Diamonds', 3500], ['28 Diamonds', 7500], ['59 Diamonds', 15000, 'Populer'], ['86 Diamonds', 21500, 'Terlaris'], ['172 Diamonds', 42500], ['257 Diamonds', 63000], ['706 Diamonds', 172000], ['Weekly Diamond Pass', 27500, 'Hemat']]),
+  },
+  {
+    id: 'freefire', kind: 'game', name: 'Free Fire', short: 'Free Fire', aliases: ['ff'], category: 'Battle Royale', currency: 'Diamonds', popular: true, rank: 2,
+    fields: [{ id: 'userId', label: 'Player ID', ph: 'Contoh: 123456789', inputmode: 'numeric', maxlength: 12, rule: { type: 'digits', min: 8, max: 12 }, hint: 'Ada di profil / lobi game.' }],
+    products: rows('freefire', [['5 Diamonds', 1000], ['50 Diamonds', 7500], ['70 Diamonds', 10000], ['140 Diamonds', 19500, 'Populer'], ['355 Diamonds', 48500], ['720 Diamonds', 96000], ['1450 Diamonds', 190000], ['Membership Mingguan', 29000, 'Hemat']]),
+  },
+  {
+    id: 'pubgm', kind: 'game', name: 'PUBG Mobile', short: 'PUBG Mobile', aliases: ['pubg', 'pubgm'], category: 'Battle Royale', currency: 'UC', popular: true, rank: 3,
+    fields: [{ id: 'userId', label: 'Character ID', ph: 'Contoh: 5123456789', inputmode: 'numeric', maxlength: 12, rule: { type: 'digits', min: 8, max: 12 }, hint: 'Ketuk avatar di game untuk melihat ID.' }],
+    products: rows('pubgm', [['60 UC', 15000], ['325 UC', 78000], ['660 UC', 155000, 'Populer'], ['1800 UC', 400000], ['3850 UC', 800000], ['8100 UC', 1600000]]),
+  },
+  {
+    id: 'genshin', kind: 'game', name: 'Genshin Impact', short: 'Genshin Impact', aliases: ['gi', 'genshin'], category: 'RPG', currency: 'Genesis Crystals', popular: true, rank: 4,
+    layout: 'split', fields: [
+      { id: 'uid', label: 'UID', ph: '8xxxxxxxx', inputmode: 'numeric', maxlength: 10, rule: { type: 'digits', min: 9, max: 10 }, hint: '9–10 digit, ada di pojok layar.' },
+      { id: 'server', label: 'Server', type: 'select', options: ['Asia', 'America', 'Europe', 'TW/HK/MO'] },
+    ],
+    products: rows('genshin', [['60 Genesis Crystals', 16000], ['300 + 30 Genesis Crystals', 79000], ['980 + 110 Genesis Crystals', 249000, 'Populer'], ['1980 + 260 Genesis Crystals', 479000], ['3280 + 600 Genesis Crystals', 799000], ['6480 + 1600 Genesis Crystals', 1599000], ['Blessing of the Welkin Moon', 79000, 'Hemat']]),
+  },
+  {
+    id: 'valorant', kind: 'game', name: 'Valorant', short: 'Valorant', aliases: ['valo', 'vp'], category: 'FPS', currency: 'Valorant Points', popular: true, rank: 5,
+    fields: [{ id: 'riotId', label: 'Riot ID', ph: 'NamaKamu#TAG', maxlength: 24, rule: { type: 'regex', re: /^.{3,16}#[A-Za-z0-9]{3,5}$/, msg: 'Format Riot ID: Nama#TAG (contoh: Jett#123).' }, hint: 'Format: Nama#TAG' }],
+    products: rows('valorant', [['475 VP', 59000], ['1000 VP', 119000, 'Populer'], ['2050 VP', 239000], ['3650 VP', 419000], ['5350 VP', 599000], ['11000 VP', 1190000]]),
+  },
+  {
+    id: 'hok', kind: 'game', name: 'Honor of Kings', short: 'Honor of Kings', aliases: ['hok'], category: 'MOBA', currency: 'Tokens', popular: true, rank: 6,
+    fields: [{ id: 'userId', label: 'User ID', ph: 'Contoh: 12345678', inputmode: 'numeric', maxlength: 12, rule: { type: 'digits', min: 8, max: 12 }, hint: 'Ada di menu profil.' }],
+    products: rows('hok', [['16 Tokens', 3000], ['80 Tokens', 15000], ['240 Tokens', 45000, 'Populer'], ['400 Tokens', 75000], ['800 Tokens', 149000], ['1200 Tokens', 220000]]),
+  },
+  {
+    id: 'roblox', kind: 'game', name: 'Roblox', short: 'Roblox', aliases: ['rbx', 'robux'], category: 'Sandbox', currency: 'Robux', popular: true, rank: 7,
+    fields: [{ id: 'username', label: 'Username Roblox', ph: 'username_kamu', maxlength: 20, rule: { type: 'regex', re: /^[A-Za-z0-9_]{3,20}$/, msg: 'Username 3–20 karakter: huruf, angka, atau underscore.' }, hint: '3–20 karakter.' }],
+    products: rows('roblox', [['80 Robux', 15000], ['400 Robux', 75000, 'Populer'], ['800 Robux', 150000], ['1700 Robux', 300000], ['4500 Robux', 750000]]),
+  },
+  {
+    id: 'codm', kind: 'game', name: 'Call of Duty Mobile', short: 'CoD Mobile', aliases: ['cod', 'codm'], category: 'FPS', currency: 'CP', popular: false, rank: 8,
+    fields: [{ id: 'openId', label: 'Open ID', ph: 'Contoh: 6789012345678', inputmode: 'numeric', maxlength: 20, rule: { type: 'digits', min: 8, max: 20 }, hint: 'Ada di menu pengaturan akun.' }],
+    products: rows('codm', [['63 CP', 10000], ['128 CP', 20000], ['321 CP', 49000, 'Populer'], ['645 CP', 98000], ['1373 CP', 199000], ['2750 CP', 395000]]),
+  },
+  {
+    id: 'steam', kind: 'game', name: 'Steam Wallet', short: 'Steam Wallet', aliases: ['steam'], category: 'Voucher', currency: 'Steam Wallet Code', popular: false, rank: 9,
+    fields: [{ id: 'email', label: 'Email Penerima Kode', ph: 'nama@email.com', type: 'email', inputmode: 'email', maxlength: 60, rule: { type: 'email' }, hint: 'Kode voucher dikirim ke email ini.' }],
+    products: rows('steam', [['Steam Wallet Rp12.000', 12400], ['Steam Wallet Rp45.000', 46400], ['Steam Wallet Rp60.000', 61800], ['Steam Wallet Rp90.000', 92700, 'Populer'], ['Steam Wallet Rp120.000', 123600], ['Steam Wallet Rp250.000', 257500], ['Steam Wallet Rp400.000', 412000]]),
+  },
+  {
+    id: 'pointblank', kind: 'game', name: 'Point Blank', short: 'Point Blank', aliases: ['pb'], category: 'FPS', currency: 'PB Cash', popular: false, rank: 10,
+    fields: [{ id: 'userId', label: 'ID Zepetto', ph: 'id_zepetto', maxlength: 20, rule: { type: 'regex', re: /^[A-Za-z0-9_]{4,20}$/, msg: 'ID 4–20 karakter: huruf, angka, atau underscore.' }, hint: '4–20 karakter.' }],
+    products: rows('pointblank', [['1.200 PB Cash', 10000], ['2.400 PB Cash', 20000], ['6.000 PB Cash', 50000, 'Populer'], ['12.000 PB Cash', 100000], ['24.000 PB Cash', 200000], ['60.000 PB Cash', 500000]]),
+  },
+].map((g) => ({ ...g, cover: COVERS[g.id], subtitle: `${g.category} · ${g.currency}`, icon: 'fa-gem', stepTitle: 'Data Akun' }));
+
+const pulsaPrice = (n) => n + (n <= 10000 ? 1000 : 1500);
+const PPOB = [
+  { id: 'pulsa', kind: 'ppob', name: 'Pulsa Semua Operator', short: 'Pulsa', icon: 'fa-mobile-screen-button', tone: 'blue', desc: 'Isi ulang pulsa semua operator, proses cepat.', stepTitle: 'Nomor Tujuan', fields: [FIELD_PHONE],
+    products: rows('pulsa', [5000, 10000, 15000, 20000, 25000, 50000, 100000].map((n) => [`Pulsa ${nominal(n)}`, pulsaPrice(n), n === 50000 ? 'Populer' : undefined])) },
+  { id: 'data', kind: 'ppob', name: 'Paket Data Internet', short: 'Paket Data', icon: 'fa-wifi', tone: 'cyan', desc: 'Kuota harian hingga bulanan, semua operator.', stepTitle: 'Nomor Tujuan', fields: [FIELD_PHONE],
+    products: rows('data', [['1,5 GB · 7 hari', 15000], ['3 GB · 30 hari', 28000], ['8 GB · 30 hari', 45000, 'Populer'], ['15 GB · 30 hari', 65000], ['30 GB · 30 hari', 95000], ['70 GB · 30 hari', 150000]]) },
+  { id: 'pln', kind: 'ppob', name: 'Token Listrik PLN', short: 'Token PLN', icon: 'fa-bolt', tone: 'orange', desc: 'Beli token prabayar, kode token langsung tampil.', stepTitle: 'Nomor Meter', fields: [{ id: 'meter', label: 'Nomor Meter / ID Pelanggan', ph: '12345678901', inputmode: 'numeric', maxlength: 12, rule: { type: 'digits', min: 11, max: 12 }, hint: '11–12 digit, ada di meteran.' }],
+    products: rows('pln', [20000, 50000, 100000, 200000, 500000, 1000000].map((n) => [`Token ${nominal(n)}`, n + 2500, n === 100000 ? 'Populer' : undefined])) },
+  { id: 'listrik', kind: 'ppob', name: 'Tagihan Listrik Pascabayar', short: 'Tagihan Listrik', icon: 'fa-plug-circle-bolt', tone: 'purple', desc: 'Cek dan bayar tagihan listrik bulanan.', stepTitle: 'Data Pelanggan', inquiry: true, billLabel: 'Tagihan Listrik',
+    fields: [{ id: 'custId', label: 'ID Pelanggan', ph: '123456789012', inputmode: 'numeric', maxlength: 12, rule: { type: 'digits', min: 12, max: 12 }, hint: '12 digit ID pelanggan.' }] },
+  { id: 'bpjs', kind: 'ppob', name: 'BPJS Kesehatan', short: 'BPJS', icon: 'fa-heart-pulse', tone: 'green', desc: 'Bayar iuran BPJS Kesehatan keluarga.', stepTitle: 'Data Peserta', inquiry: true, billLabel: 'Iuran BPJS',
+    fields: [{ id: 'custId', label: 'Nomor Virtual Account', ph: '8888801234567890', inputmode: 'numeric', maxlength: 16, rule: { type: 'digits', min: 11, max: 16 }, hint: '11–16 digit nomor VA keluarga.' }] },
+  { id: 'pdam', kind: 'ppob', name: 'PDAM', short: 'PDAM', icon: 'fa-droplet', tone: 'cyan', desc: 'Tagihan air PDAM dari berbagai wilayah.', stepTitle: 'Data Pelanggan', inquiry: true, billLabel: 'Tagihan Air',
+    fields: [{ id: 'region', label: 'Wilayah PDAM', type: 'select', options: ['Jabodetabek', 'Jawa Barat', 'Jawa Tengah & DIY', 'Jawa Timur', 'Luar Jawa'] },
+      { id: 'custId', label: 'Nomor Pelanggan', ph: '1234567', inputmode: 'numeric', maxlength: 12, rule: { type: 'digits', min: 6, max: 12 }, hint: '6–12 digit.' }] },
+  { id: 'internet', kind: 'ppob', name: 'Internet & TV Kabel', short: 'Internet & TV', icon: 'fa-tv', tone: 'pink', desc: 'Tagihan internet rumah dan TV berlangganan.', stepTitle: 'Data Pelanggan', inquiry: true, billLabel: 'Tagihan Internet & TV',
+    fields: [{ id: 'plan', label: 'Jenis Layanan', type: 'select', options: ['Internet Fiber Rumah', 'TV Kabel & Streaming', 'Paket Internet + TV'] },
+      { id: 'custId', label: 'Nomor Pelanggan', ph: '12345678', inputmode: 'numeric', maxlength: 14, rule: { type: 'digits', min: 8, max: 14 }, hint: '8–14 digit.' }] },
+  { id: 'ewallet', kind: 'ppob', name: 'Saldo E-Wallet', short: 'E-Wallet', icon: 'fa-wallet', tone: 'blue', desc: 'Top up DANA, OVO, GoPay, dan ShopeePay.', stepTitle: 'Data E-Wallet', layout: 'even',
+    fields: [{ id: 'wallet', label: 'E-Wallet', type: 'select', options: ['DANA', 'OVO', 'GoPay', 'ShopeePay'] }, { ...FIELD_PHONE, label: 'Nomor Terdaftar', detect: false }],
+    products: rows('ewallet', [10000, 20000, 50000, 100000, 200000, 500000].map((n) => [`Saldo ${nominal(n)}`, n + 1500, n === 100000 ? 'Populer' : undefined])) },
+  { id: 'voucher', kind: 'ppob', name: 'Voucher Digital', short: 'Voucher Digital', icon: 'fa-ticket', tone: 'purple', desc: 'Voucher aplikasi, streaming, dan belanja.', stepTitle: 'Data Penerima', layout: 'even',
+    fields: [{ id: 'brand', label: 'Jenis Voucher', type: 'select', options: ['Voucher Google Play', 'Voucher Spotify', 'Voucher Streaming Video'] }, { id: 'email', label: 'Email Penerima', ph: 'nama@email.com', type: 'email', inputmode: 'email', maxlength: 60, rule: { type: 'email' }, hint: 'Kode dikirim ke email ini.' }],
+    products: rows('voucher', [20000, 50000, 100000, 150000, 300000].map((n) => [`Voucher ${nominal(n)}`, n + 2000, n === 50000 ? 'Populer' : undefined])) },
+].map((s) => ({ subtitle: s.desc, ...s }));
+
+const PAYMENTS = [
+  { id: 'qris', name: 'QRIS', desc: 'Semua e-wallet & mobile banking', code: 'QR', color: '#14241d', fee: { type: 'percent', value: 0.7 } },
+  { id: 'dana', name: 'DANA', desc: 'Bayar lewat aplikasi DANA', code: 'DANA', color: '#118eea', fee: { type: 'percent', value: 1 } },
+  { id: 'ovo', name: 'OVO', desc: 'Bayar lewat aplikasi OVO', code: 'OVO', color: '#4c2a86', fee: { type: 'percent', value: 1.5 } },
+  { id: 'gopay', name: 'GoPay', desc: 'Bayar lewat aplikasi Gojek', code: 'GP', color: '#00a05a', fee: { type: 'percent', value: 1 } },
+  { id: 'shopeepay', name: 'ShopeePay', desc: 'Bayar lewat aplikasi Shopee', code: 'SP', color: '#e8472b', fee: { type: 'percent', value: 1.2 } },
+  { id: 'va', name: 'Virtual Account', desc: 'Bank besar di Indonesia', code: 'VA', color: '#0e7a57', fee: { type: 'flat', value: 4000 } },
+  { id: 'bank', name: 'Transfer Bank', desc: 'Transfer manual, verifikasi otomatis', code: 'TF', color: '#475569', fee: { type: 'flat', value: 2500 } },
+];
+
+const PROMOS = [
+  { code: 'HEMAT10', title: 'Diskon 10%', desc: 'Maks. Rp15.000 · min. belanja Rp30.000', type: 'percent', value: 10, max: 15000, min: 30000, scope: 'all' },
+  { code: 'GAMER5K', title: 'Potongan Rp5.000', desc: 'Khusus top up game · min. belanja Rp25.000', type: 'flat', value: 5000, min: 25000, scope: 'game' },
+  { code: 'PPOBHEMAT', title: 'Potongan Rp2.000', desc: 'Khusus layanan PPOB · min. belanja Rp20.000', type: 'flat', value: 2000, min: 20000, scope: 'ppob' },
+  { code: 'NEWUSER', title: 'Diskon 15% Transaksi Pertama', desc: 'Maks. Rp25.000 · min. belanja Rp50.000', type: 'percent', value: 15, max: 25000, min: 50000, scope: 'all', firstOnly: true },
+];
+
+const PROMO_SLIDES = [
+  { code: 'NEWUSER', icon: 'fa-gift', title: 'Diskon 15% Transaksi Pertama', text: 'Untuk pengguna baru. Maks. Rp25.000.' },
+  { code: 'HEMAT10', icon: 'fa-percent', title: 'Hemat 10% Semua Produk', text: 'Berlaku untuk game & PPOB. Min. belanja Rp30.000.' },
+  { code: 'PPOBHEMAT', icon: 'fa-bolt', title: 'Potongan Rp2.000 PPOB', text: 'Untuk pulsa, data, token, dan tagihan. Min. Rp20.000.' },
+  { code: 'GAMER5K', icon: 'fa-gamepad', title: 'Potongan Rp5.000 Top Up Game', text: 'Khusus top up game favoritmu. Min. belanja Rp25.000.' },
+];
+
+const BEST = [
+  ['ppob', 'pulsa', 'pulsa-6'], ['ppob', 'pln', 'pln-3'], ['ppob', 'ewallet', 'ewallet-4'], ['ppob', 'data', 'data-3'],
+  ['game', 'mlbb', 'mlbb-5'], ['game', 'freefire', 'freefire-4'], ['game', 'pubgm', 'pubgm-3'], ['game', 'genshin', 'genshin-3'],
+];
+const DEALS = [
+  ['ppob', 'data', 'data-3', 'PPOBHEMAT'], ['ppob', 'pln', 'pln-4', 'PPOBHEMAT'], ['ppob', 'ewallet', 'ewallet-5', 'HEMAT10'],
+  ['game', 'mlbb', 'mlbb-9', 'HEMAT10'], ['game', 'genshin', 'genshin-7', 'HEMAT10'], ['game', 'codm', 'codm-4', 'GAMER5K'], ['game', 'steam', 'steam-4', 'HEMAT10'],
+];
+
+const QUICK = [['ppob', 'pulsa'], ['ppob', 'data'], ['ppob', 'pln'], ['ppob', 'ewallet'], ['ppob', 'voucher'], ['game', 'mlbb'], ['game', 'freefire'], ['game', 'pubgm'], ['game', 'genshin'], ['game', 'valorant']];
+
+const FAQS = [
+  ['Bagaimana cara top up game?', 'Pilih game, isi User ID (dan Zone/Server bila ada), pilih nominal, pasang kode promo bila punya, pilih metode pembayaran, lalu tekan “Lanjutkan Pembayaran”.'],
+  ['Di mana saya menemukan User ID dan Zone ID?', 'Biasanya ada di halaman profil dalam game. Petunjuk singkat tampil di bawah setiap kolom input pada form top up.'],
+  ['Bagaimana cara memakai kode promo?', 'Klik “Pakai Kode” pada banner promo, atau ketik kodenya di langkah Promo saat checkout. Syarat minimal belanja dan cakupan produk ditampilkan otomatis.'],
+  ['Saya salah memasukkan ID, bisa dibatalkan?', 'Pesanan yang belum dibayar bisa dibatalkan dari halaman Transaksi. Pesanan yang sudah dibayar dan diproses tidak dapat diubah, jadi pastikan ID sudah benar sebelum membayar.'],
+  ['Pembayaran sudah dilakukan tapi status masih menunggu?', 'Status diperbarui setelah pembayaran terkonfirmasi. Tunggu beberapa saat lalu segarkan halaman Transaksi. Jika masih belum berubah, hubungi kami lewat halaman Kontak dengan menyertakan nomor invoice.'],
+  ['Bagaimana cara mengecek status pesanan?', 'Buka halaman Transaksi lalu masukkan nomor invoice, atau pilih dari riwayat pesananmu di perangkat ini.'],
+];
+
+const LEGAL = {
+  terms: { title: 'Syarat & Ketentuan', icon: 'fa-file-contract', body: [
+    ['Penggunaan layanan', 'Dengan menggunakan layanan ini, kamu menyatakan data yang dimasukkan (ID akun game, nomor tujuan, email) adalah benar. Kesalahan input dapat membuat pesanan tidak dapat dibatalkan setelah diproses.'],
+    ['Harga & biaya', 'Harga produk, biaya admin, dan potongan promo ditampilkan sebelum pembayaran. Total yang harus dibayar adalah angka pada ringkasan transaksi.'],
+    ['Pembayaran', 'Pesanan diproses setelah pembayaran terkonfirmasi. Pesanan yang tidak dibayar sebelum batas waktu akan dibatalkan otomatis.'],
+    ['Pembatalan & pengembalian dana', 'Pesanan yang belum dibayar dapat dibatalkan kapan saja. Pesanan yang gagal diproses akan dikembalikan dananya sesuai kebijakan penyedia pembayaran.'],
+    ['Promo', 'Setiap kode promo memiliki syarat minimal belanja, cakupan produk, dan batas potongan. Satu transaksi hanya dapat memakai satu kode.'],
+  ] },
+  privacy: { title: 'Kebijakan Privasi', icon: 'fa-user-shield', body: [
+    ['Data yang kami proses', 'ID akun game atau nomor tujuan, email (bila diperlukan untuk pengiriman kode), serta riwayat transaksi, semata-mata untuk memproses dan menampilkan pesananmu.'],
+    ['Penyimpanan di perangkat', 'Riwayat pesanan dan preferensi tampilan (tema) disimpan di browser perangkatmu.'],
+    ['Menghapus data', 'Kamu dapat menghapus riwayat lewat tombol “Hapus riwayat” di halaman Transaksi atau dengan membersihkan data situs di browser.'],
+  ] },
+  contact: { title: 'Kontak', icon: 'fa-address-book', body: [
+    ...(SITE.email ? [['Email', SITE.email]] : []),
+    ...(SITE.whatsapp ? [['WhatsApp', SITE.whatsapp]] : []),
+    ...(SITE.hours ? [['Jam layanan', SITE.hours]] : []),
+    ['Saat menghubungi kami', 'Sertakan nomor invoice agar pesananmu lebih cepat kami periksa.'],
+  ] },
+};
+
+const STATUS = {
+  pending: { label: 'Menunggu Pembayaran', icon: 'fa-clock', desc: 'Selesaikan pembayaran agar pesanan dapat diproses.' },
+  processing: { label: 'Diproses', icon: 'fa-gear', desc: 'Pembayaran diterima. Pesanan sedang diproses ke provider.' },
+  success: { label: 'Berhasil', icon: 'fa-circle-check', desc: 'Pesanan selesai diproses.' },
+  failed: { label: 'Gagal', icon: 'fa-circle-xmark', desc: 'Pesanan tidak dapat diselesaikan. Dana akan dikembalikan sesuai kebijakan.' },
+  cancelled: { label: 'Dibatalkan', icon: 'fa-ban', desc: 'Pesanan dibatalkan dan tidak akan diproses.' },
+};
+
+const OPERATORS = [['Telkomsel', /^08(11|12|13|21|22|23|51|52|53)/], ['Indosat', /^08(14|15|16|55|56|57|58)/], ['XL', /^08(17|18|19|59|77|78)/], ['Axis', /^08(31|32|33|38)/], ['Tri', /^089[5-9]/], ['Smartfren', /^088[1-9]/]];
+
+/* ===== js/icons.js ===== */
+/* Zenvira Digital — Ikon layanan PPOB (SVG inline, duotone).
+   Memakai currentColor → otomatis mengikuti warna `tone-*` dan tema terang/gelap.
+   Tanpa dependensi CDN. viewBox 48×48. */
+const SVC_ICONS = (() => {
+  const T = 'fill="currentColor" fill-opacity=".16"'; // lapisan tint (isi)
+  const F = 'fill="currentColor" stroke="none"';      // titik/isi penuh
+  return {
+    // ponsel dengan tanda tambah (isi pulsa)
+    pulsa: `<rect x="13" y="4.5" width="22" height="39" rx="5.5" ${T}/><path d="M21 9.5h6"/><circle cx="24" cy="24" r="7.5"/><path d="M24 20.2v7.6M20.2 24h7.6"/><circle cx="24" cy="38.2" r="1.3" ${F}/>`,
+    // sinyal data
+    data: `<circle cx="24" cy="24" r="19" ${T} stroke="none"/><path d="M10.5 20.5c7.5-7 19.5-7 27 0"/><path d="M15.5 26c5-4.5 12-4.5 17 0"/><path d="M20.5 31.3c2.2-1.9 4.8-1.9 7 0"/><circle cx="24" cy="36" r="2" ${F}/>`,
+    // token listrik: petir dalam koin
+    pln: `<circle cx="24" cy="24" r="19" ${T}/><path d="M26.5 8.5 15 26.5h8.3l-1.8 13L33 21.5h-8z" fill="currentColor"/>`,
+    // tagihan listrik pascabayar: steker
+    listrik: `<path d="M17 5v10M31 5v10"/><rect x="11" y="15" width="26" height="13" rx="4" ${T}/><path d="M17.5 28v1.5a6.5 6.5 0 0 0 13 0V28"/><path d="M24 36v7"/>`,
+    // BPJS: hati + denyut
+    bpjs: `<path d="M24 41S6.5 30.3 6.5 18.8A10 10 0 0 1 24 13a10 10 0 0 1 17.5 5.8C41.5 30.3 24 41 24 41z" ${T}/><path d="M11 25h7l3-7 4.5 12 3-5H37"/>`,
+    // PDAM: tetes air
+    pdam: `<path d="M24 5s-13 14.5-13 24a13 13 0 0 0 26 0C37 19.5 24 5 24 5z" ${T}/><path d="M17.5 30a6.5 6.5 0 0 0 6.5 6.5"/>`,
+    // internet & TV: layar dengan sinyal
+    internet: `<rect x="5" y="9" width="38" height="26" rx="4.5" ${T}/><path d="M17 41h14M24 35v6"/><path d="M16 23c4.7-4.2 11.3-4.2 16 0"/><path d="M20 27.5c2.4-2 5.6-2 8 0"/><circle cx="24" cy="31" r="1.3" ${F}/>`,
+    // e-wallet: dompet
+    ewallet: `<rect x="5.5" y="13" width="37" height="27" rx="5" ${T}/><path d="M9.5 13l22-7a3 3 0 0 1 4 2.8V13"/><rect x="29" y="22.5" width="13.5" height="10" rx="3" ${T}/><circle cx="34.8" cy="27.5" r="1.5" ${F}/>`,
+    // voucher: tiket dengan persen
+    voucher: `<path d="M6 14a3 3 0 0 1 3-3h30a3 3 0 0 1 3 3v6.2a4.3 4.3 0 0 0 0 8.6V35a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-6.2a4.3 4.3 0 0 0 0-8.6z" ${T}/><path d="M31 14.5v19" stroke-dasharray="2.5 3.5"/><circle cx="15" cy="20.5" r="2.4"/><circle cx="23" cy="29.5" r="2.4"/><path d="M24 18.5 14 31.5"/>`,
+  };
+})();
+
+/** SVG inline untuk layanan PPOB. Ukuran mengikuti CSS (.svc-ico). */
+function svcIcon(id, cls = '') {
+  const inner = SVC_ICONS[id];
+  if (!inner) return '<i class="fa-solid fa-receipt" aria-hidden="true"></i>';
+  return `<svg class="svc-ico ${cls}" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${inner}</svg>`;
+}
+
+/* ===== js/util.js ===== */
+/* Zenvira Digital — Utilitas DOM, format, helper layanan
+   Diekstrak dari V1 (logika sudah teruji). Dimuat sebagai <script> klasik: scope top-level dipakai bersama. */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const idr = (n) => (n < 0 ? '-' : '') + 'Rp' + Math.abs(Math.round(n)).toLocaleString('id-ID');
+const fmtDate = (ts) => new Intl.DateTimeFormat(CONFIG.locale, { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }).format(ts);
+const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const debounce = (fn, ms = 150) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
+const wait = (ms) => new Promise((r) => setTimeout(r, reduceMotion() ? Math.min(ms, 40) : ms));
+const mask = (v) => {
+  const s = String(v);
+  if (s.includes('@')) { const [u, d] = s.split('@'); return `${u[0] || ''}•••@${d}`; }
+  return s.length <= 4 ? s : s.slice(0, 2) + '•'.repeat(Math.min(s.length - 4, 6)) + s.slice(-2);
+};
+const getService = (kind, id) => (kind === 'game' ? GAMES : PPOB).find((s) => s.id === id) || null;
+const getProduct = (kind, svcId, pid) => getService(kind, svcId)?.products?.find((p) => p.id === pid) || null;
+const findPayment = (id) => PAYMENTS.find((p) => p.id === id) || null;
+const feeText = (pay) => (pay.fee.type === 'percent' ? `Biaya ${String(pay.fee.value).replace('.', ',')}%` : `Biaya ${idr(pay.fee.value)}`);
+const randomCode = (n) => {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  const buf = new Uint32Array(n);
+  (window.crypto || { getRandomValues: (a) => a.map(() => Math.random() * 4e9) }).getRandomValues(buf);
+  return [...buf].map((x) => chars[x % chars.length]).join('');
+};
+const newInvoiceId = () => {
+  const d = new Date();
+  const p = (x) => String(x).padStart(2, '0');
+  return `INV-${String(d.getFullYear()).slice(2)}${p(d.getMonth() + 1)}${p(d.getDate())}-${randomCode(5)}`;
+};
+async function copyText(text) {
+  try { await navigator.clipboard.writeText(text); return true; } catch { /* fallback below */ }
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', ''); ta.style.cssText = 'position:fixed;opacity:0;top:0';
+    document.body.appendChild(ta); ta.select();
+    const ok = document.execCommand('copy'); ta.remove(); return ok;
+  } catch { return false; }
+}
+const App = { pendingPromo: null };
+
+/* ===== js/store.js ===== */
+/* Zenvira Digital — Penyimpanan lokal (localStorage aman) dan cache riwayat pesanan di perangkat.
+   Dimuat sebagai <script> klasik: scope top-level dipakai bersama. */
+const Store = (() => {
+  const mem = {};
+  let ok = true;
+  try { localStorage.setItem('__kt', '1'); localStorage.removeItem('__kt'); } catch { ok = false; }
+  return {
+    get(k, d) { try { const v = ok ? localStorage.getItem(k) : mem[k]; return v ? JSON.parse(v) : d; } catch { return d; } },
+    set(k, v) { const s = JSON.stringify(v); try { if (ok) localStorage.setItem(k, s); else mem[k] = s; } catch { mem[k] = s; } },
+    remove(k) { try { if (ok) localStorage.removeItem(k); else delete mem[k]; } catch { delete mem[k]; } },
+  };
+})();
+
+/* Event bus ringan: emit('tx', invoiceId) dipakai halaman Transaksi untuk render ulang. */
+const bus = new EventTarget();
+const emit = (name, detail) => bus.dispatchEvent(new CustomEvent(name, { detail }));
+
+/* Riwayat pesanan di perangkat ini.
+   INTEGRATION: saat backend tersedia, sumber kebenaran pindah ke API (lihat js/api.js).
+   Modul ini cukup menyimpan daftar pesanan terakhir sebagai cache/riwayat lokal. */
+const Tx = (() => {
+  const read = () => Store.get(CONFIG.storageKey, []);
+  const write = (list) => Store.set(CONFIG.storageKey, list);
+  return {
+    local: read,
+    localCount: () => read().length,
+    all: () => read(),
+    find: (id) => { const k = String(id || '').trim().toUpperCase(); return read().find((t) => t.id === k) || null; },
+    create(payload) {
+      const tx = { ...payload, id: newInvoiceId(), createdAt: Date.now(), status: 'pending', history: [{ status: 'pending', at: Date.now(), note: 'Pesanan dibuat. Menunggu pembayaran.' }] };
+      const list = read(); list.unshift(tx); write(list.slice(0, 30));
+      emit('tx', tx.id); return tx;
+    },
+    setStatus(id, status, note) {
+      const list = read(); const tx = list.find((t) => t.id === id);
+      if (!tx) return null;
+      tx.status = status; tx.history.push({ status, at: Date.now(), note }); write(list);
+      emit('tx', id); return tx;
+    },
+    clear() { write([]); emit('tx', null); },
+  };
+})();
+
+/* ===== js/pricing.js ===== */
+/* Zenvira Digital — Perhitungan harga, diskon & biaya admin
+   Diekstrak dari V1 (logika sudah teruji). Dimuat sebagai <script> klasik: scope top-level dipakai bersama. */
+// Kebijakan pembulatan diskon (saat ini tanpa pembulatan).
+function roundDiscount(amount) {
+  return amount;
+}
+
+const Promos = {
+  evaluate(promo, ctx) {
+    if (promo.scope !== 'all' && promo.scope !== ctx.kind) {
+      return { ok: false, hard: true, reason: `Kode ${promo.code} hanya berlaku untuk ${promo.scope === 'game' ? 'Top Up Game' : 'layanan PPOB'}.` };
+    }
+    if (promo.firstOnly && !ctx.isFirst) return { ok: false, hard: true, reason: `Kode ${promo.code} hanya berlaku untuk transaksi pertama.` };
+    if (ctx.subtotal < promo.min) return { ok: false, hard: false, reason: `Minimal belanja ${idr(promo.min)} untuk memakai kode ${promo.code}.` };
+    let amount = promo.type === 'percent' ? Math.floor((ctx.subtotal * promo.value) / 100) : promo.value;
+    if (promo.max) amount = Math.min(amount, promo.max);
+    amount = roundDiscount(amount);
+    return { ok: true, amount: Math.max(0, Math.min(amount, ctx.subtotal)) };
+  },
+};
+
+const Pricing = {
+  fee(pay, base) {
+    if (!pay || base <= 0) return 0;
+    return pay.fee.type === 'percent' ? Math.ceil(+((base * pay.fee.value) / 100).toFixed(4)) : pay.fee.value;
+  },
+  compute({ subtotal, promo, kind, payId, isFirst }) {
+    const state = promo ? Promos.evaluate(promo, { kind, subtotal, isFirst }) : null;
+    const discount = state && state.ok ? state.amount : 0;
+    const fee = Pricing.fee(findPayment(payId), subtotal - discount);
+    return { subtotal, discount, fee, total: Math.max(0, subtotal - discount + fee), promoState: state };
+  },
+};
+
+/* ===== js/api.js ===== */
+/* Zenvira Digital — Lapisan API
+   ==========================================================================
+   SATU-SATUNYA tempat UI berbicara dengan "server". Saat ini diisi implementasi
+   MOCK (berjalan di browser, data di localStorage) supaya aplikasi bisa dipakai
+   sebelum backend siap. Untuk go-live: ganti isi setiap fungsi dengan fetch() ke
+   backend — tanda tangan fungsi & bentuk datanya (lihat @typedef) jangan diubah,
+   maka UI tidak perlu disentuh.
+
+   @typedef {Object} OrderPayload   input createOrder (dibuat oleh halaman checkout)
+     kind          'game' | 'ppob'
+     serviceId     string            id layanan (mis. 'mlbb', 'pln')
+     serviceName   string
+     productLabel  string
+     fields        {label, value, secret}[]   data akun/tujuan (ID, zona, nomor, dsb.)
+     subtotal, discount, fee, total   number (Rupiah)
+     promoCode     string | null
+     paymentId     string            id metode (lihat PAYMENTS di data.js)
+     paymentName   string
+
+   @typedef {Object} Order          dikembalikan createOrder / getOrder
+     id            string            nomor invoice
+     status        'pending' | 'processing' | 'success' | 'failed' | 'cancelled'
+     createdAt     number (ms epoch)
+     history       {status, at, note}[]
+     ...semua field OrderPayload
+     paymentUrl?   string            (produksi) URL halaman bayar dari payment gateway
+   ========================================================================== */
+const api = {
+  /* ---- Tagihan (PPOB pascabayar) ----
+     INTEGRATION: GET /bills/inquiry?service={id}&customerId={no}
+     → { name, period, amount, admin, price, label } */
+  async inquireBill(svc, customerId) {
+    await wait(850);
+    const sum = [...customerId].reduce((a, c) => a + (Number(c) || 0) * 7 + 13, 0);
+    const names = ['A*** S****', 'B*** W******', 'D*** P*****', 'R*** H*****'];
+    const amount = Math.round((60000 + ((sum * 917) % 340000)) / 100) * 100;
+    const admin = 2500;
+    const period = new Intl.DateTimeFormat(CONFIG.locale, { month: 'long', year: 'numeric' }).format(new Date());
+    return { name: names[sum % names.length], period, amount, admin, price: amount + admin, label: `${svc.billLabel} ${period}` };
+  },
+
+  /* ---- Buat pesanan ----
+     INTEGRATION: POST /orders  (body: OrderPayload) → Order (status 'pending') */
+  async createOrder(payload) { await wait(1100); return Tx.create(payload); },
+
+  /* ---- Ambil satu pesanan ----
+     INTEGRATION: GET /orders/{invoice} → Order | 404 */
+  async getOrder(id) { await wait(600); return Tx.find(id); },
+
+  /* ---- Mulai pembayaran ----
+     INTEGRATION: POST /orders/{invoice}/pay → { paymentUrl }  lalu `location.href = paymentUrl`.
+     Status berubah lewat webhook gateway di server; UI cukup membaca getOrder() / polling.
+     MOCK: langsung menandai dibayar → diproses → selesai. */
+  async payOrder(id) {
+    await wait(900);
+    MockBackend.pay(id);
+  },
+
+  /* ---- Batalkan pesanan (hanya status 'pending') ----
+     INTEGRATION: POST /orders/{invoice}/cancel */
+  async cancelOrder(id) { await wait(500); MockBackend.cancel(id); },
+};
+
+/* ==========================================================================
+   MOCK BACKEND — hapus blok ini saat backend sungguhan dipasang.
+   Meniru perilaku webhook payment gateway dan provider di sisi server.
+   ========================================================================== */
+const MockBackend = (() => {
+  const timers = {};
+  const PROCESS_MS = 3500;
+
+  function pay(id) {
+    const tx = Tx.find(id);
+    if (!tx || tx.status !== 'pending') return;
+    Tx.setStatus(id, 'processing', 'Pembayaran diterima. Pesanan sedang diproses.');
+    clearTimeout(timers[id]);
+    timers[id] = setTimeout(() => {
+      if (Tx.find(id)?.status === 'processing') {
+        Tx.setStatus(id, 'success', 'Pesanan selesai diproses.');
+        toast('Pesanan berhasil diproses.', { type: 'success' });
+      }
+    }, reduceMotion() ? 800 : PROCESS_MS);
+  }
+
+  function cancel(id) {
+    const tx = Tx.find(id);
+    if (tx && tx.status === 'pending') Tx.setStatus(id, 'cancelled', 'Dibatalkan oleh pengguna.');
+  }
+
+  /* Dipanggil saat aplikasi dimuat: pesanan "diproses" yang sudah melewati waktu proses dianggap selesai
+     (agar status tetap konsisten bila halaman dimuat ulang). */
+  function settle() {
+    const list = Tx.local();
+    list.filter((t) => t.status === 'processing' && Date.now() - t.history[t.history.length - 1].at > PROCESS_MS)
+      .forEach((t) => Tx.setStatus(t.id, 'success', 'Pesanan selesai diproses.'));
+  }
+
+  return { pay, cancel, settle };
+})();
+
+/* ===== js/ui/toast.js ===== */
+/* Zenvira Digital — Toast notifikasi
+   Diekstrak dari V1 (logika sudah teruji). Dimuat sebagai <script> klasik: scope top-level dipakai bersama. */
+function toast(msg, { type = 'info', icon, duration = 4000 } = {}) {
+  const wrap = $('#toasts');
+  const icons = { success: 'fa-circle-check', error: 'fa-circle-exclamation', info: 'fa-circle-info' };
+  const el = document.createElement('div');
+  el.className = `toast toast--${type}`;
+  el.setAttribute('role', type === 'error' ? 'alert' : 'status');
+  el.innerHTML = `<span class="toast__ico"><i class="fa-solid ${icon || icons[type]}" aria-hidden="true"></i></span><p></p><button type="button" aria-label="Tutup notifikasi"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>`;
+  $('p', el).textContent = msg;
+  const remove = () => { if (!el.isConnected || el.classList.contains('is-leaving')) return; el.classList.add('is-leaving'); setTimeout(() => el.remove(), reduceMotion() ? 0 : 300); };
+  $('button', el).addEventListener('click', remove);
+  wrap.appendChild(el);
+  while (wrap.children.length > 3) wrap.firstElementChild.remove();
+  setTimeout(remove, duration);
+}
+
+/* ===== js/ui/sheet.js ===== */
+/* Zenvira Digital — Sheet: bottom-sheet (mobile) / dialog (desktop)
+   Focus-trap, Esc, kunci scroll, tumpukan (stack), pengembalian fokus. */
+const Sheet = (() => {
+  const stack = [];
+  let uid = 0;
+  let scrollLocks = 0;
+  const FOCUSABLE = 'a[href],button:not([disabled]),input:not([disabled]):not([type=hidden]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])';
+  const isVisible = (el) => el.offsetParent !== null || el.getClientRects().length > 0;
+
+  function lockScroll() {
+    if (++scrollLocks === 1) {
+      const sbw = window.innerWidth - document.documentElement.clientWidth;
+      document.documentElement.style.setProperty('--sbw', sbw + 'px');
+      document.documentElement.classList.add('no-scroll');
+    }
+  }
+  function unlockScroll() {
+    scrollLocks = Math.max(0, scrollLocks - 1);
+    if (!scrollLocks) document.documentElement.classList.remove('no-scroll');
+  }
+
+  function open({ title = '', body = '', foot = '', locked = false, className = '', onClose } = {}) {
+    const id = `sheet-${++uid}`;
+    const el = document.createElement('div');
+    el.className = `sheet ${className}`.trim();
+    el.setAttribute('role', 'dialog');
+    el.setAttribute('aria-modal', 'true');
+    el.setAttribute('aria-labelledby', `${id}-t`);
+    el.innerHTML = `
+      <div class="sheet__backdrop" data-sheet-close></div>
+      <div class="sheet__panel" tabindex="-1">
+        <div class="sheet__grab" aria-hidden="true"></div>
+        <header class="sheet__head"><h2 id="${id}-t"></h2><button class="icon-btn" type="button" data-sheet-close aria-label="Tutup"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></header>
+        <div class="sheet__body"></div>
+        <div class="sheet__foot"></div>
+      </div>`;
+    const titleEl = el.querySelector('h2'); titleEl.textContent = title;
+    const bodyEl = el.querySelector('.sheet__body');
+    const footEl = el.querySelector('.sheet__foot');
+    const setContent = (target, c) => { if (c instanceof Node) { target.replaceChildren(c); } else { target.innerHTML = c; } };
+    setContent(bodyEl, body); setContent(footEl, foot);
+
+    const ctl = {
+      el, body: bodyEl, foot: footEl, locked,
+      setTitle: (t) => { titleEl.textContent = t; },
+      setBody: (c) => setContent(bodyEl, c),
+      setFoot: (c) => setContent(footEl, c),
+      close: () => close(ctl),
+      onClose,
+    };
+    el._ctl = ctl;
+    el._ret = document.activeElement;
+
+    const below = stack[stack.length - 1];
+    if (below) below.el.setAttribute('inert', '');
+    el.style.zIndex = 1000 + stack.length * 10;
+    stack.push(ctl);
+    $('#sheets').appendChild(el);
+    lockScroll();
+    setTimeout(() => {
+      if (!stack.includes(ctl)) return;
+      el.classList.add('is-open');
+      const coarse = window.matchMedia('(pointer: coarse)').matches;
+      const first = coarse ? null : bodyEl.querySelector('input:not([type=radio]):not([type=checkbox]), select');
+      (first || el.querySelector('.sheet__panel')).focus({ preventScroll: true });
+    }, 30);
+    return ctl;
+  }
+
+  function close(ctl) {
+    const i = stack.indexOf(ctl);
+    if (i < 0) return;
+    stack.splice(i, 1);
+    const { el } = ctl;
+    el.classList.remove('is-open');
+    el.removeAttribute('inert');
+    const below = stack[stack.length - 1];
+    if (below && i === stack.length) below.el.removeAttribute('inert');
+    setTimeout(() => el.remove(), reduceMotion() ? 0 : 340);
+    unlockScroll();
+    if (el._ret && document.contains(el._ret)) el._ret.focus({ preventScroll: true });
+    if (ctl.onClose) ctl.onClose();
+  }
+
+  function closeAll() { [...stack].reverse().forEach(close); }
+
+  document.addEventListener('click', (e) => {
+    const c = e.target.closest('[data-sheet-close]');
+    if (!c) return;
+    const el = c.closest('.sheet');
+    if (el && el._ctl && !el._ctl.locked) close(el._ctl);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    const top = stack[stack.length - 1];
+    if (!top) return;
+    if (e.key === 'Escape' && !top.locked) { e.preventDefault(); close(top); return; }
+    if (e.key !== 'Tab') return;
+    const panel = top.el.querySelector('.sheet__panel');
+    const items = [...panel.querySelectorAll(FOCUSABLE)].filter(isVisible);
+    if (!items.length) { e.preventDefault(); return; }
+    const first = items[0]; const last = items[items.length - 1];
+    if (e.shiftKey && (document.activeElement === first || document.activeElement === panel)) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+
+  /* ---- helpers siap pakai ---- */
+  function confirm({ title, text, label = 'Ya', cancel = 'Batal', onConfirm }) {
+    const s = open({
+      title,
+      body: `<div class="prose"><p>${esc(text)}</p></div>`,
+      foot: `<button class="btn btn--line" type="button" data-sheet-close>${esc(cancel)}</button><button class="btn btn--ink" type="button" data-ok>${esc(label)}</button>`,
+    });
+    s.foot.querySelector('[data-ok]').addEventListener('click', () => { s.close(); if (onConfirm) onConfirm(); });
+    return s;
+  }
+
+  return { open, close, closeAll, confirm, lockScroll, unlockScroll, get depth() { return stack.length; } };
+})();
+
+/* ===== js/ui/theme.js ===== */
+/* Zenvira Digital — Tema terang / gelap / sistem. Kunci localStorage cocok dengan skrip di <head>. */
+const Theme = (() => {
+  const KEY = 'zenvira.theme';
+  const MODES = ['system', 'light', 'dark'];
+  const LABEL = { system: 'Sistem', light: 'Terang', dark: 'Gelap' };
+  const ICON = { system: 'fa-circle-half-stroke', light: 'fa-sun', dark: 'fa-moon' };
+  const mq = window.matchMedia('(prefers-color-scheme: dark)');
+  let mode = 'system';
+  try { mode = localStorage.getItem(KEY) || 'system'; } catch { /* storage diblokir */ }
+  if (!MODES.includes(mode)) mode = 'system';
+
+  const resolved = () => (mode === 'system' ? (mq.matches ? 'dark' : 'light') : mode);
+
+  function apply() {
+    const r = resolved();
+    document.documentElement.setAttribute('data-theme', r);
+    const meta = document.getElementById('metaTheme');
+    if (meta) meta.setAttribute('content', r === 'dark' ? '#0d0d0e' : '#f5f5f1');
+    $$('[data-theme-toggle]').forEach((b) => {
+      b.setAttribute('aria-label', `Ganti tema (sekarang: ${LABEL[mode]})`);
+      const i = $('i', b); if (i) i.className = `fa-solid ${ICON[mode]}`;
+      const s = $('span', b); if (s) s.textContent = `Tema: ${LABEL[mode]}`;
+    });
+  }
+
+  function set(next) {
+    mode = next;
+    try { localStorage.setItem(KEY, mode); } catch { /* abaikan */ }
+    apply();
+  }
+
+  function cycle() {
+    set(MODES[(MODES.indexOf(mode) + 1) % MODES.length]);
+    toast(`Tema: ${LABEL[mode]}`, { type: 'info', icon: ICON[mode], duration: 1800 });
+  }
+
+  function init() {
+    apply();
+    mq.addEventListener('change', () => { if (mode === 'system') apply(); });
+    document.addEventListener('click', (e) => { if (e.target.closest('[data-theme-toggle]')) cycle(); });
+  }
+
+  return { init, set, cycle, get mode() { return mode; }, get resolved() { return resolved(); } };
+})();
+
+/* ===== js/ui/palette.js ===== */
+/* Zenvira Digital — Command palette (Ctrl/⌘ + K atau "/"): cari game, layanan, halaman, invoice. */
+const Palette = (() => {
+  let root = null; let list = null; let input = null;
+  let items = []; let sel = 0; let ret = null;
+
+  const PAGES = [
+    { title: 'Beranda', sub: 'Ringkasan & promo', icon: 'fa-house', href: '#/' },
+    { title: 'PPOB', sub: 'Pulsa, data, listrik, e-wallet', icon: 'fa-receipt', href: '#/ppob' },
+    { title: 'Top Up Game', sub: 'Semua game', icon: 'fa-gamepad', href: '#/game' },
+    { title: 'Transaksi', sub: 'Cek status invoice', icon: 'fa-clock-rotate-left', href: '#/transaksi' },
+    { title: 'Bantuan', sub: 'FAQ & kontak', icon: 'fa-circle-question', href: '#/bantuan' },
+  ];
+
+  const minPrice = (g) => Math.min(...g.products.map((p) => p.price));
+
+  function allItems() {
+    const out = [];
+    PAGES.forEach((p) => out.push({ group: 'Halaman', ...p, keys: [p.title, p.sub] }));
+    PPOB.forEach((s) => out.push({ group: 'PPOB', title: s.name, sub: s.desc, svg: svcIcon(s.id), tone: s.tone, href: `#/ppob/${s.id}`, keys: [s.name, s.short, s.desc] }));
+    GAMES.forEach((g) => out.push({ group: 'Game', title: g.name, sub: `${g.category} · mulai ${idr(minPrice(g))}`, img: g.cover, href: `#/game/${g.id}`, keys: [g.name, g.short, g.category, ...g.aliases] }));
+    Tx.local().slice(0, 5).forEach((t) => out.push({ group: 'Transaksi', title: t.id, sub: `${t.productLabel} · ${STATUS[t.status].label}`, icon: 'fa-file-invoice', href: `#/transaksi/${t.id}`, keys: [t.id, t.productLabel, t.serviceName] }));
+    out.push({ group: 'Aksi', title: 'Ganti tema', sub: 'Sistem → Terang → Gelap', icon: 'fa-circle-half-stroke', run: () => Theme.cycle(), keys: ['tema', 'gelap', 'terang', 'dark', 'light'] });
+    return out;
+  }
+
+  function filter(q) {
+    const all = allItems();
+    const query = q.trim().toLowerCase();
+    let res;
+    if (!query) {
+      const cap = { Halaman: 5, PPOB: 5, Game: 4, Transaksi: 3, Aksi: 2 };
+      const used = {};
+      res = all.filter((i) => (used[i.group] = (used[i.group] || 0) + 1) <= cap[i.group]);
+    } else {
+      res = all
+        .map((i) => {
+          const hay = i.keys.map((k) => String(k).toLowerCase());
+          const score = hay.some((k) => k.startsWith(query)) ? 2 : hay.some((k) => k.includes(query)) ? 1 : 0;
+          return { i, score };
+        })
+        .filter((x) => x.score).sort((a, b) => b.score - a.score).map((x) => x.i);
+      if (/^inv-[a-z0-9-]+$/i.test(query) && !res.some((i) => i.title.toLowerCase() === query)) {
+        res.unshift({ group: 'Transaksi', title: `Buka invoice ${query.toUpperCase()}`, sub: 'Cek status transaksi', icon: 'fa-magnifying-glass', href: `#/transaksi/${query.toUpperCase()}` });
+      }
+    }
+    return res.slice(0, 24);
+  }
+
+  const iconHTML = (i) => (i.svg ? `<span class="ico tone-${i.tone}">${i.svg}</span>` : i.img ? `<span class="ico"><img src="${esc(i.img)}" alt="" width="36" height="36"></span>` : `<span class="ico ${i.tone ? 'tone-' + i.tone : ''}"><i class="${i.icon.includes(' ') ? i.icon : 'fa-solid ' + i.icon}" aria-hidden="true"></i></span>`);
+
+  function render() {
+    if (!items.length) {
+      list.innerHTML = '<div class="palette__empty"><i class="fa-regular fa-face-frown" aria-hidden="true"></i><p>Tidak ada hasil untuk pencarian ini.</p></div>';
+      input.removeAttribute('aria-activedescendant');
+      return;
+    }
+    let html = ''; let last = '';
+    items.forEach((it, idx) => {
+      if (it.group !== last) { html += `<div class="palette__group" role="presentation">${esc(it.group)}</div>`; last = it.group; }
+      html += `<button class="palette__item" type="button" role="option" tabindex="-1" id="pal-${idx}" data-idx="${idx}" aria-selected="${idx === sel}">${iconHTML(it)}<span><b>${esc(it.title)}</b><small>${esc(it.sub || '')}</small></span></button>`;
+    });
+    list.innerHTML = html;
+    input.setAttribute('aria-activedescendant', `pal-${sel}`);
+  }
+
+  function select(n, scroll = true) {
+    if (!items.length) return;
+    sel = (n + items.length) % items.length;
+    $$('.palette__item', list).forEach((b) => b.setAttribute('aria-selected', String(Number(b.dataset.idx) === sel)));
+    input.setAttribute('aria-activedescendant', `pal-${sel}`);
+    if (scroll) $(`#pal-${sel}`, list)?.scrollIntoView({ block: 'nearest' });
+  }
+
+  function activate(idx) {
+    const it = items[idx]; if (!it) return;
+    close(false);
+    if (it.run) it.run(); else if (it.href) { if (location.hash === it.href) Router.refresh(); else location.hash = it.href; }
+  }
+
+  function open() {
+    if (root) return;
+    ret = document.activeElement;
+    root = document.createElement('div');
+    root.className = 'palette';
+    root.setAttribute('role', 'dialog'); root.setAttribute('aria-modal', 'true'); root.setAttribute('aria-label', 'Pencarian cepat');
+    root.innerHTML = `<div class="palette__backdrop"></div>
+      <div class="palette__panel">
+        <div class="palette__bar"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input class="palette__input" type="text" role="combobox" aria-expanded="true" aria-controls="palList" aria-autocomplete="list" placeholder="Cari game, layanan, halaman, invoice…" autocomplete="off" spellcheck="false" aria-label="Pencarian cepat">
+          <kbd>Esc</kbd></div>
+        <div class="palette__list" id="palList" role="listbox" aria-label="Hasil"></div>
+        <div class="palette__foot"><span><kbd>↑</kbd> <kbd>↓</kbd> pilih</span><span><kbd>Enter</kbd> buka</span></div>
+      </div>`;
+    $('#sheets').appendChild(root);
+    list = $('.palette__list', root); input = $('.palette__input', root);
+    Sheet.lockScroll();
+    items = filter(''); sel = 0; render();
+    setTimeout(() => { root.classList.add('is-open'); input.focus(); }, 20);
+
+    input.addEventListener('input', () => { items = filter(input.value); sel = 0; render(); });
+    root.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); close(); }
+      else if (e.key === 'ArrowDown') { e.preventDefault(); select(sel + 1); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); select(sel - 1); }
+      else if (e.key === 'Enter') { e.preventDefault(); activate(sel); }
+      else if (e.key === 'Tab') { e.preventDefault(); }
+    });
+    root.addEventListener('click', (e) => {
+      const b = e.target.closest('.palette__item');
+      if (b) activate(Number(b.dataset.idx));
+      else if (e.target.classList.contains('palette__backdrop')) close();
+    });
+    root.addEventListener('mousemove', (e) => { const b = e.target.closest('.palette__item'); if (b && Number(b.dataset.idx) !== sel) select(Number(b.dataset.idx), false); });
+  }
+
+  function close(restore = true) {
+    if (!root) return;
+    const r = root; root = null;
+    r.classList.remove('is-open');
+    setTimeout(() => r.remove(), reduceMotion() ? 0 : 260);
+    Sheet.unlockScroll();
+    if (restore && ret && document.contains(ret)) ret.focus({ preventScroll: true });
+  }
+
+  function init() {
+    document.addEventListener('click', (e) => { if (e.target.closest('[data-palette]')) { e.preventDefault(); open(); } });
+    document.addEventListener('keydown', (e) => {
+      const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName) || document.activeElement?.isContentEditable;
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); root ? close() : open(); }
+      else if (e.key === '/' && !typing && !root && Sheet.depth === 0) { e.preventDefault(); open(); }
+    });
+  }
+
+  /* dipakai juga oleh pencarian di hero: hasil terfilter (opsional dibatasi grup) */
+  function search(q, { groups, limit = 7 } = {}) {
+    return filter(q).filter((i) => !groups || groups.includes(i.group)).slice(0, limit);
+  }
+
+  return { init, open, close, search, iconHTML };
+})();
+
+/* ===== js/pages/home.js ===== */
+/* Zenvira Digital — Beranda: grid "bento" (hero, promo, akses cepat, game, transaksi terakhir, PPOB, terlaris, penawaran) */
+const Pages = {};
+
+/* ---------- potongan tampilan yang dipakai ulang ---------- */
+const View = {
+  thumb(kind, s) {
+    return kind === 'game'
+      ? `<span class="prow__thumb"><img src="${esc(s.cover)}" width="44" height="44" alt="" loading="lazy"></span>`
+      : `<span class="prow__thumb ico tone-${s.tone}">${svcIcon(s.id)}</span>`;
+  },
+  gcard(g) {
+    const min = Math.min(...g.products.map((p) => p.price));
+    return `<a class="gcard" href="#/game/${g.id}" aria-label="Top up ${esc(g.name)}, mulai ${idr(min)}">
+      <span class="gcard__cover"><img src="${esc(g.cover)}" width="400" height="400" alt="" loading="lazy">${g.popular ? '<span class="badge badge--accent"><i class="fa-solid fa-fire" aria-hidden="true"></i> Populer</span>' : ''}</span>
+      <span class="gcard__body"><b>${esc(g.name)}</b><small>${esc(g.category)} · mulai <strong>${idr(min)}</strong></small></span></a>`;
+  },
+  svc(s) {
+    return `<a class="svc tone-${s.tone}" href="#/ppob/${s.id}"><span class="ico">${svcIcon(s.id)}</span>
+      <div><h3>${esc(s.name)}</h3><p>${esc(s.desc)}</p></div><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>`;
+  },
+  txRow(t) {
+    const s = STATUS[t.status]; const svc = getService(t.kind, t.serviceId);
+    const ico = svc && t.kind === 'game' ? `<span class="ico"><img src="${esc(svc.cover)}" width="44" height="44" alt="" loading="lazy"></span>` : `<span class="ico tone-${svc?.tone || 'blue'}">${svc ? svcIcon(svc.id) : '<i class="fa-solid fa-receipt" aria-hidden="true"></i>'}</span>`;
+    return `<a class="tx-row" href="#/transaksi/${esc(t.id)}">${ico}
+      <span><b>${esc(t.productLabel)}</b><small>${esc(t.serviceName)}</small><small class="mono">${esc(t.id)}</small></span>
+      <span class="tx-row__end"><strong>${idr(t.total)}</strong><span class="status status--${t.status}"><i class="fa-solid ${s.icon}" aria-hidden="true"></i> ${s.label}</span></span></a>`;
+  },
+  skeletonCards(n) {
+    return Array.from({ length: n }, () => '<div class="sk-card" aria-hidden="true"><div class="skeleton"></div><div class="skeleton sk-line"></div><div class="skeleton sk-line w60"></div></div>').join('');
+  },
+};
+
+/* ---------- carousel promo ---------- */
+function mountPromo(root) {
+  const track = $('#promoTrack', root); const dots = $('#promoDots', root);
+  const slides = $$('.promo__slide', track);
+  let active = 0; let hover = false; let paused = false; let timer = null;
+  const left = (s) => s.offsetLeft - track.offsetLeft;
+  const go = (i) => { i = (i + slides.length) % slides.length; track.scrollTo({ left: left(slides[i]), behavior: reduceMotion() ? 'auto' : 'smooth' }); };
+  const update = () => {
+    let idx = 0; let best = Infinity;
+    slides.forEach((s, i) => { const d = Math.abs(left(s) - track.scrollLeft); if (d < best) { best = d; idx = i; } });
+    if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 2) idx = slides.length - 1;
+    active = idx;
+    $$('.dot', dots).forEach((d, i) => (i === idx ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current')));
+  };
+  const start = () => { clearInterval(timer); if (reduceMotion() || paused) return; timer = setInterval(() => { if (!hover && !document.hidden) go(active + 1); }, 5500); };
+  dots.innerHTML = slides.map((_, i) => `<button class="dot" type="button" aria-label="Ke promo ${i + 1}"></button>`).join('');
+  dots.addEventListener('click', (e) => { const d = e.target.closest('.dot'); if (d) go($$('.dot', dots).indexOf(d)); });
+  track.addEventListener('scroll', debounce(update, 40), { passive: true });
+  root.addEventListener('mouseenter', () => (hover = true)); root.addEventListener('mouseleave', () => (hover = false));
+  root.addEventListener('focusin', () => (hover = true)); root.addEventListener('focusout', () => (hover = false));
+  $('#promoPause', root).addEventListener('click', (e) => {
+    paused = !paused; const b = e.currentTarget;
+    b.setAttribute('aria-label', paused ? 'Putar promo otomatis' : 'Jeda promo otomatis');
+    $('i', b).className = `fa-solid ${paused ? 'fa-play' : 'fa-pause'}`; start();
+  });
+  update(); start();
+  return () => clearInterval(timer);
+}
+
+/* ---------- rail (scroll horizontal + tombol) ---------- */
+function mountRails(root) {
+  const offs = [];
+  $$('[data-rail]', root).forEach((wrap) => {
+    const track = $('.rail', wrap); const prev = $('[data-rail-prev]', wrap); const next = $('[data-rail-next]', wrap);
+    const sync = () => { prev.disabled = track.scrollLeft <= 2; next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2; };
+    prev.addEventListener('click', () => track.scrollBy({ left: -track.clientWidth * 0.8, behavior: reduceMotion() ? 'auto' : 'smooth' }));
+    next.addEventListener('click', () => track.scrollBy({ left: track.clientWidth * 0.8, behavior: reduceMotion() ? 'auto' : 'smooth' }));
+    track.addEventListener('scroll', debounce(sync, 40), { passive: true });
+    const onResize = debounce(sync, 120);
+    window.addEventListener('resize', onResize);
+    offs.push(() => window.removeEventListener('resize', onResize));
+    sync();
+  });
+  return () => offs.forEach((f) => f());
+}
+
+async function usePromo(code) {
+  App.pendingPromo = code;
+  const copied = await copyText(code);
+  toast(`Kode ${code} ${copied ? 'disalin dan ' : ''}disimpan — otomatis terpasang saat checkout.`, { type: 'success', icon: 'fa-ticket' });
+  location.hash = '#/game';
+}
+
+/* ---------- pencarian di hero (combobox dengan hasil langsung) ---------- */
+function mountHeroSearch(root) {
+  const input = $('#heroSearch', root); const list = $('#heroList', root);
+  const HINTS = ['Cari Pulsa semua operator…', 'Cari Token PLN 100rb…', 'Cari Paket Data…', 'Cari tagihan BPJS…', 'Cari Mobile Legends…'];
+  let items = []; let sel = 0; let hint = 0; let timer = null;
+
+  const isOpen = () => !list.hidden;
+  const show = () => { list.hidden = false; input.setAttribute('aria-expanded', 'true'); };
+  const hide = () => { list.hidden = true; input.setAttribute('aria-expanded', 'false'); input.removeAttribute('aria-activedescendant'); };
+  const go = (it) => { if (!it) return; hide(); input.blur(); if (it.href) location.hash = it.href; };
+
+  function render() {
+    const q = input.value.trim();
+    if (!items.length) { list.innerHTML = `<div class="palette__empty">Tidak ada hasil untuk “${esc(q)}”.</div>`; input.removeAttribute('aria-activedescendant'); return; }
+    let html = `<div class="palette__group" role="presentation">${q ? 'Hasil' : 'Populer'}</div>`;
+    items.forEach((it, i) => {
+      html += `<button class="palette__item" type="button" role="option" tabindex="-1" id="hs-${i}" data-i="${i}" aria-selected="${i === sel}">${Palette.iconHTML(it)}<span><b>${esc(it.title)}</b><small>${esc(it.sub || '')}</small></span></button>`;
+    });
+    list.innerHTML = html;
+    input.setAttribute('aria-activedescendant', `hs-${sel}`);
+  }
+  function update() { items = Palette.search(input.value, { groups: ['PPOB', 'Game'], limit: 7 }); sel = 0; render(); show(); }
+  function select(n) {
+    if (!items.length) return;
+    sel = (n + items.length) % items.length;
+    $$('.palette__item', list).forEach((b) => b.setAttribute('aria-selected', String(Number(b.dataset.i) === sel)));
+    input.setAttribute('aria-activedescendant', `hs-${sel}`);
+    $(`#hs-${sel}`, list)?.scrollIntoView({ block: 'nearest' });
+  }
+
+  input.addEventListener('focus', update);
+  input.addEventListener('click', () => { if (!isOpen()) update(); });
+  input.addEventListener('input', update);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') { e.preventDefault(); if (!isOpen()) update(); else select(sel + 1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); select(sel - 1); }
+    else if (e.key === 'Enter') { e.preventDefault(); go(items[sel]); }
+    else if (e.key === 'Escape') { if (isOpen()) { e.stopPropagation(); hide(); } }
+  });
+  list.addEventListener('mousedown', (e) => e.preventDefault()); // jaga fokus input saat klik item
+  list.addEventListener('click', (e) => { const b = e.target.closest('.palette__item'); if (b) go(items[Number(b.dataset.i)]); });
+  list.addEventListener('mousemove', (e) => { const b = e.target.closest('.palette__item'); if (b && Number(b.dataset.i) !== sel) select(Number(b.dataset.i)); });
+  const onDoc = (e) => { if (!e.target.closest('.hero-search')) hide(); };
+  document.addEventListener('click', onDoc);
+
+  // teks petunjuk berganti-ganti (dimatikan jika reduced-motion / sedang dipakai)
+  if (!reduceMotion()) {
+    timer = setInterval(() => {
+      if (document.activeElement === input || input.value) return;
+      hint = (hint + 1) % HINTS.length; input.placeholder = HINTS[hint];
+    }, 2600);
+  }
+  return () => { clearInterval(timer); document.removeEventListener('click', onDoc); };
+}
+
+/* ---------- halaman ---------- */
+Pages.home = () => {
+  const promos = PROMO_SLIDES.map((s, i) => `
+    <article class="promo__slide promo__slide--${i + 1}" role="group" aria-roledescription="slide" aria-label="${i + 1} dari ${PROMO_SLIDES.length}">
+      <div><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></div>
+      <div class="promo__foot"><span class="promo__code">${esc(s.code)}</span><button class="btn btn--sm" type="button" data-use-promo="${esc(s.code)}"><i class="fa-solid fa-copy" aria-hidden="true"></i> Pakai Kode</button></div>
+    </article>`).join('');
+  const quick = QUICK.map(([kind, id]) => {
+    const s = getService(kind, id);
+    const href = kind === 'game' ? `#/game/${id}` : `#/ppob/${id}`;
+    const ico = kind === 'game' ? `<span class="ico"><img src="${esc(s.cover)}" width="54" height="54" alt="" loading="lazy"></span>` : `<span class="ico tone-${s.tone}">${svcIcon(s.id)}</span>`;
+    return `<li><a class="quick__item" href="${href}">${ico}<span>${esc(s.short)}</span></a></li>`;
+  }).join('');
+  const rows = (list, withPromo) => list.map(([kind, sid, pid, code]) => {
+    const s = getService(kind, sid); const p = getProduct(kind, sid, pid);
+    let price = `<span class="prow__price">${idr(p.price)}</span>`;
+    if (withPromo) {
+      const c = Pricing.compute({ subtotal: p.price, promo: PROMOS.find((x) => x.code === code), kind, payId: null, isFirst: true });
+      price = `<span class="prow__price"><s>${idr(p.price)}</s>${idr(p.price - c.discount)}<em>Kode ${esc(code)}</em></span>`;
+    }
+    const q = `?p=${pid}${withPromo ? `&promo=${code}` : ''}`;
+    return `<a class="prow" href="#/${kind}/${sid}${q}">${View.thumb(kind, s)}<span><b>${esc(s.short)}</b><small>${esc(p.label)}</small></span>${price}</a>`;
+  }).join('');
+  const topGames = GAMES.filter((g) => g.popular).sort((a, b) => a.rank - b.rank).slice(0, 7);
+
+  // pintasan di bawah kolom cari hero
+  const heroChips = [['ppob', 'pulsa'], ['ppob', 'data'], ['ppob', 'pln'], ['ppob', 'ewallet'], ['game', 'mlbb']].map(([kind, id]) => {
+    const s = getService(kind, id);
+    const lead = kind === 'game' ? `<img src="${esc(s.cover)}" width="28" height="28" alt="">` : `<span class="ico-s tone-${s.tone}">${svcIcon(s.id)}</span>`;
+    return `<a class="hero-chip" href="#/${kind}/${id}">${lead}${esc(s.short)}</a>`;
+  }).join('');
+  // "poster wall": daftar diduplikasi agar animasi geser -50% terlihat mulus
+  const rep3 = (arr) => [...arr, ...arr, ...arr];
+  const wallServices = rep3(PPOB).map((p) => `<span class="wall__tile wall__tile--svc tone-${p.tone}">${svcIcon(p.id)}<b>${esc(p.short)}</b></span>`).join('');
+  const wallGames = rep3([...GAMES].reverse()).map((g) => `<span class="wall__tile"><img src="${esc(g.cover)}" width="150" height="150" alt=""></span>`).join('');
+
+  return {
+    title: 'Beranda', route: 'home', view: 'home',
+    html: `<div class="bento">
+      <section class="hero span-12" aria-labelledby="hero-title">
+        <div class="hero__copy">
+          <span class="eyebrow"><i class="fa-solid fa-bolt" aria-hidden="true"></i> PPOB &amp; Top Up Game</span>
+          <h1 class="hero__title" id="hero-title">Semua Kebutuhan Digital, <span class="hl">Satu Tempat.</span></h1>
+          <p class="hero__sub">Top up game, bayar tagihan, dan beli produk digital dengan mudah, cepat, dan praktis.</p>
+          <div class="hero-search" role="search">
+            <i class="fa-solid fa-magnifying-glass lead" aria-hidden="true"></i>
+            <input class="hero-search__input" id="heroSearch" type="text" role="combobox" aria-expanded="false" aria-controls="heroList" aria-autocomplete="list" placeholder="Cari Pulsa semua operator…" autocomplete="off" spellcheck="false" aria-label="Cari game atau layanan">
+            <div class="hero-search__list" id="heroList" role="listbox" aria-label="Hasil pencarian" hidden></div>
+          </div>
+          <div class="hero__chips" aria-label="Pintasan populer">${heroChips}</div>
+        </div>
+        <div class="wall" aria-hidden="true"><div class="wall__stage">
+          <div class="wall__row">${wallServices}</div>
+          <div class="wall__row wall__row--b">${wallGames}</div>
+        </div></div>
+      </section>
+
+      <section class="tile span-12" aria-label="Akses cepat"><div class="tile__head"><h2>Akses cepat</h2></div><ul class="quick">${quick}</ul></section>
+
+      <section class="tile span-12" aria-labelledby="home-ppob">
+        <div class="tile__head"><h2 id="home-ppob">Layanan PPOB</h2><a class="tile__link" href="#/ppob">Semua layanan</a></div>
+        <div class="svc-grid">${PPOB.map(View.svc).join('')}</div>
+      </section>
+
+      <section class="tile tile--promo span-12" aria-label="Promo spesial">
+        <div class="tile__head"><h2>Promo spesial</h2>
+          <button class="icon-btn" type="button" id="promoPause" aria-label="Jeda promo otomatis" style="width:38px;height:38px"><i class="fa-solid fa-pause" aria-hidden="true"></i></button></div>
+        <div class="promo" role="region" aria-roledescription="carousel" aria-label="Promo spesial">
+          <div class="promo__track" id="promoTrack" tabindex="0">${promos}</div>
+          <div class="promo__bar"><div class="dots" id="promoDots"></div></div>
+        </div>
+      </section>
+
+      <section class="tile span-12" aria-labelledby="home-games" data-rail>
+        <div class="tile__head"><h2 id="home-games">Top up game populer</h2>
+          <div class="rail-ctrl"><button type="button" data-rail-prev aria-label="Geser ke kiri"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button><button type="button" data-rail-next aria-label="Geser ke kanan"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button></div></div>
+        <div class="rail" tabindex="0" aria-label="Daftar game populer">${topGames.map(View.gcard).join('')}</div>
+        <a class="tile__link" href="#/game">Lihat semua game <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </section>
+
+      <section class="tile span-7" aria-labelledby="home-best"><div class="tile__head"><h2 id="home-best">Produk terlaris</h2></div>${rows(BEST, false)}</section>
+      <section class="tile span-5" aria-labelledby="home-deals"><div class="tile__head"><h2 id="home-deals">Penawaran terbaru</h2><span class="badge badge--accent">Baru</span></div>${rows(DEALS, true)}</section>
+    </div>`,
+    mount(root) {
+      const stopPromo = mountPromo(root); const stopRails = mountRails(root); const stopHero = mountHeroSearch(root);
+      root.addEventListener('click', (e) => { const b = e.target.closest('[data-use-promo]'); if (b) usePromo(b.dataset.usePromo); });
+      return () => { stopPromo(); stopRails(); stopHero(); };
+    },
+  };
+};
+
+/* ===== js/pages/catalog.js ===== */
+/* Zenvira Digital — Katalog: daftar game (cari, filter, urut) dan daftar layanan PPOB */
+Pages.games = (_params, query) => {
+  const state = { q: query.q || '', cat: query.kat && ['Semua', ...new Set(GAMES.map((g) => g.category))].includes(query.kat) ? query.kat : 'Semua', sort: 'popular' };
+  const cats = ['Semua', ...new Set(GAMES.map((g) => g.category))];
+  const minPrice = (g) => Math.min(...g.products.map((p) => p.price));
+
+  const list = () => {
+    const q = state.q.trim().toLowerCase();
+    const out = GAMES.filter((g) => (state.cat === 'Semua' || g.category === state.cat) && (!q || [g.name, g.short, g.category, ...g.aliases].some((t) => t.toLowerCase().includes(q))));
+    if (state.sort === 'price') out.sort((a, b) => minPrice(a) - minPrice(b));
+    else if (state.sort === 'name') out.sort((a, b) => a.name.localeCompare(b.name));
+    else out.sort((a, b) => a.rank - b.rank);
+    return out;
+  };
+
+  return {
+    title: 'Top Up Game', route: 'game', view: 'catalog',
+    html: `
+      <div class="page-head"><h1>Top Up Game</h1><p>Masukkan ID akun, pilih nominal, bayar. Cari berdasarkan nama atau filter kategori.</p></div>
+      <div class="tools">
+        <div class="searchbox"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <label class="sr-only" for="gameSearch">Cari game</label>
+          <input class="input" id="gameSearch" type="search" placeholder="Cari game, mis. Mobile Legends" autocomplete="off" spellcheck="false" value="${esc(state.q)}">
+          <button class="icon-btn" type="button" id="gameClear" aria-label="Hapus pencarian" ${state.q ? '' : 'hidden'}><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
+        <label class="sr-only" for="gameSort">Urutkan game</label>
+        <select class="input" id="gameSort" style="min-width:170px"><option value="popular">Terpopuler</option><option value="price">Harga terendah</option><option value="name">Nama A–Z</option></select>
+        <div class="chip-row" id="gameCats" role="group" aria-label="Filter kategori"></div>
+      </div>
+      <p class="sr-only" id="gameCount" role="status" aria-live="polite"></p>
+      <div class="gcards" id="gameGrid">${View.skeletonCards(10)}</div>
+      <div class="empty" id="gameEmpty" hidden><span class="ico"><i class="fa-regular fa-face-frown" aria-hidden="true"></i></span><h2>Game tidak ditemukan</h2><p>Coba kata kunci lain atau tampilkan semua kategori.</p><button class="btn btn--ink" type="button" id="gameReset">Reset pencarian</button></div>`,
+    mount(root) {
+      const grid = $('#gameGrid', root);
+      const renderCats = () => { $('#gameCats', root).innerHTML = cats.map((c) => `<button class="chip" type="button" data-cat="${esc(c)}" aria-pressed="${c === state.cat}">${esc(c)}</button>`).join(''); };
+      const render = () => {
+        const items = list();
+        grid.innerHTML = items.map(View.gcard).join('');
+        grid.hidden = !items.length; $('#gameEmpty', root).hidden = items.length > 0;
+        $('#gameCount', root).textContent = `${items.length} game ditemukan`;
+        $('#gameClear', root).hidden = !state.q;
+      };
+      renderCats();
+      const t = setTimeout(render, reduceMotion() ? 0 : 450);
+      $('#gameSearch', root).addEventListener('input', debounce((e) => { state.q = e.target.value; render(); }, 150));
+      $('#gameClear', root).addEventListener('click', () => { const i = $('#gameSearch', root); i.value = ''; state.q = ''; render(); i.focus(); });
+      $('#gameSort', root).addEventListener('change', (e) => { state.sort = e.target.value; render(); });
+      $('#gameCats', root).addEventListener('click', (e) => { const b = e.target.closest('[data-cat]'); if (b) { state.cat = b.dataset.cat; renderCats(); render(); } });
+      $('#gameReset', root).addEventListener('click', () => { $('#gameSearch', root).value = ''; state.q = ''; state.cat = 'Semua'; renderCats(); render(); });
+      return () => clearTimeout(t);
+    },
+  };
+};
+
+Pages.ppob = () => ({
+  title: 'PPOB', route: 'ppob', view: 'catalog',
+  html: `
+    <div class="page-head"><h1>PPOB</h1><p>Pulsa, data, listrik, BPJS, air, internet, hingga e-wallet — satu form yang sama untuk semuanya.</p></div>
+    <div class="svc-grid">${PPOB.map(View.svc).join('')}</div>
+`,
+});
+
+/* ===== js/pages/service.js ===== */
+/* Zenvira Digital — Halaman checkout untuk SEMUA game & PPOB (berbasis konfigurasi di data.js)
+   Rute: #/game/:id  dan  #/ppob/:id   (opsional ?p=<produk>&promo=<kode>) */
+Pages.service = (kind, id, query = {}) => {
+  const svc = getService(kind, id);
+  if (!svc || svc.kind !== kind) return Pages.notFound('Layanan tidak ditemukan.');
+
+  const st = { values: {}, touched: {}, products: svc.products ? [...svc.products] : [], productId: null, promo: null, payId: null, bill: null };
+  if (query.p && st.products.some((p) => p.id === query.p)) st.productId = query.p;
+
+  const fieldById = (fid) => svc.fields.find((f) => f.id === fid);
+  const product = () => st.products.find((p) => p.id === st.productId) || null;
+  const isFirst = () => Tx.localCount() === 0;
+
+  /* ---------- validasi ---------- */
+  function validateField(f, raw) {
+    const v = String(raw ?? '').trim();
+    if (!v) return f.type === 'select' ? `Pilih ${f.label.toLowerCase()}.` : `${f.label} wajib diisi.`;
+    const r = f.rule; if (!r) return '';
+    if (r.type === 'digits') {
+      if (!/^\d+$/.test(v)) return `${f.label} hanya boleh berisi angka.`;
+      if (v.length < r.min || v.length > r.max) return `${f.label} harus ${r.min === r.max ? r.min : `${r.min}–${r.max}`} digit.`;
+    }
+    if (r.type === 'phone' && !/^08\d{8,12}$/.test(v)) return 'Nomor HP diawali 08 dan terdiri dari 10–14 digit.';
+    if (r.type === 'regex' && !r.re.test(v)) return r.msg;
+    if (r.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return 'Format email belum benar.';
+    return '';
+  }
+
+  /* ---------- markup ---------- */
+  function fieldHTML(f) {
+    const fid = `f-${f.id}`; const desc = `${fid}-hint ${fid}-err`;
+    const control = f.type === 'select'
+      ? `<select class="input" id="${fid}" name="${f.id}" aria-describedby="${desc}" required><option value="">Pilih ${esc(f.label.toLowerCase())}</option>${f.options.map((o) => `<option>${esc(o)}</option>`).join('')}</select>`
+      : `<input class="input" id="${fid}" name="${f.id}" type="${f.type === 'email' ? 'email' : 'text'}" inputmode="${f.inputmode || 'text'}" placeholder="${esc(f.ph || '')}" maxlength="${f.maxlength || 40}" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="${desc}" required>`;
+    const btn = svc.inquiry && f.id === 'custId' ? '<button class="btn btn--line" type="button" data-inquiry>Cek Tagihan</button>' : '';
+    return `<div class="field"><label for="${fid}">${esc(f.label)}</label>${btn ? `<div class="input-group">${control}${btn}</div>` : control}
+      <p class="field__hint" id="${fid}-hint">${esc(f.hint || '')}</p><p class="field__error" id="${fid}-err" role="alert"></p></div>`;
+  }
+  const productHTML = (p) => `<label class="opt"><input class="opt__input" type="radio" name="product" value="${p.id}"${p.id === st.productId ? ' checked' : ''}>
+    <span class="opt__card">${p.tag ? `<span class="opt__tag">${esc(p.tag)}</span>` : ''}<span class="opt__name">${esc(p.label)}</span><span class="opt__price">${idr(p.price)}</span></span></label>`;
+  const productsArea = () => (svc.inquiry && !st.products.length
+    ? '<p class="field__hint"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Masukkan nomor pelanggan lalu tekan “Cek Tagihan” untuk menampilkan jumlah yang harus dibayar.</p>'
+    : `<div class="opts">${st.products.map(productHTML).join('')}</div>`);
+
+  const headIco = kind === 'game'
+    ? `<span class="ico"><img src="${esc(svc.cover)}" width="64" height="64" alt=""></span>`
+    : `<span class="ico tone-${svc.tone}">${svcIcon(svc.id)}</span>`;
+  const layout = svc.layout ? `field-row field-row--${svc.layout === 'split' ? '2' : 'even'}` : '';
+
+  const html = `
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="#/${kind === 'game' ? 'game' : 'ppob'}"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> ${kind === 'game' ? 'Top Up Game' : 'PPOB'}</a></nav>
+    <div class="svc-head">${headIco}<div><h1>${esc(svc.name)}</h1><p>${esc(svc.subtitle)}</p></div></div>
+    <div class="checkout">
+      <form id="orderForm" class="steps" novalidate autocomplete="off">
+        <fieldset class="step"><legend><span class="step__n">1</span> ${esc(svc.stepTitle)}</legend>
+          <div class="${layout}">${svc.fields.map(fieldHTML).join('')}</div>
+          <div id="billBox"></div></fieldset>
+        <fieldset class="step"><legend><span class="step__n">2</span> ${svc.inquiry ? 'Tagihan' : kind === 'game' ? `Pilih nominal ${esc(svc.currency)}` : 'Pilih nominal'}</legend>
+          <div id="productArea">${productsArea()}</div><p class="field__error" id="err-product" role="alert"></p></fieldset>
+        <fieldset class="step"><legend><span class="step__n">3</span> Kode promo</legend>
+          <div class="promo-row"><label class="sr-only" for="promoInput">Kode promo</label>
+            <input class="input" id="promoInput" type="text" placeholder="Masukkan kode" maxlength="16" autocomplete="off" spellcheck="false" aria-describedby="promoMsg">
+            <button class="btn btn--line" type="button" data-apply-promo>Terapkan</button></div>
+          <p class="promo-msg" id="promoMsg" role="status" aria-live="polite"></p>
+          <div class="suggest" aria-label="Kode promo yang tersedia">${PROMOS.map((p) => `<button class="chip chip--mono" type="button" data-suggest="${p.code}" title="${esc(p.desc)}">${p.code}</button>`).join('')}</div></fieldset>
+        <fieldset class="step"><legend><span class="step__n">4</span> Metode pembayaran</legend>
+          <div class="pay-list">${PAYMENTS.map((p) => `<label class="opt pay"><input class="opt__input" type="radio" name="payment" value="${p.id}"><span class="opt__card">
+            <span class="pay-logo" style="--pc:${p.color}" aria-hidden="true">${esc(p.code)}</span>
+            <span class="opt__name">${esc(p.name)}<small>${esc(p.desc)} · ${esc(feeText(p))}</small></span></span></label>`).join('')}</div>
+          <p class="field__error" id="err-payment" role="alert"></p></fieldset>
+      </form>
+      <aside class="summary" aria-label="Ringkasan transaksi">
+        <h2>Ringkasan transaksi</h2>
+        <dl class="kv">
+          <div><dt>Tujuan</dt><dd id="sumTarget">–</dd></div>
+          <div><dt>Produk</dt><dd id="sumProduct">Belum dipilih</dd></div>
+          <div><dt>Harga</dt><dd id="sumSub">Rp0</dd></div>
+          <div class="is-discount" id="sumDiscRow" hidden><dt>Diskon <span id="sumCode"></span></dt><dd id="sumDisc">-Rp0</dd></div>
+          <div><dt>Biaya admin</dt><dd id="sumFee">—</dd></div>
+          <div><dt>Pembayaran</dt><dd id="sumPay">Belum dipilih</dd></div>
+        </dl>
+        <div class="summary__total"><span>Total bayar</span><strong id="sumTotal">Rp0</strong></div>
+        <button class="btn btn--accent btn--lg btn--block" type="submit" form="orderForm">Lanjutkan Pembayaran <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        <p class="summary__note"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>Biaya admin menyesuaikan metode pembayaran yang dipilih.</span></p>
+      </aside>
+    </div>
+    <div class="checkout-bar"><div class="checkout-bar__total"><small>Total bayar</small><strong id="barTotal">Rp0</strong></div>
+      <button class="btn btn--accent btn--lg" type="submit" form="orderForm">Lanjutkan <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div>`;
+
+  /* ---------- perilaku ---------- */
+  function mount(root) {
+    const $r = (s) => $(s, root);
+
+    function setFieldError(f, msg) {
+      const input = $r(`#f-${f.id}`); const err = $r(`#f-${f.id}-err`); if (!input) return;
+      err.textContent = msg || '';
+      input.setAttribute('aria-invalid', msg ? 'true' : 'false');
+      input.classList.toggle('is-valid', !msg && String(input.value).trim() !== '');
+    }
+    function calc() {
+      const p = product();
+      return { p, ...Pricing.compute({ subtotal: p ? p.price : 0, promo: st.promo, kind, payId: st.payId, isFirst: isFirst() }) };
+    }
+    const targetText = () => svc.fields.map((f) => st.values[f.id]).filter(Boolean).map((v, i) => (i === 1 && svc.id === 'mlbb' ? `(${v})` : v)).join(' ') || '–';
+    function setPromoMsg(text, tone, removable = false) {
+      const el = $r('#promoMsg');
+      el.className = `promo-msg is-${tone}`;
+      const icon = { ok: 'fa-circle-check', warn: 'fa-circle-info', err: 'fa-circle-exclamation' }[tone];
+      el.innerHTML = text ? `<i class="fa-solid ${icon}" aria-hidden="true"></i><span>${esc(text)}${removable ? ' <button type="button" data-remove-promo>Hapus</button>' : ''}</span>` : '';
+    }
+    function updateSummary() {
+      const c = calc(); const pay = findPayment(st.payId);
+      $r('#sumTarget').textContent = targetText();
+      $r('#sumProduct').textContent = c.p ? c.p.label : 'Belum dipilih';
+      $r('#sumSub').textContent = idr(c.subtotal);
+      $r('#sumDiscRow').hidden = !c.discount;
+      $r('#sumDisc').textContent = idr(-c.discount);
+      $r('#sumCode').textContent = st.promo ? `(${st.promo.code})` : '';
+      $r('#sumFee').textContent = pay ? idr(c.fee) : '—';
+      $r('#sumPay').textContent = pay ? pay.name : 'Belum dipilih';
+      const total = $r('#sumTotal'); const changed = total.textContent !== idr(c.total);
+      total.textContent = idr(c.total); $r('#barTotal').textContent = idr(c.total);
+      if (changed && !reduceMotion()) { total.classList.add('bump'); setTimeout(() => total.classList.remove('bump'), 250); }
+      if (st.promo) { const s = c.promoState; setPromoMsg(s && s.ok ? `Kode ${st.promo.code} dipakai — hemat ${idr(s.amount)}.` : s ? s.reason : '', s && s.ok ? 'ok' : 'warn', true); }
+    }
+    function applyPromo(raw) {
+      const code = String(raw || '').trim().toUpperCase();
+      if (!code) { setPromoMsg('Masukkan kode promo terlebih dahulu.', 'err'); return; }
+      const promo = PROMOS.find((p) => p.code === code);
+      if (!promo) { st.promo = null; setPromoMsg(`Kode “${code}” tidak ditemukan.`, 'err'); updateSummary(); return; }
+      const s = Promos.evaluate(promo, { kind, subtotal: calc().subtotal, isFirst: isFirst() });
+      if (!s.ok && s.hard) { st.promo = null; setPromoMsg(s.reason, 'err'); updateSummary(); return; }
+      st.promo = promo; $r('#promoInput').value = code; updateSummary();
+      if (s.ok) toast(`Kode ${code} berhasil dipakai.`, { type: 'success' });
+    }
+    function validateAll() {
+      const bad = [];
+      svc.fields.forEach((f) => { const msg = validateField(f, st.values[f.id]); setFieldError(f, msg); if (msg) bad.push($r(`#f-${f.id}`)); });
+      if (!product()) { const m = svc.inquiry ? 'Cek tagihan terlebih dahulu.' : 'Pilih nominal terlebih dahulu.'; $r('#err-product').textContent = m; bad.push($r('#productArea input') || $r('#productArea')); }
+      if (!st.payId) { $r('#err-payment').textContent = 'Pilih metode pembayaran.'; bad.push($r('.pay input')); }
+      return bad;
+    }
+    async function runInquiry() {
+      const f = fieldById('custId'); const btn = $r('[data-inquiry]');
+      const msg = validateField(f, st.values.custId); setFieldError(f, msg);
+      if (msg) { $r('#f-custId').focus(); return; }
+      btn.classList.add('is-loading');
+      try {
+        const bill = await api.inquireBill(svc, st.values.custId);
+        st.bill = bill; st.products = [{ id: 'bill', label: bill.label, price: bill.price, tag: 'Tagihan' }]; st.productId = 'bill';
+        $r('#billBox').innerHTML = `<div class="bill" role="status"><b><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Tagihan ditemukan</b>
+          <dl><div><dt>Nama pelanggan</dt><dd>${esc(bill.name)}</dd></div><div><dt>Periode</dt><dd>${esc(bill.period)}</dd></div><div><dt>Tagihan</dt><dd>${idr(bill.amount)}</dd></div><div><dt>Biaya layanan</dt><dd>${idr(bill.admin)}</dd></div></dl></div>`;
+        $r('#productArea').innerHTML = productsArea(); $r('#err-product').textContent = ''; updateSummary();
+      } finally { btn.classList.remove('is-loading'); }
+    }
+    function clearBill() { if (!svc.inquiry || !st.bill) return; st.bill = null; st.products = []; st.productId = null; $r('#billBox').innerHTML = ''; $r('#productArea').innerHTML = productsArea(); updateSummary(); }
+
+    function payload() {
+      const c = calc(); const pay = findPayment(st.payId);
+      return {
+        kind, serviceId: svc.id, serviceName: svc.name, productLabel: c.p.label,
+        fields: svc.fields.map((f) => ({ label: f.label, value: st.values[f.id], secret: f.type !== 'select' })),
+        subtotal: c.subtotal, discount: c.discount, promoCode: c.discount && st.promo ? st.promo.code : null, fee: c.fee, total: c.total,
+        paymentId: pay.id, paymentName: pay.name,
+      };
+    }
+    function openConfirm() {
+      const p = payload();
+      const s = Sheet.open({
+        title: 'Konfirmasi pesanan',
+        body: `<div class="notice"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i><span>Periksa kembali data akun/tujuan. Pesanan yang sudah diproses tidak dapat diubah.</span></div>${txKV(p)}`,
+        foot: '<button class="btn btn--line" type="button" data-sheet-close>Ubah pesanan</button><button class="btn btn--ink" type="button" data-go><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Konfirmasi Pesanan</button>',
+      });
+      $('[data-go]', s.foot).addEventListener('click', async (e) => {
+        const btn = e.currentTarget; btn.classList.add('is-loading'); s.locked = true;
+        try {
+          const tx = await api.createOrder(p);
+          s.locked = false; s.close();
+          toast('Pesanan dibuat. Lanjutkan ke pembayaran.', { type: 'success' });
+          location.hash = `#/transaksi/${tx.id}?baru=1`;
+        } catch {
+          s.locked = false; btn.classList.remove('is-loading');
+          toast('Pesanan gagal dibuat. Coba lagi.', { type: 'error' });
+        }
+      });
+    }
+
+    /* events */
+    root.addEventListener('input', (e) => {
+      const t = e.target;
+      if (t.id === 'promoInput') { if (!st.promo) setPromoMsg('', 'ok'); return; }
+      const f = t.name && fieldById(t.name); if (!f) return;
+      if (f.type !== 'select' && f.rule && (f.rule.type === 'digits' || f.rule.type === 'phone')) { const c = t.value.replace(/\D/g, ''); if (c !== t.value) t.value = c; }
+      st.values[f.id] = t.value;
+      if (st.touched[f.id]) setFieldError(f, validateField(f, t.value));
+      if (f.detect) { const op = OPERATORS.find(([, re]) => re.test(t.value)); $r(`#f-${f.id}-hint`).innerHTML = op ? `<span class="op-chip"><i class="fa-solid fa-signal" aria-hidden="true"></i> ${op[0]}</span>` : esc(f.hint); }
+      if (f.id === 'custId') clearBill();
+      updateSummary();
+    });
+    root.addEventListener('change', (e) => {
+      const t = e.target;
+      if (t.name === 'product') { st.productId = t.value; $r('#err-product').textContent = ''; updateSummary(); }
+      else if (t.name === 'payment') { st.payId = t.value; $r('#err-payment').textContent = ''; updateSummary(); }
+      else if (t.tagName === 'SELECT' && t.name) { const f = fieldById(t.name); if (f) { st.values[f.id] = t.value; setFieldError(f, validateField(f, t.value)); updateSummary(); } }
+    });
+    root.addEventListener('focusout', (e) => { const t = e.target; const f = t.name && fieldById(t.name); if (f && t.tagName !== 'SELECT') { st.touched[f.id] = true; setFieldError(f, validateField(f, t.value)); } });
+    root.addEventListener('keydown', (e) => { if (e.key === 'Enter' && e.target.id === 'promoInput') { e.preventDefault(); applyPromo(e.target.value); } });
+    root.addEventListener('click', (e) => {
+      if (e.target.closest('[data-apply-promo]')) applyPromo($r('#promoInput').value);
+      const sug = e.target.closest('[data-suggest]'); if (sug) applyPromo(sug.dataset.suggest);
+      if (e.target.closest('[data-remove-promo]')) { st.promo = null; $r('#promoInput').value = ''; setPromoMsg('Kode promo dihapus.', 'warn'); updateSummary(); }
+      if (e.target.closest('[data-inquiry]')) runInquiry();
+    });
+    root.addEventListener('submit', (e) => {
+      if (e.target.id !== 'orderForm') return;
+      e.preventDefault();
+      const bad = validateAll();
+      if (bad.length) {
+        toast('Periksa kembali data pesananmu.', { type: 'error' });
+        const el = bad[0]; if (el) { el.scrollIntoView({ block: 'center', behavior: reduceMotion() ? 'auto' : 'smooth' }); if (el.focus) el.focus({ preventScroll: true }); }
+        return;
+      }
+      openConfirm();
+    });
+
+    updateSummary();
+    const code = query.promo || App.pendingPromo; App.pendingPromo = null;
+    if (code) applyPromo(code);
+    if (st.productId && !svc.inquiry) toast(`${product().label} dipilih. Lengkapi data untuk melanjutkan.`, { type: 'info', duration: 2800 });
+  }
+
+  return { title: svc.name, route: kind, view: 'checkout', html, mount };
+};
+
+/* Daftar rincian pesanan (dipakai konfirmasi & detail transaksi) */
+function txKV(p, { masked = false, date = false } = {}) {
+  return `<dl class="kv">
+    <div><dt>Layanan</dt><dd>${esc(p.serviceName)}</dd></div>
+    ${p.fields.map((f) => `<div><dt>${esc(f.label)}</dt><dd>${esc(masked && f.secret ? mask(f.value) : f.value)}</dd></div>`).join('')}
+    <div><dt>Produk</dt><dd>${esc(p.productLabel)}</dd></div>
+    <div><dt>Metode</dt><dd>${esc(p.paymentName)}</dd></div>
+    ${date ? `<div><dt>Dibuat</dt><dd>${fmtDate(p.createdAt)}</dd></div>` : ''}
+    <div><dt>Harga</dt><dd>${idr(p.subtotal)}</dd></div>
+    ${p.discount ? `<div class="is-discount"><dt>Diskon (${esc(p.promoCode)})</dt><dd>${idr(-p.discount)}</dd></div>` : ''}
+    <div><dt>Biaya admin</dt><dd>${idr(p.fee)}</dd></div>
+    <div class="is-total"><dt>Total</dt><dd>${idr(p.total)}</dd></div></dl>`;
+}
+
+/* ===== js/pages/transaksi.js ===== */
+/* Zenvira Digital — Transaksi: daftar + pencarian invoice (#/transaksi) dan detail pesanan (#/transaksi/:id) */
+/* Batas waktu pembayaran (jam) sejak pesanan dibuat */
+const PAY_WINDOW_HOURS = 24;
+
+/* ================= DAFTAR ================= */
+Pages.transaksi = () => {
+  const TABS = [['all', 'Semua'], ['pending', 'Menunggu'], ['processing', 'Diproses'], ['success', 'Berhasil'], ['failed', 'Gagal'], ['cancelled', 'Dibatalkan']];
+  let filter = 'all';
+
+  return {
+    title: 'Transaksi', route: 'transaksi', view: 'page',
+    html: `
+      <div class="page-head"><h1>Transaksi</h1><p>Masukkan nomor invoice untuk melihat status pesanan, atau telusuri riwayat pesananmu di perangkat ini.</p></div>
+      <div class="tx-tools">
+        <form class="tx-search" id="txSearch" novalidate>
+          <div class="field" style="margin:0">
+            <label class="sr-only" for="txInput">Nomor invoice</label>
+            <div class="searchbox"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i>
+              <input class="input" id="txInput" type="text" placeholder="Nomor invoice, mis. INV-250101-AB12C" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-describedby="txError">
+            </div>
+            <p class="field__error" id="txError" role="alert"></p>
+          </div>
+          <button class="btn btn--ink btn--lg" type="submit" id="txBtn" style="align-self:start"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Cek Status</button>
+        </form>
+        <div class="seg" role="tablist" aria-label="Filter status" id="txTabs"></div>
+      </div>
+      <section class="tx-section" aria-labelledby="tx-mine"><h2 id="tx-mine">Riwayat pesanan <small id="mineCount"></small><span style="flex:1"></span><button class="btn btn--ghost btn--sm" type="button" id="txClear" hidden><i class="fa-regular fa-trash-can" aria-hidden="true"></i> Hapus riwayat</button></h2><div id="txMine"></div></section>`,
+    mount(root) {
+      const $r = (s) => $(s, root);
+      const renderTabs = () => {
+        const all = Tx.all(); const c = { all: all.length };
+        all.forEach((t) => (c[t.status] = (c[t.status] || 0) + 1));
+        $r('#txTabs').innerHTML = TABS.map(([k, l]) => `<button type="button" role="tab" data-tab="${k}" aria-selected="${k === filter}">${l}${c[k] ? ` <span class="muted">${c[k]}</span>` : ''}</button>`).join('');
+      };
+      const renderList = () => {
+        const all = Tx.local(); const mine = all.filter((t) => filter === 'all' || t.status === filter);
+        $r('#mineCount').textContent = all.length ? `${all.length} pesanan` : '';
+        $r('#txClear').hidden = !all.length;
+        $r('#txMine').innerHTML = mine.length
+          ? `<ul class="tx-list">${mine.map((t) => `<li>${View.txRow(t)}</li>`).join('')}</ul>`
+          : `<div class="empty"><span class="ico"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i></span><h3>${all.length ? 'Tidak ada pesanan dengan status ini' : 'Belum ada pesanan'}</h3><p>${all.length ? 'Pilih filter lain untuk melihat pesanan lainnya.' : 'Pesanan yang kamu buat akan muncul di sini. Mulai dari PPOB atau top up game.'}</p>${all.length ? '' : '<div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a class="btn btn--ink" href="#/ppob">Bayar PPOB</a><a class="btn btn--line" href="#/game">Top Up Game</a></div>'}</div>`;
+      };
+      const refresh = () => { renderTabs(); renderList(); };
+      refresh();
+
+      $r('#txTabs').addEventListener('click', (e) => { const b = e.target.closest('[data-tab]'); if (b) { filter = b.dataset.tab; refresh(); } });
+      $r('#txClear').addEventListener('click', () => Sheet.confirm({ title: 'Hapus riwayat?', text: 'Semua riwayat pesanan di perangkat ini akan dihapus. Tindakan ini tidak dapat dibatalkan.', label: 'Ya, hapus', onConfirm: () => { Tx.clear(); toast('Riwayat pesanan dihapus.', { type: 'info' }); } }));
+
+      const input = $r('#txInput'); const err = $r('#txError');
+      const setError = (m) => { err.textContent = m || ''; input.setAttribute('aria-invalid', m ? 'true' : 'false'); };
+      input.addEventListener('input', () => setError(''));
+      $r('#txSearch').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const id = input.value.trim().toUpperCase(); input.value = id;
+        if (!id) { setError('Masukkan nomor invoice terlebih dahulu.'); input.focus(); return; }
+        if (!/^INV-[A-Z0-9]+(-[A-Z0-9]+)*$/.test(id)) { setError('Format nomor invoice tidak valid. Contoh: INV-250101-AB12C.'); return; }
+        setError('');
+        const btn = $r('#txBtn'); btn.classList.add('is-loading');
+        try {
+          const tx = await api.getOrder(id);
+          if (tx) location.hash = `#/transaksi/${tx.id}`;
+          else setError(`Invoice ${id} tidak ditemukan. Periksa kembali nomor invoice-nya.`);
+        } finally { btn.classList.remove('is-loading'); }
+      });
+
+      const onTx = () => refresh();
+      bus.addEventListener('tx', onTx);
+      return () => bus.removeEventListener('tx', onTx);
+    },
+  };
+};
+
+/* ================= DETAIL PESANAN ================= */
+Pages.transaksiDetail = (id, query = {}) => {
+  const first = Tx.find(id);
+  if (!first) {
+    return {
+      title: 'Invoice tidak ditemukan', route: 'transaksi', view: 'page',
+      html: `<nav class="crumbs" aria-label="Breadcrumb"><a href="#/transaksi"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Transaksi</a></nav>
+        <div class="empty"><span class="ico"><i class="fa-solid fa-circle-question" aria-hidden="true"></i></span><h1 style="font-size:1.5rem">Invoice tidak ditemukan</h1>
+        <p>Nomor <code>${esc(id)}</code> tidak ditemukan. Periksa kembali nomor invoice-nya atau cek riwayat pesananmu.</p><a class="btn btn--ink" href="#/transaksi">Kembali ke Transaksi</a></div>`,
+    };
+  }
+
+  /* Panel pembayaran (status "pending") */
+  const payPanel = (tx) => {
+    const pay = findPayment(tx.paymentId);
+    const deadline = fmtDate(tx.createdAt + PAY_WINDOW_HOURS * 3600 * 1000);
+    return `
+      <div class="pay-panel">
+        <div class="pay-panel__head">
+          <span class="pay-logo" style="--pc:${pay ? pay.color : '#121212'}" aria-hidden="true">${esc(pay ? pay.code : '')}</span>
+          <div><b>Bayar dengan ${esc(tx.paymentName)}</b><small>Selesaikan pembayaran sebelum ${deadline}</small></div>
+        </div>
+        <div class="pay-panel__amount"><span>Total pembayaran</span><strong>${idr(tx.total)}</strong></div>
+        <div class="tx-actions">
+          <button class="btn btn--accent btn--lg" type="button" data-pay="${esc(tx.id)}"><i class="fa-solid fa-lock" aria-hidden="true"></i> Bayar Sekarang</button>
+          <button class="btn btn--line btn--lg" type="button" data-cancel="${esc(tx.id)}">Batalkan Pesanan</button>
+        </div>
+      </div>`;
+  };
+
+  const detailHTML = (tx, isNew) => {
+    const s = STATUS[tx.status];
+    const aside = tx.status === 'pending' ? payPanel(tx)
+      : tx.status === 'processing' ? '<div class="notice notice--info" style="margin:0"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>Pembayaran sudah kami terima. Halaman ini diperbarui otomatis saat pesanan selesai diproses.</span></div>'
+        : '';
+    const title = isNew && tx.status === 'pending' ? 'Pesanan berhasil dibuat' : s.label;
+    const desc = isNew && tx.status === 'pending' ? 'Lanjutkan ke pembayaran. Simpan nomor invoice ini untuk mengecek status pesanan.' : s.desc;
+    return `
+      <section class="tile tx-hero status--${tx.status}${isNew ? ' is-new' : ''}" aria-labelledby="tx-title">
+        <div class="tx-hero__top"><span class="tx-hero__ico"><i class="fa-solid ${isNew && tx.status === 'pending' ? 'fa-file-circle-check' : s.icon}" aria-hidden="true"></i></span>
+          <div><h1 id="tx-title">${esc(title)}</h1><p>${esc(desc)}</p></div></div>
+        <div class="tx-id"><code>${esc(tx.id)}</code><button class="btn btn--line btn--sm" type="button" data-copy="${esc(tx.id)}"><i class="fa-solid fa-copy" aria-hidden="true"></i> Salin</button></div>
+        <div><span class="status status--${tx.status}"><i class="fa-solid ${s.icon}" aria-hidden="true"></i> ${s.label}</span></div>
+      </section>
+      <div class="tx-grid">
+        ${aside ? `<section class="tile span-full" aria-label="Pembayaran">${aside}</section>` : ''}
+        <section class="tile" aria-labelledby="tx-detail-h"><h2 id="tx-detail-h">Rincian pesanan</h2>${txKV(tx, { masked: true, date: true })}</section>
+        <section class="tile" aria-labelledby="tx-hist-h"><h2 id="tx-hist-h">Riwayat status</h2>
+          <ol class="timeline">${[...tx.history].reverse().map((h) => `<li class="is-${h.status}"><b>${STATUS[h.status].label}</b><small>${fmtDate(h.at)} · ${esc(h.note || '')}</small></li>`).join('')}</ol></section>
+        <section class="tile span-full">
+          <div class="tx-actions" style="margin-top:0">
+            <a class="btn btn--line" href="#/transaksi"><i class="fa-solid fa-list" aria-hidden="true"></i> Semua Transaksi</a>
+            <a class="btn btn--ink" href="#/${tx.kind}/${esc(tx.serviceId)}"><i class="fa-solid fa-rotate-right" aria-hidden="true"></i> Pesan Lagi</a>
+          </div>
+        </section>
+      </div>`;
+  };
+
+  return {
+    title: `Invoice ${first.id}`, route: 'transaksi', view: 'page',
+    html: `<nav class="crumbs" aria-label="Breadcrumb"><a href="#/transaksi"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Transaksi</a></nav><div id="txRoot">${detailHTML(first, !!query.baru)}</div>`,
+    mount(root) {
+      const box = $('#txRoot', root);
+      root.addEventListener('click', async (e) => {
+        const c = e.target.closest('[data-copy]');
+        if (c) copyText(c.dataset.copy).then((ok) => toast(ok ? 'Nomor invoice disalin.' : 'Tidak dapat menyalin otomatis. Salin manual ya.', { type: ok ? 'success' : 'error' }));
+
+        const p = e.target.closest('[data-pay]');
+        if (p) {
+          p.classList.add('is-loading');
+          try { await api.payOrder(p.dataset.pay); toast('Pembayaran diterima. Pesanan sedang diproses.', { type: 'success' }); }
+          catch { toast('Pembayaran belum berhasil. Coba lagi.', { type: 'error' }); p.classList.remove('is-loading'); }
+        }
+
+        const x = e.target.closest('[data-cancel]');
+        if (x) Sheet.confirm({ title: 'Batalkan pesanan?', text: 'Pesanan yang dibatalkan tidak akan diproses dan tidak dapat dipulihkan.', label: 'Ya, batalkan', cancel: 'Kembali', onConfirm: async () => { await api.cancelOrder(x.dataset.cancel); toast('Pesanan dibatalkan.', { type: 'info' }); } });
+      });
+      const onTx = (e) => {
+        if (e.detail && e.detail !== first.id) return;
+        const tx = Tx.find(first.id); if (!tx) return;
+        const y = window.scrollY; box.innerHTML = detailHTML(tx, false); window.scrollTo(0, y);
+      };
+      bus.addEventListener('tx', onTx);
+      return () => bus.removeEventListener('tx', onTx);
+    },
+  };
+};
+
+/* ===== js/pages/help.js ===== */
+/* Zenvira Digital — Bantuan (FAQ, kontak, dokumen) + dialog dokumen & halaman 404 */
+const Info = {
+  /* key: 'terms' | 'privacy' | 'contact' (isi di LEGAL, data.js) */
+  open(key) {
+    const d = LEGAL[key]; if (!d) return;
+    Sheet.open({
+      title: d.title,
+      body: `<div class="prose">${d.body.map(([h, t]) => `<h3>${esc(h)}</h3><p>${esc(t)}</p>`).join('')}</div>`,
+    });
+  },
+};
+
+Pages.help = () => ({
+  title: 'Bantuan', route: 'bantuan', view: 'page',
+  html: `
+    <div class="page-head"><h1>Bantuan</h1><p>Jawaban untuk pertanyaan yang sering diajukan, serta informasi kontak dan dokumen.</p></div>
+    <div class="help-grid">
+      <div>
+        <h2 style="font-size:1.1rem;margin-bottom:12px">Pertanyaan yang sering diajukan</h2>
+        <div class="faq">${FAQS.map(([q, a]) => `<details><summary>${esc(q)}</summary><div>${esc(a)}</div></details>`).join('')}</div>
+      </div>
+      <aside>
+        <div class="contact">
+          <h2>Butuh bantuan lebih lanjut?</h2>
+          <p>Tim kami siap membantu. Sertakan nomor invoice agar pesananmu lebih cepat kami periksa.</p>
+          <button class="btn" type="button" data-info="contact"><i class="fa-solid fa-address-book" aria-hidden="true"></i> Hubungi Kami</button>
+        </div>
+        <div class="legal-links">
+          <button type="button" data-info="terms"><span>Syarat &amp; Ketentuan</span><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+          <button type="button" data-info="privacy"><span>Kebijakan Privasi</span><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        </div>
+      </aside>
+    </div>`,
+});
+
+Pages.notFound = (msg = 'Halaman tidak ditemukan.') => ({
+  title: 'Tidak ditemukan', route: '', view: 'page',
+  html: `<div class="empty"><span class="ico"><i class="fa-solid fa-compass" aria-hidden="true"></i></span><h1 style="font-size:1.6rem">${esc(msg)}</h1><p>Alamat yang kamu buka tidak tersedia. Kembali ke beranda atau cari lewat pencarian cepat.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a class="btn btn--ink" href="#/">Ke Beranda</a><button class="btn btn--line" type="button" data-palette>Cari…</button></div></div>`,
+});
+
+/* ===== js/router.js ===== */
+/* Zenvira Digital — Router hash sederhana.
+   Handler halaman: (params, query) => { title, route, view, html, mount?(root) => cleanup? } */
+const Router = (() => {
+  const routes = [];
+  let cleanup = null;
+
+  function add(pattern, handler) {
+    const keys = [];
+    const re = new RegExp('^' + pattern.replace(/:([a-zA-Z]+)/g, (_, k) => { keys.push(k); return '([^/]+)'; }) + '/?$');
+    routes.push({ re, keys, handler });
+  }
+
+  function parse() {
+    const raw = window.location.hash.replace(/^#/, '') || '/';
+    const [path, qs = ''] = raw.split('?');
+    return { path: path.startsWith('/') ? path : `/${path}`, query: Object.fromEntries(new URLSearchParams(qs)) };
+  }
+
+  function render() {
+    if (cleanup) { try { cleanup(); } catch { /* abaikan */ } cleanup = null; }
+    Sheet.closeAll(); Palette.close(false);
+
+    const { path, query } = parse();
+    let res = null;
+    for (const r of routes) {
+      const m = r.re.exec(path);
+      if (m) {
+        const params = {}; r.keys.forEach((k, i) => { params[k] = decodeURIComponent(m[i + 1]); });
+        res = r.handler(params, query); break;
+      }
+    }
+    if (!res) res = Pages.notFound();
+
+    // Ganti #view dengan salinan bersih (tanpa listener) agar handler halaman lama tidak menumpuk.
+    const old = $('#view');
+    const view = old.cloneNode(false);
+    old.replaceWith(view);
+    view.innerHTML = res.html;
+    document.body.dataset.view = res.view || 'page';
+    document.title = `${res.title} — Zenvira Digital`;
+    $$('[data-route]').forEach((el) => (el.dataset.route === res.route ? el.setAttribute('aria-current', 'page') : el.removeAttribute('aria-current')));
+
+    view.classList.remove('is-entering'); void view.offsetWidth; view.classList.add('is-entering');
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    const h1 = $('h1', view);
+    if (h1) { h1.setAttribute('tabindex', '-1'); h1.style.outline = 'none'; h1.focus({ preventScroll: true }); } else view.focus({ preventScroll: true });
+
+    if (res.mount) { const c = res.mount(view); if (typeof c === 'function') cleanup = c; }
+  }
+
+  return {
+    add, refresh: render,
+    start() { window.addEventListener('hashchange', render); render(); },
+    go(path) { if (window.location.hash === `#${path}`) render(); else window.location.hash = path; },
+  };
+})();
+
+/* ===== js/app.js ===== */
+/* Zenvira Digital — Boot aplikasi: daftar rute & inisialisasi modul */
+(function boot() {
+  $('#year').textContent = new Date().getFullYear();
+
+  MockBackend.settle(); // hapus bersama MockBackend saat backend sungguhan terpasang
+  Theme.init();
+  Palette.init();
+
+  Router.add('/', () => Pages.home());
+  Router.add('/game', (_p, q) => Pages.games(_p, q));
+  Router.add('/game/:id', (p, q) => Pages.service('game', p.id, q));
+  Router.add('/ppob', () => Pages.ppob());
+  Router.add('/ppob/:id', (p, q) => Pages.service('ppob', p.id, q));
+  Router.add('/transaksi', () => Pages.transaksi());
+  Router.add('/transaksi/:id', (p, q) => Pages.transaksiDetail(p.id, q));
+  Router.add('/bantuan', () => Pages.help());
+
+  // dokumen & info (footer, halaman bantuan)
+  document.addEventListener('click', (e) => {
+    const i = e.target.closest('[data-info]');
+    if (i) Info.open(i.dataset.info);
+  });
+
+
+  Router.start();
+})();
+
+</script>
+</body>
+</html>

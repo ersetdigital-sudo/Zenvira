@@ -1,0 +1,104 @@
+/* css/tokens.css */
+/* ==========================================================================
+   Zenvira Digital — Design tokens
+   Terang & gelap dikendalikan lewat atribut [data-theme] di <html>.
+   ========================================================================== */
+:root {
+  color-scheme: light;
+
+  /* surfaces */
+  --bg: #f5f5f1;
+  --surface: #ffffff;
+  --surface-2: #eeeee8;
+  --surface-3: #e5e5de;
+
+  /* text & lines */
+  --text: #121212;
+  --muted: #6a6a64;
+  --faint: #9a9a93;
+  --line: #e3e3dc;
+  --line-strong: #cdcdc3;
+
+  /* brand */
+  --ink: #121212;
+  --on-ink: #ffffff;
+  --accent: #ff5b2e;
+  --accent-ink: #c93a10;
+  --accent-soft: #ffe9e1;
+  --on-accent: #121212;
+
+  /* semantic */
+  --ok: #0c8a54;
+  --ok-soft: #ddf3e7;
+  --warn: #a35b00;
+  --warn-soft: #fdecc9;
+  --err: #c6362b;
+  --err-soft: #fbe3df;
+  --info: #1d5fcf;
+  --info-soft: #e1ebff;
+
+  /* tinted icon tiles (nama mengikuti `tone` di data.js) */
+  --tone-blue-bg: #dfe9ff;   --tone-blue-fg: #1d4fc4;
+  --tone-cyan-bg: #d8f1f2;   --tone-cyan-fg: #0b7480;
+  --tone-orange-bg: #ffe6d6; --tone-orange-fg: #bd4a10;
+  --tone-purple-bg: #f4e9c8; --tone-purple-fg: #8a6208;
+  --tone-green-bg: #ddf3e7;  --tone-green-fg: #0c7a49;
+  --tone-pink-bg: #ffe0e7;   --tone-pink-fg: #b82b52;
+
+  /* shape */
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 18px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+
+  /* elevation (dipakai hemat — desain mengandalkan border) */
+  --shadow-sm: 0 1px 2px rgba(18, 18, 18, 0.05);
+  --shadow-md: 0 8px 24px rgba(18, 18, 18, 0.08);
+  --shadow-lg: 0 24px 64px rgba(18, 18, 18, 0.18);
+
+  /* type */
+  --font: "Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  /* layout */
+  --topbar-h: 64px;
+  --tab-h: 66px;
+  --gutter: 16px;
+  --ease: cubic-bezier(0.22, 0.8, 0.2, 1);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0d0d0e;
+  --surface: #161618;
+  --surface-2: #1e1e21;
+  --surface-3: #28282c;
+  --text: #f4f4f0;
+  --muted: #a0a099;
+  --faint: #6f6f69;
+  --line: #2a2a2e;
+  --line-strong: #3b3b41;
+  --ink: #f4f4f0;
+  --on-ink: #121212;
+  --accent: #ff6a3d;
+  --accent-ink: #ff8c66;
+  --accent-soft: #3a1f16;
+  --ok: #3fd08a;
+  --ok-soft: #11301f;
+  --warn: #f0b04a;
+  --warn-soft: #33260d;
+  --err: #ff7b70;
+  --err-soft: #3b1613;
+  --info: #7ca9ff;
+  --info-soft: #15233f;
+  --tone-blue-bg: #17284f;   --tone-blue-fg: #8fb2ff;
+  --tone-cyan-bg: #11343a;   --tone-cyan-fg: #6fd3dd;
+  --tone-orange-bg: #3d2013; --tone-orange-fg: #ff9a6c;
+  --tone-purple-bg: #382d10; --tone-purple-fg: #e8c35e;
+  --tone-green-bg: #11301f;  --tone-green-fg: #5fdc9c;
+  --tone-pink-bg: #3a1621;   --tone-pink-fg: #ff8fab;
+  --shadow-sm: none;
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.6);
+}
