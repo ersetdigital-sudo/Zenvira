@@ -74,7 +74,7 @@ select.input { padding-right: 40px; background-image: url("data:image/svg+xml,%3
 
 /* ---- badge / status ---- */
 .badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: var(--r-pill); font-size: 0.68rem; font-weight: 750; letter-spacing: 0.02em; text-transform: uppercase; background: var(--ink); color: var(--on-ink); }
-.badge--accent { background: var(--accent); color: var(--on-accent); }
+.badge--accent { background: var(--accent); color: #fff; }
 .badge--soft { background: var(--surface-2); color: var(--muted); }
 .status { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: var(--r-pill); font-size: 0.76rem; font-weight: 700; white-space: nowrap; }
 .status--pending { background: var(--warn-soft); color: var(--warn); }
