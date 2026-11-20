@@ -182,27 +182,25 @@
 .checkout-bar .btn { flex: 1; min-width: 0; }
 
 /* ================= TRANSAKSI ================= */
-.tx-tools { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; margin-bottom: 22px; }
+.tx-check { display: grid; gap: 14px; max-width: 760px; }
 .tx-search { display: grid; gap: 8px; }
-.tx-section { margin-top: 26px; }
-.tx-section > h2 { font-size: 1.1rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
-.tx-section > h2 small { font-size: 0.78rem; font-weight: 600; color: var(--muted); letter-spacing: 0; }
-.tx-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
-.tx-list > li { min-width: 0; }
-.tx-row { display: flex; align-items: center; gap: 14px; padding: 14px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--surface); transition: border-color 0.2s, transform 0.25s var(--ease); width: 100%; text-align: left; }
-.tx-row:hover { border-color: var(--text); transform: translateY(-2px); }
-.tx-row > span:nth-child(2) { flex: 1; min-width: 0; }
-.tx-row b { display: block; font-size: 0.95rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.tx-row small { color: var(--muted); font-size: 0.78rem; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.tx-row small.mono { font-size: 0.72rem; }
-.tx-row__end { display: grid; gap: 6px; justify-items: end; flex: none; }
-.tx-row__end strong { font-size: 0.92rem; }
+.tx-check__note { display: flex; gap: 8px; padding-top: 14px; border-top: 1px dashed var(--line); color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+.tx-check__note i { margin-top: 3px; }
 
 .tx-hero { display: grid; gap: 14px; position: relative; overflow: hidden; }
+.tx-hero.tile { background: var(--surface); color: var(--text); }
 .tx-hero__top { display: flex; align-items: center; gap: 16px; }
+.tx-hero__copy { min-width: 0; }
 .tx-hero__ico { width: 64px; height: 64px; flex: none; border-radius: 20px; display: grid; place-items: center; font-size: 1.7rem; }
 .tx-hero h1 { font-size: clamp(1.4rem, 4.5vw, 1.9rem); font-weight: 800; }
 .tx-hero p { color: var(--muted); font-size: 0.92rem; }
+.tx-hero__meta { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.tx-hero__meta .tx-id { flex: 1 1 280px; }
+@media (min-width: 900px) {
+  .tx-hero { grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 24px; }
+  .tx-hero__meta { flex-direction: column; align-items: flex-end; gap: 10px; }
+  .tx-hero__meta .tx-id { flex: none; width: min(400px, 100%); }
+}
 .tx-id { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 10px 10px 16px; border-radius: var(--r-md); background: var(--surface-2); }
 .tx-id code { font-weight: 700; font-size: 0.98rem; overflow-wrap: anywhere; }
 .tx-hero.status--pending .tx-hero__ico { background: var(--warn-soft); color: var(--warn); }
@@ -215,6 +213,11 @@
 .tx-grid h2 { font-size: 1.05rem; margin-bottom: 8px; }
 .tx-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
 .tx-actions .btn { flex: 1 1 170px; }
+.tx-detail { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; margin-top: 14px; align-items: start; }
+.tx-detail__side { display: grid; gap: 14px; align-content: start; }
+@media (min-width: 1024px) {
+  .tx-detail { grid-template-columns: minmax(0, 1.5fr) minmax(320px, 1fr); }
+}
 
 /* ================= BANTUAN ================= */
 .help-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; align-items: start; }
@@ -274,19 +277,31 @@
 }
 
 /* ================= PANEL PEMBAYARAN (detail pesanan) ================= */
-.pay-panel { display: grid; gap: 16px; }
+.pay-panel { display: grid; gap: 18px; align-content: start; }
 .pay-panel__head { display: flex; align-items: center; gap: 14px; }
 .pay-panel__head .pay-logo { width: 46px; height: 46px; border-radius: 14px; font-size: 0.72rem; }
-.pay-panel__head b { display: block; font-size: 1.05rem; }
-.pay-panel__head small { color: var(--muted); font-size: 0.85rem; }
+.pay-panel__title { min-width: 0; }
+.pay-panel__title b { display: block; font-size: 1.05rem; }
+.pay-panel__title small { color: var(--muted); font-size: 0.85rem; }
+.pay-panel__grid { display: grid; gap: 16px; align-items: start; }
+.pay-panel__side { display: grid; gap: 12px; align-content: start; }
+@media (min-width: 900px) {
+  .pay-panel__grid { grid-template-columns: 280px minmax(0, 1fr); gap: 22px; }
+}
 .pay-panel__amount { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 16px; border-radius: var(--r-md); background: var(--surface-2); }
 .pay-panel__amount span { color: var(--muted); font-size: 0.9rem; }
 .pay-panel__amount strong { font-size: 1.6rem; letter-spacing: -0.03em; }
+.pay-timer { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 14px; border-radius: var(--r-md); background: var(--warn-soft); color: var(--warn); }
+.pay-timer span { display: inline-flex; align-items: center; gap: 8px; font-size: 0.82rem; font-weight: 650; }
+.pay-timer b { font-size: 1.05rem; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; }
+.pay-timer.is-expired { background: var(--err-soft); color: var(--err); }
+.pay-panel__hint { display: flex; gap: 8px; font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+.pay-panel__hint i { margin-top: 3px; }
+.pay-panel__side .tx-actions { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 2px; }
+.pay-panel__side .tx-actions .btn { flex: none; width: 100%; }
 
 /* ---- QRIS ---- */
-.qris-box { margin-top: 14px; padding: 16px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--surface-2); display: grid; justify-items: center; gap: 12px; text-align: center; }
-.pay-panel .qris-box { margin-top: 0; }
+.qris-box { margin-top: 0; padding: 14px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--surface-2); display: grid; justify-items: center; gap: 10px; text-align: center; }
 .qris-box__img { width: min(260px, 100%); padding: 10px; border-radius: var(--r-md); background: #fff; box-shadow: var(--shadow-sm); }
 .qris-box__img img { width: 100%; height: auto; }
 .qris-box__note { font-size: 0.78rem; color: var(--muted); max-width: 42ch; }
-.pay-panel .qris-box__img { width: min(300px, 100%); }
